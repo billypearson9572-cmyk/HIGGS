@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-felt-950 text-felt-50 font-sans antialiased;
+  margin: 0;
+}
+
+/* Dyslexia-friendly font toggle: switch body text to a hyperlegible face. */
+html.readable body {
+  @apply font-readable;
+  letter-spacing: 0.01em;
+}
+
+/* Generous line spacing toggle. */
+html.relaxed body {
+  line-height: 1.9;
+}
+html.relaxed p {
+  margin-bottom: 1rem;
+}
+
+/* High-contrast toggle: darker background, brighter text and borders. */
+html.hc body {
+  @apply bg-black text-white;
+}
+html.hc .surface {
+  background-color: #000 !important;
+  border-color: #ffffff !important;
+}
+html.hc a,
+html.hc .accent-text {
+  color: #ffe14d !important;
+}
+
+/* Reduced-motion toggle plus respect for the OS setting. */
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Reusable surface for cards and panels. */
+.surface {
+  @apply bg-felt-900 border border-felt-700 rounded-xl;
+}
+
+/* Visible focus ring for keyboard users. */
+:focus-visible {
+  outline: 3px solid #ffe14d;
+  outline-offset: 2px;
+}
