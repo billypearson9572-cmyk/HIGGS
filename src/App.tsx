@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { ProgressProvider } from './state/ProgressContext';
 import { SettingsProvider } from './state/SettingsContext';
@@ -15,7 +15,7 @@ export default function App() {
   return (
     <SettingsProvider>
       <ProgressProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Layout>
             <Routes>
               <Route path="/" element={<Dashboard />} />
@@ -29,7 +29,7 @@ export default function App() {
               <Route path="*" element={<Dashboard />} />
             </Routes>
           </Layout>
-        </BrowserRouter>
+        </HashRouter>
       </ProgressProvider>
     </SettingsProvider>
   );
