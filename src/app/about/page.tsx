@@ -1,0 +1,201 @@
+import type { Metadata } from "next";
+import { Zap, Target, Repeat, Eye, Handshake, Layers } from "lucide-react";
+import {
+  Container,
+  Section,
+  SectionHeading,
+  Eyebrow,
+  Card,
+  GradientText,
+} from "@/components/ui";
+import { CTASection } from "@/components/CTASection";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Voltara Digital exists to help great small businesses get the visibility they deserve — and the time back to enjoy growing.",
+};
+
+const values = [
+  {
+    icon: Target,
+    title: "Outcomes over vanity",
+    body: "We care about leads, customers and revenue — not likes for the sake of likes. Every action ties back to growing your business.",
+  },
+  {
+    icon: Repeat,
+    title: "Built to be owned by you",
+    body: "Your accounts, your data, your workflows. We build you leverage, never lock-in. If we ever part ways, you keep everything.",
+  },
+  {
+    icon: Zap,
+    title: "Automation with a human touch",
+    body: "We automate the repetitive work so the human moments — the conversations that win customers — get more of your attention, not less.",
+  },
+  {
+    icon: Eye,
+    title: "Radically transparent",
+    body: "Clear reporting, plain English and honest advice. You'll always know what we're doing, why, and what it's getting you.",
+  },
+];
+
+const differentiators = [
+  {
+    icon: Handshake,
+    title: "Senior attention, not a junior handover",
+    body: "You work directly with the people doing the work. No being passed to an intern after the sales call.",
+  },
+  {
+    icon: Layers,
+    title: "Marketing and automation, under one roof",
+    body: "Most agencies do one or the other. We connect both, so your growth and your systems are designed to work together.",
+  },
+  {
+    icon: Target,
+    title: "Built around your numbers",
+    body: "We start from the result you want and work backwards — then report against it honestly, every single month.",
+  },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      {/* ---------------------------------------------------------------- Hero */}
+      <section className="relative overflow-hidden border-b border-line/60">
+        <div className="glow-radial pointer-events-none absolute -top-32 right-0 h-[28rem] w-[40rem]" />
+        <Container className="relative py-20 sm:py-28">
+          <div className="max-w-3xl">
+            <Eyebrow>About Voltara</Eyebrow>
+            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
+              The growth partner SMEs{" "}
+              <GradientText>actually need.</GradientText>
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-muted">
+              We started Voltara Digital with a simple frustration: brilliant
+              small businesses staying invisible, while louder — but not better —
+              competitors won the customers. Great work deserves to be seen.
+              We&apos;re here to make sure it is.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* ------------------------------------------------------------- Mission */}
+      <Section>
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <SectionHeading
+                eyebrow="Our mission"
+                title="Marketing shouldn't be a gamble"
+              />
+              <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-muted">
+                <p>
+                  For most small businesses, growth comes down to luck and
+                  relationships. When work is good, referrals trickle in. When
+                  it&apos;s quiet, there&apos;s no lever to pull. That&apos;s a
+                  stressful way to run a business — and an impossible way to plan
+                  one.
+                </p>
+                <p>
+                  We believe every good business deserves a growth system it can
+                  actually rely on: visibility that brings in customers
+                  predictably, and the systems to handle that growth without
+                  burning out the owner.
+                </p>
+                <p>
+                  So that&apos;s what we build. We combine creative social media
+                  marketing with practical AI automation to give SMEs the kind of
+                  growth engine that used to be reserved for big companies with
+                  big budgets.
+                </p>
+              </div>
+            </div>
+
+            <Card className="border-gradient self-start p-8">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-gradient text-[#04121f]">
+                <Zap className="h-6 w-6" />
+              </span>
+              <h3 className="mt-6 font-display text-xl font-bold">
+                Why &ldquo;Voltara&rdquo;?
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                The name comes from <em>volt</em> — the unit of electrical
+                energy. It&apos;s the spark that gets things moving and the
+                current that keeps them running. That&apos;s the role we want to
+                play for your business: the energy behind your growth, and the
+                steady current that sustains it.
+              </p>
+            </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* -------------------------------------------------------------- Values */}
+      <Section className="bg-bg-soft">
+        <Container>
+          <SectionHeading
+            align="center"
+            eyebrow="What we stand for"
+            title="The principles behind every decision"
+          />
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            {values.map((value) => (
+              <Card key={value.title} className="flex gap-5">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-line bg-white/5 text-brand-teal">
+                  <value.icon className="h-6 w-6" />
+                </span>
+                <div>
+                  <h3 className="font-display text-lg font-semibold">
+                    {value.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {value.body}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* ------------------------------------------------------- How we're different */}
+      <Section>
+        <Container>
+          <SectionHeading
+            eyebrow="How we're different"
+            title={
+              <>
+                Not your typical{" "}
+                <GradientText>marketing agency.</GradientText>
+              </>
+            }
+          />
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {differentiators.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-line bg-surface/60 p-7"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gradient text-[#04121f]">
+                  <item.icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-5 font-display text-lg font-semibold">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <CTASection
+        title="Let's grow something together"
+        description="If you've got a business you're proud of and you're ready for more people to know about it, we should talk."
+      />
+    </>
+  );
+}
