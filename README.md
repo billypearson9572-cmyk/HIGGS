@@ -24,7 +24,8 @@ src/
 │   ├── page.tsx          # Home
 │   ├── services/         # Services
 │   ├── about/            # About
-│   ├── contact/          # Contact (+ form)
+│   ├── contact/          # Contact (+ form) — the "free audit" funnel
+│   ├── privacy/          # Privacy policy
 │   ├── blog/             # Blog index + [slug] article pages
 │   ├── layout.tsx        # Root layout, fonts, global metadata
 │   ├── globals.css       # Theme tokens, brand utilities
@@ -39,9 +40,14 @@ src/
 
 ## Editing the most common things
 
-- **Contact details, booking link, socials:** `src/config/site.ts`
+- **Contact details, booking link, socials:** `src/config/site.ts`. Leave a
+  value blank to hide it — socials and phone won't show until you add them, and
+  the "book a call" buttons route to the contact form until you set a Calendly
+  link.
 - **Blog posts:** add an entry to the array in `src/content/blog.ts` — the
   `content` field is plain Markdown.
+- **Analytics:** Vercel Web Analytics is wired in (`@vercel/analytics`). It's
+  cookieless and activates automatically once deployed to Vercel.
 - **Brand colours / fonts:** the `@theme` block at the top of
   `src/app/globals.css`.
 - **Logo:** `src/components/Logo.tsx` draws the mark inline. To use the exact

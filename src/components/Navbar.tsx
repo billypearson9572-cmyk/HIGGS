@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Menu, X, CalendarCheck } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Container, Button } from "@/components/ui";
-import { mainNav, siteConfig } from "@/config/site";
+import { mainNav, siteConfig, cta } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -46,9 +46,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:block">
-          <Button href={siteConfig.bookingUrl} external size="md">
-            <CalendarCheck className="h-4 w-4" />
-            Book a call
+          <Button href={cta.href} size="md">
+            <Search className="h-4 w-4" />
+            {cta.shortLabel}
           </Button>
         </div>
 
@@ -80,14 +80,9 @@ export function Navbar() {
                 {item.title}
               </Link>
             ))}
-            <Button
-              href={siteConfig.bookingUrl}
-              external
-              size="md"
-              className="mt-3"
-            >
-              <CalendarCheck className="h-4 w-4" />
-              Book a call
+            <Button href={cta.href} size="md" className="mt-3">
+              <Search className="h-4 w-4" />
+              {cta.shortLabel}
             </Button>
           </Container>
         </div>

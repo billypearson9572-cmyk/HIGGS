@@ -62,7 +62,7 @@ None of this replaces a great reputation. It compounds it. Marketing turns the t
 
 Word-of-mouth got you here. It's proof that people value what you do. But a reputation you can't scale is a business you can't scale. The next stage of growth comes from owning your visibility — and that's exactly what a marketing system is for.
 
-Ready to build one? [Book a free strategy call](/contact) and we'll map it out together.`,
+Ready to build one? [Get a free marketing audit](/contact) and we'll map it out together.`,
   },
   {
     slug: "social-media-that-sells",
@@ -124,7 +124,7 @@ Once your organic content is converting, paid ads pour fuel on the fire — putt
 
 Social media that sells isn't about doing more — it's about doing the right things, consistently, with a clear path to a sale. Build the engine once and it keeps working.
 
-Want us to build it for you? [Have a look at our services](/services) or [book a call](/contact).`,
+Want us to build it for you? [Have a look at our services](/services) or [get a free audit](/contact).`,
   },
   {
     slug: "automate-your-admin",
@@ -174,7 +174,7 @@ You don't automate everything on day one. We start with the one or two workflows
 
 Marketing fills your pipeline. Automation makes sure that growth doesn't bury you. Together, they're a business that scales its revenue without scaling its stress.
 
-Curious what we could automate for you? [Book a free call](/contact) and we'll find your biggest time-sinks.`,
+Curious what we could automate for you? [Get a free audit](/contact) and we'll find your biggest time-sinks.`,
   },
 ];
 

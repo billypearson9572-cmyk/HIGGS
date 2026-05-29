@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Send, Check, Loader2, AlertCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -73,8 +74,8 @@ export function ContactForm() {
           Thanks — message on its way!
         </h3>
         <p className="mt-2 max-w-sm text-sm text-muted">
-          We typically reply within one business day. Prefer to talk sooner?
-          Grab a slot on our calendar any time.
+          We typically reply within one business day — usually with a first look
+          at your audit and clear next steps.
         </p>
         <button
           type="button"
@@ -127,8 +128,9 @@ export function ContactForm() {
         <Field label="I'm interested in" htmlFor="service">
           <select id="service" name="service" defaultValue="" className={fieldClass}>
             <option value="" disabled>
-              Choose a service…
+              Choose one…
             </option>
+            <option>A free marketing audit</option>
             <option>Social media marketing</option>
             <option>AI automation</option>
             <option>Both</option>
@@ -177,14 +179,18 @@ export function ContactForm() {
         ) : (
           <>
             <Send className="h-4.5 w-4.5" />
-            Send message
+            Get my free audit
           </>
         )}
       </button>
 
       <p className="text-xs text-muted">
         By submitting, you agree to be contacted about your enquiry. We never
-        share your details.
+        sell or share your details — see our{" "}
+        <Link href="/privacy" className="text-brand-blue hover:underline">
+          Privacy Policy
+        </Link>
+        .
       </p>
     </form>
   );

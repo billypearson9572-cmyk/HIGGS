@@ -1,8 +1,9 @@
 /**
  * Central site configuration.
  *
- * Edit the values below to update contact details, booking links and social
- * profiles across the entire site. Nothing else needs to change.
+ * Edit the values below to update contact details, links and social profiles
+ * across the entire site. Leave a value blank to hide it (e.g. socials and
+ * phone won't render until you add them).
  */
 export const siteConfig = {
   name: "Voltara Digital",
@@ -11,30 +12,44 @@ export const siteConfig = {
   description:
     "Voltara Digital builds the social-media marketing engine that brings small and medium businesses a steady flow of customers — then automates the admin so growth never buries you in busywork.",
 
-  // Used for SEO / share links. Update once you have your live domain.
+  // Your live domain. Used for SEO and share links.
   url: "https://voltaradigital.com",
 
-  // Contact details — replace with your real ones.
+  // Contact details.
   email: "hello@voltaradigital.com",
-  phone: "+44 20 0000 0000",
-  location: "London, UK · Working with SMEs everywhere",
-
-  // Your scheduling link (Calendly, Cal.com, etc.). All "Book a call" buttons use this.
-  bookingUrl: "https://calendly.com/voltaradigital/discovery-call",
+  // Add a number to display it on the site, e.g. "+44 20 1234 5678".
+  phone: "",
+  location: "United Kingdom · Working with SMEs everywhere",
 
   /**
-   * Optional: set NEXT_PUBLIC_CONTACT_ENDPOINT in your environment to a form
-   * backend (e.g. Formspree or Web3Forms). When set, the contact form POSTs
-   * submissions there. When empty, the form falls back to opening the
-   * visitor's email client pre-filled.
+   * Scheduling link (Calendly, Cal.com, etc.). Not surfaced yet — when you
+   * have one, paste it here and a "Book a call" button can be wired up.
+   */
+  bookingUrl: "",
+
+  /**
+   * Optional: set NEXT_PUBLIC_CONTACT_ENDPOINT to a form backend (e.g.
+   * Formspree or Web3Forms). When set, the contact form POSTs there; when
+   * empty, it falls back to opening the visitor's email client pre-filled.
    */
   contactEndpoint: process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "",
 
+  // Leave blank to hide the icon. Add full profile URLs when they're live.
   socials: {
-    instagram: "https://instagram.com/",
-    linkedin: "https://www.linkedin.com/company/",
-    x: "https://x.com/",
+    instagram: "",
+    linkedin: "",
+    x: "",
   },
+};
+
+/**
+ * The site's primary call-to-action: a free marketing audit, requested via the
+ * contact form. Used by buttons across the site so the offer stays consistent.
+ */
+export const cta = {
+  label: "Get a free marketing audit",
+  shortLabel: "Free audit",
+  href: "/contact",
 } as const;
 
 export type NavItem = { title: string; href: string };

@@ -6,12 +6,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url.replace(/\/$/, "");
   const now = new Date();
 
-  const routes = ["", "/services", "/about", "/blog", "/contact"].map(
+  const routes = ["", "/services", "/about", "/blog", "/contact", "/privacy"].map(
     (path) => ({
       url: `${base}${path}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: path === "" ? 1 : 0.8,
+      priority: path === "" ? 1 : path === "/privacy" ? 0.3 : 0.8,
     }),
   );
 

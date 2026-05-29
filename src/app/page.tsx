@@ -23,7 +23,7 @@ import {
   GradientText,
 } from "@/components/ui";
 import { CTASection } from "@/components/CTASection";
-import { siteConfig } from "@/config/site";
+import { siteConfig, cta } from "@/config/site";
 
 const problems = [
   {
@@ -131,9 +131,9 @@ export default function HomePage() {
               busywork.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button href={siteConfig.bookingUrl} external size="lg">
-                <CalendarCheck className="h-5 w-5" />
-                Book a free strategy call
+              <Button href={cta.href} size="lg">
+                <Search className="h-5 w-5" />
+                {cta.label}
               </Button>
               <Button href="/services" variant="secondary" size="lg">
                 Explore our services
@@ -141,7 +141,8 @@ export default function HomePage() {
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted">
-              For ambitious SMEs ready to stop relying on referrals alone.
+              Free, no-obligation. For ambitious SMEs ready to stop relying on
+              referrals alone.
             </p>
           </div>
 

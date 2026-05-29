@@ -1,10 +1,10 @@
-import { ArrowRight, CalendarCheck } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 import { Container, Button } from "@/components/ui";
-import { siteConfig } from "@/config/site";
+import { cta } from "@/config/site";
 
 export function CTASection({
-  title = "Ready to grow beyond referrals?",
-  description = "Book a free 30-minute strategy call. We'll map where your marketing is leaking growth — and exactly how to fix it. No pressure, no jargon.",
+  title = "Get your free marketing audit",
+  description = "We'll review your current marketing, show you exactly where you're leaking growth, and map the fastest wins for your business. Free, and no obligation.",
 }: {
   title?: string;
   description?: string;
@@ -22,12 +22,12 @@ export function CTASection({
               {description}
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href={siteConfig.bookingUrl} external size="lg">
-                <CalendarCheck className="h-5 w-5" />
-                Book a free strategy call
+              <Button href={cta.href} size="lg">
+                <Search className="h-5 w-5" />
+                {cta.label}
               </Button>
-              <Button href="/contact" variant="secondary" size="lg">
-                Send us a message
+              <Button href="/services" variant="secondary" size="lg">
+                Explore services
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>

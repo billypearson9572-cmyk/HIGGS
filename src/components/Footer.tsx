@@ -21,12 +21,28 @@ const footerNav = [
       { title: "About", href: "/about" },
       { title: "Blog", href: "/blog" },
       { title: "Contact", href: "/contact" },
-      { title: "Book a call", href: siteConfig.bookingUrl },
+      { title: "Privacy", href: "/privacy" },
     ],
   },
 ];
 
 export function Footer() {
+  const socialLinks = [
+    {
+      key: "instagram",
+      href: siteConfig.socials.instagram,
+      label: "Instagram",
+      Icon: InstagramIcon,
+    },
+    {
+      key: "linkedin",
+      href: siteConfig.socials.linkedin,
+      label: "LinkedIn",
+      Icon: LinkedInIcon,
+    },
+    { key: "x", href: siteConfig.socials.x, label: "X", Icon: XIcon },
+  ].filter((s) => s.href);
+
   return (
     <footer className="border-t border-line bg-bg-soft">
       <Container className="py-14">
@@ -37,17 +53,15 @@ export function Footer() {
               {siteConfig.tagline}. We help SMEs grow beyond word-of-mouth — and
               automate the busywork once they do.
             </p>
-            <div className="mt-6 flex items-center gap-3">
-              <SocialLink href={siteConfig.socials.instagram} label="Instagram">
-                <InstagramIcon className="h-4.5 w-4.5" />
-              </SocialLink>
-              <SocialLink href={siteConfig.socials.linkedin} label="LinkedIn">
-                <LinkedInIcon className="h-4.5 w-4.5" />
-              </SocialLink>
-              <SocialLink href={siteConfig.socials.x} label="X">
-                <XIcon className="h-4.5 w-4.5" />
-              </SocialLink>
-            </div>
+            {socialLinks.length > 0 ? (
+              <div className="mt-6 flex items-center gap-3">
+                {socialLinks.map(({ key, href, label, Icon }) => (
+                  <SocialLink key={key} href={href} label={label}>
+                    <Icon className="h-4.5 w-4.5" />
+                  </SocialLink>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           {footerNav.map((group) => (

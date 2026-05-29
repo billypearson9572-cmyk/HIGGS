@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Megaphone,
   Workflow,
@@ -15,6 +16,7 @@ import {
   Check,
   ArrowRight,
   ArrowDown,
+  Search,
 } from "lucide-react";
 import {
   Container,
@@ -26,12 +28,12 @@ import {
 } from "@/components/ui";
 import { CTASection } from "@/components/CTASection";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/config/site";
+import { cta } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Social media marketing that fills your funnel, and AI automation that frees your time. See exactly what Voltara Digital does for SMEs.",
+    "Social media marketing that fills your funnel, and AI automation that frees your time — delivered as scoped, project-based engagements for SMEs.",
 };
 
 const socialOfferings = [
@@ -63,7 +65,7 @@ const socialOfferings = [
   {
     icon: BarChart3,
     title: "Analytics & reporting",
-    body: "Clear monthly reporting tied to leads and revenue — so you always know what your marketing is doing.",
+    body: "Clear reporting tied to leads and revenue — so you always know what your marketing is doing.",
   },
 ];
 
@@ -100,46 +102,43 @@ const automationOfferings = [
   },
 ];
 
-const tiers = [
+const projects = [
   {
-    name: "Launch",
-    tagline: "Best for getting started",
+    name: "Social Launch",
+    tagline: "Best for getting visible",
     description:
-      "Establish a consistent presence and start turning attention into enquiries.",
+      "Stand up a professional, consistent social presence that starts attracting the right audience.",
     features: [
-      "1 primary social channel",
-      "Content strategy + monthly plan",
-      "Done-for-you content creation",
-      "Community management",
-      "Monthly performance report",
+      "Channel strategy & setup",
+      "Branded content templates",
+      "An initial batch of content",
+      "A 30-day content plan",
     ],
     highlighted: false,
   },
   {
-    name: "Grow",
-    tagline: "Best for steady growth",
+    name: "Growth Campaign",
+    tagline: "Best for driving leads",
     description:
-      "Add paid amplification and your first automations to accelerate the pipeline.",
+      "A focused campaign engineered to turn attention into enquiries — content, paid ads and optimisation.",
     features: [
-      "Everything in Launch",
-      "2 social channels",
-      "Paid social ad management",
-      "Lead capture → CRM automation",
-      "Instant lead follow-up",
+      "Full content production",
+      "Paid social ad campaign",
+      "Lead capture & landing page",
+      "Performance reporting",
     ],
     highlighted: true,
   },
   {
-    name: "Scale",
-    tagline: "Best for scaling teams",
+    name: "Automation Build",
+    tagline: "Best for saving time",
     description:
-      "A full growth system — marketing at volume with the admin fully automated.",
+      "Connect your tools and automate the admin so growth never buries you in busywork.",
     features: [
-      "Everything in Grow",
-      "Multi-channel content + ads",
-      "Full n8n automation suite",
-      "Email nurture sequences",
-      "Priority support & strategy",
+      "n8n workflow build",
+      "CRM setup & integration",
+      "Automated lead follow-up",
+      "Reporting dashboards",
     ],
     highlighted: false,
   },
@@ -164,11 +163,12 @@ export default function ServicesPage() {
               light on its feet.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button href={siteConfig.bookingUrl} external size="lg">
-                Book a free strategy call
+              <Button href={cta.href} size="lg">
+                <Search className="h-5 w-5" />
+                {cta.label}
               </Button>
               <Button href="#pricing" variant="secondary" size="lg">
-                See what&apos;s included
+                See how we work
               </Button>
             </div>
           </div>
@@ -247,40 +247,45 @@ export default function ServicesPage() {
         </Container>
       </Section>
 
-      {/* -------------------------------------------------------------- Pricing */}
+      {/* -------------------------------------------------- Projects / packages */}
       <Section id="pricing" className="bg-bg-soft">
         <Container>
           <SectionHeading
             align="center"
-            eyebrow="Packages"
-            title="Plans that grow with you"
-            description="Every business is different, so pricing is tailored to your goals on a quick call. Here's the shape of how we work together."
+            eyebrow="Projects"
+            title="Work with us, project by project"
+            description="No retainers, no long contracts, no lock-in. We scope each project to your goals and quote up front — so you know exactly what you're getting before we start."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
-            {tiers.map((tier) => (
+            {projects.map((project) => (
               <div
-                key={tier.name}
+                key={project.name}
                 className={cn(
                   "relative flex flex-col rounded-3xl border p-8",
-                  tier.highlighted
+                  project.highlighted
                     ? "border-transparent bg-surface [background:linear-gradient(var(--color-surface),var(--color-surface))_padding-box,var(--brand-gradient)_border-box]"
                     : "border-line bg-surface/60",
                 )}
               >
-                {tier.highlighted ? (
+                {project.highlighted ? (
                   <span className="absolute -top-3 left-8 rounded-full bg-brand-gradient px-3 py-1 text-xs font-semibold text-[#04121f]">
                     Most popular
                   </span>
                 ) : null}
-                <h3 className="font-display text-xl font-bold">{tier.name}</h3>
+                <span className="text-xs font-medium uppercase tracking-[0.16em] text-muted">
+                  Project
+                </span>
+                <h3 className="mt-2 font-display text-xl font-bold">
+                  {project.name}
+                </h3>
                 <p className="mt-1 text-sm font-medium text-brand-teal">
-                  {tier.tagline}
+                  {project.tagline}
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-muted">
-                  {tier.description}
+                  {project.description}
                 </p>
                 <ul className="mt-6 flex flex-1 flex-col gap-3">
-                  {tier.features.map((feature) => (
+                  {project.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm">
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-teal" />
                       {feature}
@@ -288,34 +293,31 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <Button
-                  href={siteConfig.bookingUrl}
-                  external
-                  variant={tier.highlighted ? "primary" : "secondary"}
+                  href="/contact"
+                  variant={project.highlighted ? "primary" : "secondary"}
                   className="mt-8 w-full"
                 >
-                  Get a tailored quote
+                  Get a quote
                 </Button>
               </div>
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-muted">
-            Not sure which fits?{" "}
-            <a
-              href={siteConfig.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            Every project is scoped and quoted on a quick call.{" "}
+            <Link
+              href="/contact"
               className="font-medium text-brand-blue hover:underline"
             >
-              Book a call
-            </a>{" "}
-            and we&apos;ll point you in the right direction.
+              Get in touch
+            </Link>{" "}
+            and we&apos;ll find the right fit.
           </p>
         </Container>
       </Section>
 
       <CTASection
         title="Let's build your growth engine"
-        description="Tell us where you are and where you want to be. We'll show you exactly how marketing and automation get you there."
+        description="Tell us where you are and where you want to be. We'll send back a free audit and show you exactly how marketing and automation get you there."
       />
     </>
   );
