@@ -16,7 +16,7 @@ export const siteConfig = {
   url: "https://voltaradigital.com",
 
   // Contact details.
-  email: "hello@voltaradigital.com",
+  email: "info@voltaradigital.com",
   // Add a number to display it on the site, e.g. "+44 20 1234 5678".
   phone: "",
   location: "United Kingdom · Working with SMEs everywhere",
@@ -28,10 +28,15 @@ export const siteConfig = {
   bookingUrl: "",
 
   /**
-   * Optional: set NEXT_PUBLIC_CONTACT_ENDPOINT to a form backend (e.g.
-   * Formspree or Web3Forms). When set, the contact form POSTs there; when
-   * empty, it falls back to opening the visitor's email client pre-filled.
+   * Contact form delivery (in priority order):
+   *
+   * 1. Web3Forms — the easy option. Get a free access key at
+   *    https://web3forms.com using info@voltaradigital.com, then set
+   *    NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY. Submissions email straight to you.
+   * 2. A generic JSON endpoint (e.g. Formspree) via NEXT_PUBLIC_CONTACT_ENDPOINT.
+   * 3. If neither is set, the form opens the visitor's email client pre-filled.
    */
+  web3formsKey: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "",
   contactEndpoint: process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "",
 
   // Leave blank to hide the icon. Add full profile URLs when they're live.

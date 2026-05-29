@@ -23,7 +23,36 @@ export function ContactForm() {
     setStatus("submitting");
     setError("");
 
-    // If a form backend is configured, POST the submission there.
+    // 1. Web3Forms — emails submissions straight to your inbox.
+    if (siteConfig.web3formsKey) {
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: siteConfig.web3formsKey,
+            subject: `New enquiry from ${payload.name || "the website"}`,
+            from_name: "Voltara Digital website",
+            ...payload,
+          }),
+        });
+        const data = await res.json();
+        if (!data.success) throw new Error("Request failed");
+        setStatus("success");
+        form.reset();
+      } catch {
+        setStatus("error");
+        setError(
+          `Something went wrong. Please email us directly at ${siteConfig.email}.`,
+        );
+      }
+      return;
+    }
+
+    // 2. A generic JSON endpoint (e.g. Formspree).
     if (siteConfig.contactEndpoint) {
       try {
         const res = await fetch(siteConfig.contactEndpoint, {
@@ -90,6 +119,17 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      {/* Honeypot: hidden from people, catches spam bots (Web3Forms). */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+        style={{ display: "none" }}
+      />
+
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name" htmlFor="name">
           <input
