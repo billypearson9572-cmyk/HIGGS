@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "fs";
+import { join } from "path";
 import { siteConfig } from "@/config/site";
 
 export const alt = `${siteConfig.name} — ${siteConfig.tagline}`;
@@ -6,6 +8,12 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const gradient = "linear-gradient(120deg, #8ae04b 0%, #34c7c9 50%, #1e8fe6 100%)";
+
+// Embed the real brand assets so the share card matches the site.
+const toDataUri = (file: string) =>
+  `data:image/png;base64,${readFileSync(join(process.cwd(), "public", file)).toString("base64")}`;
+const markSrc = toDataUri("voltara-mark.png");
+const wordmarkSrc = toDataUri("voltara-wordmark.png");
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -23,23 +31,11 @@ export default function OpenGraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <div
-            style={{
-              width: "56px",
-              height: "56px",
-              borderRadius: "14px",
-              backgroundImage: gradient,
-            }}
-          />
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: "28px", fontWeight: 700, letterSpacing: "6px" }}>
-              VOLTARA
-            </span>
-            <span style={{ fontSize: "14px", letterSpacing: "10px", color: "#93a3c0" }}>
-              DIGITAL
-            </span>
-          </div>
+        <div style={{ display: "flex", alignItems: "center", gap: "26px" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={markSrc} width={97} height={84} alt="" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={wordmarkSrc} width={172} height={44} alt="" />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "26px" }}>

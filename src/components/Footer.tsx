@@ -48,7 +48,7 @@ export function Footer() {
       <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
           <div className="max-w-sm">
-            <Logo id="vd-footer" />
+            <Logo />
             <p className="mt-5 text-sm leading-relaxed text-muted">
               {siteConfig.tagline}. We help SMEs grow beyond word-of-mouth — and
               automate the busywork once they do.

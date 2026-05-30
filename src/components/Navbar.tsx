@@ -25,7 +25,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-line/70 bg-bg/80 backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link href="/" aria-label={`${siteConfig.name} home`} className="shrink-0">
-          <Logo id="vd-nav" />
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
