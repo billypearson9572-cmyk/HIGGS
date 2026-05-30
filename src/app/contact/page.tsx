@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Get a free marketing audit",
   description:
     "Tell us about your business and we'll send back a free, tailored review of your marketing: what's working, what's leaking growth, and the fastest wins.",
+  alternates: { canonical: "/contact" },
 };
 
 const auditIncludes = [

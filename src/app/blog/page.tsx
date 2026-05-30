@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Practical insights on social media marketing, AI automation and growth for small and medium businesses, from the Voltara Digital team.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Voltara Digital exists to help great small businesses get the visibility they deserve, and the time back to enjoy growing.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [

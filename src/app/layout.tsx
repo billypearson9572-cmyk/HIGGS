@@ -5,6 +5,8 @@ import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +41,17 @@ export const metadata: Metadata = {
     "CRM automation",
   ],
   authors: [{ name: siteConfig.name }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
@@ -65,6 +78,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-bg text-fg">
+        <JsonLd data={[organizationSchema, websiteSchema]} />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

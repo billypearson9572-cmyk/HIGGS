@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Social media marketing that fills your funnel, and AI automation that frees your time, delivered as scoped, project-based engagements for SMEs.",
+  alternates: { canonical: "/services" },
 };
 
 const socialOfferings = [

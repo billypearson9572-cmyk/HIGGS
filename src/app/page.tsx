@@ -22,8 +22,15 @@ import {
   Button,
   GradientText,
 } from "@/components/ui";
+import type { Metadata } from "next";
 import { CTASection } from "@/components/CTASection";
+import { JsonLd } from "@/components/JsonLd";
 import { siteConfig, cta } from "@/config/site";
+import { faqSchema } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const problems = [
   {
@@ -111,6 +118,8 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={faqSchema(faqs)} />
+
       {/* ---------------------------------------------------------------- Hero */}
       <section className="relative overflow-hidden">
         <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />

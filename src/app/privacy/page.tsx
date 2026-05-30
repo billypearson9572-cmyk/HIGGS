@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `How ${siteConfig.name} collects, uses and protects your personal information.`,
+  alternates: { canonical: "/privacy" },
 };
 
 const lastUpdated = "29 May 2026";

@@ -8,6 +8,8 @@ import { Container } from "@/components/ui";
 import { CTASection } from "@/components/CTASection";
 import { getAllPosts, getPostBySlug } from "@/content/blog";
 import { formatDate } from "@/lib/utils";
+import { JsonLd } from "@/components/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo";
 
 type Params = { slug: string };
 
@@ -27,11 +29,21 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: `/blog/${post.slug}` },
+    authors: [{ name: post.author }],
     openGraph: {
       type: "article",
       title: post.title,
       description: post.description,
+      url: `/blog/${post.slug}`,
       publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: [post.author],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
     },
   };
 }
@@ -65,6 +77,8 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <JsonLd data={[articleSchema(post), breadcrumbSchema(post)]} />
+
       <article className="relative overflow-hidden">
         <div className="glow-radial pointer-events-none absolute -top-32 left-1/2 h-[24rem] w-[40rem] -translate-x-1/2" />
         <Container className="relative max-w-3xl py-16 sm:py-20">
