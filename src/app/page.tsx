@@ -29,7 +29,7 @@ const problems = [
   {
     icon: TrendingUp,
     title: "Feast or famine",
-    body: "Some months are packed, others are dead quiet — and you can never predict which is coming next.",
+    body: "Some months are packed, others are dead quiet, and you can never predict which is coming next.",
   },
   {
     icon: Search,
@@ -75,7 +75,7 @@ const values = [
   {
     icon: Sparkles,
     title: "Built for SMEs",
-    body: "No bloated retainers or agency jargon — just practical growth for real businesses.",
+    body: "No bloated retainers or agency jargon, just practical growth for real businesses.",
   },
   {
     icon: Workflow,
@@ -92,7 +92,7 @@ const values = [
 const faqs = [
   {
     q: "How soon will I see results?",
-    a: "Marketing compounds. Most clients see early traction — more reach and enquiries — within the first 4–8 weeks, with momentum building from there. We focus on the metrics that lead to revenue, not vanity numbers.",
+    a: "Marketing compounds. Most clients see early traction, more reach and enquiries, within the first 4 to 8 weeks, with momentum building from there. We focus on the metrics that lead to revenue, not vanity numbers.",
   },
   {
     q: "Do I need to be on every social platform?",
@@ -100,7 +100,7 @@ const faqs = [
   },
   {
     q: "What exactly do you automate?",
-    a: "Anything repetitive that's costing you time or losing you leads — lead capture into your CRM, instant follow-ups, nurture emails, reminders and reporting. We build it on n8n so it connects to the tools you already use.",
+    a: "Anything repetitive that's costing you time or losing you leads: lead capture into your CRM, instant follow-ups, nurture emails, reminders and reporting. We build it on n8n so it connects to the tools you already use.",
   },
   {
     q: "Are there long contracts?",
@@ -126,7 +126,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
               {siteConfig.name} builds the marketing engine that brings small and
-              medium businesses a steady, predictable flow of customers — then
+              medium businesses a steady, predictable flow of customers, then
               automates the admin behind it, so scaling never means drowning in
               busywork.
             </p>
@@ -161,7 +161,7 @@ export default function HomePage() {
                 <GradientText>scale.</GradientText>
               </>
             }
-            description="Word-of-mouth is powerful — but it's unpredictable, impossible to forecast, and caps how fast you can grow. Today, the businesses pulling ahead aren't always the best ones. They're the most visible."
+            description="Word-of-mouth is powerful, but it's unpredictable, impossible to forecast, and caps how fast you can grow. Today, the businesses pulling ahead aren't always the best ones. They're the most visible."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {problems.map((item) => (
@@ -192,14 +192,14 @@ export default function HomePage() {
                 Two engines. <GradientText>One growth system.</GradientText>
               </>
             }
-            description="We start by filling your funnel. Then, once the leads are flowing, we automate the admin so your time scales with your revenue — not against it."
+            description="We start by filling your funnel. Then, once the leads are flowing, we automate the admin so your time scales with your revenue, not against it."
           />
           <div className="mx-auto mt-14 grid max-w-5xl gap-6 lg:grid-cols-2">
             <ServiceCard
               phase="Phase 1"
               icon={Megaphone}
               title="Social media marketing"
-              body="We turn your social channels into a consistent source of qualified leads — strategy, content, paid ads and community management, all done for you."
+              body="We turn your social channels into a consistent source of qualified leads: strategy, content, paid ads and community management, all done for you."
               points={[
                 "Content strategy & creation",
                 "Paid social advertising",
@@ -213,7 +213,7 @@ export default function HomePage() {
               phase="Phase 2"
               icon={Workflow}
               title="AI automation"
-              body="Once you're growing, busywork becomes the bottleneck. We automate emails, CRM updates, follow-ups and reporting with smart n8n workflows — so nothing slips and you get your week back."
+              body="Once you're growing, busywork becomes the bottleneck. We automate emails, CRM updates, follow-ups and reporting with smart n8n workflows, so nothing slips and you get your week back."
               points={[
                 "Lead capture into your CRM",
                 "Instant, personalised follow-ups",
@@ -271,7 +271,7 @@ export default function HomePage() {
             align="center"
             eyebrow="Why Voltara"
             title="Marketing muscle, without the agency baggage"
-            description="We pair creative marketing with serious automation — and treat your business like we'd want ours treated."
+            description="We pair creative marketing with serious automation, and treat your business like we'd want ours treated."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (

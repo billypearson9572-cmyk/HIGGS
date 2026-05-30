@@ -14,7 +14,7 @@ const lastUpdated = "29 May 2026";
 /**
  * NOTE: This is a solid starting template tailored to what the site does today
  * (a contact form + cookieless analytics). Review it for your business and seek
- * professional advice before launch if you're unsure — especially if you later
+ * professional advice before launch if you're unsure, especially if you later
  * add advertising pixels, newsletters or other data collection.
  */
 const policy = `
@@ -26,7 +26,7 @@ We are a social media marketing and AI automation agency based in the United Kin
 
 ## Information we collect
 
-**Information you give us.** When you submit our contact form or email us, we collect the details you choose to provide — typically your name and email address, and optionally your company, the service you're interested in, your budget and your message.
+**Information you give us.** When you submit our contact form or email us, we collect the details you choose to provide, typically your name and email address, and optionally your company, the service you're interested in, your budget and your message.
 
 **Information collected automatically.** We use privacy-friendly, aggregate analytics to understand how visitors use the site (for example, which pages are popular). This data is anonymised, does not use tracking cookies and does not identify you personally. Our hosting provider may also keep standard server logs for security and reliability.
 
@@ -60,7 +60,7 @@ Our website does not use advertising or tracking cookies. Any analytics we use i
 
 ## How long we keep your data
 
-We keep enquiry information only for as long as needed to respond to you and, where relevant, to deliver our services — after which it is deleted or anonymised.
+We keep enquiry information only for as long as needed to respond to you and, where relevant, to deliver our services, after which it is deleted or anonymised.
 
 ## Your rights
 

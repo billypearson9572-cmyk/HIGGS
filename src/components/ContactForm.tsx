@@ -23,7 +23,7 @@ export function ContactForm() {
     setStatus("submitting");
     setError("");
 
-    // 1. Web3Forms — emails submissions straight to your inbox.
+    // 1. Web3Forms: emails submissions straight to your inbox.
     if (siteConfig.web3formsKey) {
       try {
         const res = await fetch("https://api.web3forms.com/submit", {
@@ -100,10 +100,10 @@ export function ContactForm() {
           <Check className="h-7 w-7" />
         </span>
         <h3 className="mt-5 font-display text-xl font-semibold">
-          Thanks — message on its way!
+          Thanks! Message on its way.
         </h3>
         <p className="mt-2 max-w-sm text-sm text-muted">
-          We typically reply within one business day — usually with a first look
+          We typically reply within one business day, usually with a first look
           at your audit and clear next steps.
         </p>
         <button
@@ -181,8 +181,8 @@ export function ContactForm() {
           <select id="budget" name="budget" defaultValue="" className={fieldClass}>
             <option value="">Prefer not to say</option>
             <option>Under £1,000</option>
-            <option>£1,000 – £2,500</option>
-            <option>£2,500 – £5,000</option>
+            <option>£1,000 to £2,500</option>
+            <option>£2,500 to £5,000</option>
             <option>£5,000+</option>
           </select>
         </Field>
@@ -226,7 +226,7 @@ export function ContactForm() {
 
       <p className="text-xs text-muted">
         By submitting, you agree to be contacted about your enquiry. We never
-        sell or share your details — see our{" "}
+        sell or share your details. See our{" "}
         <Link href="/privacy" className="text-brand-blue hover:underline">
           Privacy Policy
         </Link>

@@ -50,7 +50,7 @@ export function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-5 text-sm leading-relaxed text-muted">
-              {siteConfig.tagline}. We help SMEs grow beyond word-of-mouth — and
+              {siteConfig.tagline}. We help SMEs grow beyond word-of-mouth, and
               automate the busywork once they do.
             </p>
             {socialLinks.length > 0 ? (

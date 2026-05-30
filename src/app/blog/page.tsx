@@ -23,7 +23,7 @@ export default function BlogPage() {
             <Eyebrow>The Voltara blog</Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
               Marketing, automation &{" "}
-              <GradientText>growth — decoded.</GradientText>
+              <GradientText>growth, decoded.</GradientText>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted">
               No fluff, no jargon. Just practical ideas to help you bring in more

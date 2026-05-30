@@ -7,20 +7,20 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Get a free marketing audit",
   description:
-    "Tell us about your business and we'll send back a free, tailored review of your marketing — what's working, what's leaking growth, and the fastest wins.",
+    "Tell us about your business and we'll send back a free, tailored review of your marketing: what's working, what's leaking growth, and the fastest wins.",
 };
 
 const auditIncludes = [
   "A review of your current social presence",
   "Where you're losing potential leads",
   "Quick wins you can action right away",
-  "A clear plan to grow — with or without us",
+  "A clear plan to grow, with or without us",
 ];
 
 const nextSteps = [
   {
     title: "We review your details",
-    body: "A real person reads your enquiry — usually within one business day.",
+    body: "A real person reads your enquiry, usually within one business day.",
   },
   {
     title: "We prepare your free audit",
@@ -45,7 +45,7 @@ export default function ContactPage() {
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted">
               Tell us about your business and we&apos;ll send back a tailored
-              review of your marketing — what&apos;s working, what&apos;s leaking
+              review of your marketing: what&apos;s working, what&apos;s leaking
               growth, and the fastest wins. Free, and no obligation.
             </p>
           </div>
@@ -60,7 +60,7 @@ export default function ContactPage() {
               Tell us about your business
             </h2>
             <p className="mt-2 text-sm text-muted">
-              Fields marked optional can be skipped — just enough for us to give
+              Fields marked optional can be skipped, just enough for us to give
               you something useful.
             </p>
             <div className="mt-8">

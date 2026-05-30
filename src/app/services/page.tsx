@@ -33,7 +33,7 @@ import { cta } from "@/config/site";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Social media marketing that fills your funnel, and AI automation that frees your time — delivered as scoped, project-based engagements for SMEs.",
+    "Social media marketing that fills your funnel, and AI automation that frees your time, delivered as scoped, project-based engagements for SMEs.",
 };
 
 const socialOfferings = [
@@ -45,7 +45,7 @@ const socialOfferings = [
   {
     icon: PenTool,
     title: "Content creation",
-    body: "Scroll-stopping posts, reels and graphics — on-brand, on-message and published on a consistent schedule.",
+    body: "Scroll-stopping posts, reels and graphics: on-brand, on-message and published on a consistent schedule.",
   },
   {
     icon: Megaphone,
@@ -65,7 +65,7 @@ const socialOfferings = [
   {
     icon: BarChart3,
     title: "Analytics & reporting",
-    body: "Clear reporting tied to leads and revenue — so you always know what your marketing is doing.",
+    body: "Clear reporting tied to leads and revenue, so you always know what your marketing is doing.",
   },
 ];
 
@@ -73,7 +73,7 @@ const automationOfferings = [
   {
     icon: Inbox,
     title: "Lead capture & routing",
-    body: "Enquiries from your site, ads and DMs flow straight into your CRM — tagged, organised and ready to action.",
+    body: "Enquiries from your site, ads and DMs flow straight into your CRM, tagged, organised and ready to action.",
   },
   {
     icon: Zap,
@@ -93,7 +93,7 @@ const automationOfferings = [
   {
     icon: Workflow,
     title: "Workflow automation (n8n)",
-    body: "Custom workflows connecting the tools you already use — Gmail, Slack, Notion, Sheets, Stripe and 400+ more.",
+    body: "Custom workflows connecting the tools you already use: Gmail, Slack, Notion, Sheets, Stripe and 400+ more.",
   },
   {
     icon: Bot,
@@ -120,7 +120,7 @@ const projects = [
     name: "Growth Campaign",
     tagline: "Best for driving leads",
     description:
-      "A focused campaign engineered to turn attention into enquiries — content, paid ads and optimisation.",
+      "A focused campaign engineered to turn attention into enquiries: content, paid ads and optimisation.",
     features: [
       "Full content production",
       "Paid social ad campaign",
@@ -159,7 +159,7 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
               Two services that work as one system. We bring you a steady flow of
-              customers — then take the admin off your plate so growth stays
+              customers, then take the admin off your plate so growth stays
               light on its feet.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -190,7 +190,7 @@ export default function ServicesPage() {
             <p className="max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               Most SMEs post and pray. We build a content engine with a clear job:
               attract the right people, earn their trust, and move them towards
-              becoming customers — consistently.
+              becoming customers, consistently.
             </p>
           </div>
           <OfferingGrid items={socialOfferings} />
@@ -211,7 +211,7 @@ export default function ServicesPage() {
             </h2>
             <p className="max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               As the leads roll in, admin becomes the bottleneck. We connect your
-              tools with n8n and AI to handle the repetitive work — so nothing
+              tools with n8n and AI to handle the repetitive work, so nothing
               slips through the cracks and you get your week back.
             </p>
           </div>
@@ -254,7 +254,7 @@ export default function ServicesPage() {
             align="center"
             eyebrow="Projects"
             title="Work with us, project by project"
-            description="No retainers, no long contracts, no lock-in. We scope each project to your goals and quote up front — so you know exactly what you're getting before we start."
+            description="No retainers, no long contracts, no lock-in. We scope each project to your goals and quote up front, so you know exactly what you're getting before we start."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
             {projects.map((project) => (

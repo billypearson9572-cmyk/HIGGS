@@ -10,7 +10,7 @@ export const siteConfig = {
   shortName: "Voltara",
   tagline: "Social media marketing & AI automation for growing businesses",
   description:
-    "Voltara Digital builds the social-media marketing engine that brings small and medium businesses a steady flow of customers — then automates the admin so growth never buries you in busywork.",
+    "Voltara Digital builds the social-media marketing engine that brings small and medium businesses a steady flow of customers, then automates the admin so growth never buries you in busywork.",
 
   // Your live domain. Used for SEO and share links.
   url: "https://voltaradigital.com",
@@ -22,7 +22,7 @@ export const siteConfig = {
   location: "United Kingdom · Working with SMEs everywhere",
 
   /**
-   * Scheduling link (Calendly, Cal.com, etc.). Not surfaced yet — when you
+   * Scheduling link (Calendly, Cal.com, etc.). Not surfaced yet. When you
    * have one, paste it here and a "Book a call" button can be wired up.
    */
   bookingUrl: "",
@@ -30,7 +30,7 @@ export const siteConfig = {
   /**
    * Contact form delivery (in priority order):
    *
-   * 1. Web3Forms — the easy option. Get a free access key at
+   * 1. Web3Forms, the easy option. Get a free access key at
    *    https://web3forms.com using info@voltaradigital.com, then set
    *    NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY. Submissions email straight to you.
    * 2. A generic JSON endpoint (e.g. Formspree) via NEXT_PUBLIC_CONTACT_ENDPOINT.

@@ -13,14 +13,14 @@ import { CTASection } from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Voltara Digital exists to help great small businesses get the visibility they deserve — and the time back to enjoy growing.",
+    "Voltara Digital exists to help great small businesses get the visibility they deserve, and the time back to enjoy growing.",
 };
 
 const values = [
   {
     icon: Target,
     title: "Outcomes over vanity",
-    body: "We care about leads, customers and revenue — not likes for the sake of likes. Every action ties back to growing your business.",
+    body: "We care about leads, customers and revenue, not likes for the sake of likes. Every action ties back to growing your business.",
   },
   {
     icon: Repeat,
@@ -30,7 +30,7 @@ const values = [
   {
     icon: Zap,
     title: "Automation with a human touch",
-    body: "We automate the repetitive work so the human moments — the conversations that win customers — get more of your attention, not less.",
+    body: "We automate the repetitive work so the human moments, the conversations that win customers, get more of your attention, not less.",
   },
   {
     icon: Eye,
@@ -53,7 +53,7 @@ const differentiators = [
   {
     icon: Target,
     title: "Built around your numbers",
-    body: "We start from the result you want and work backwards — then report against it honestly, every single month.",
+    body: "We start from the result you want and work backwards, then report against it honestly, every single month.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted">
               We started Voltara Digital with a simple frustration: brilliant
-              small businesses staying invisible, while louder — but not better —
+              small businesses staying invisible, while louder, but not better,
               competitors won the customers. Great work deserves to be seen.
               We&apos;re here to make sure it is.
             </p>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   For most small businesses, growth comes down to luck and
                   relationships. When work is good, referrals trickle in. When
                   it&apos;s quiet, there&apos;s no lever to pull. That&apos;s a
-                  stressful way to run a business — and an impossible way to plan
+                  stressful way to run a business, and an impossible way to plan
                   one.
                 </p>
                 <p>
@@ -120,7 +120,7 @@ export default function AboutPage() {
                 Why &ldquo;Voltara&rdquo;?
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                The name comes from <em>volt</em> — the unit of electrical
+                The name comes from <em>volt</em>, the unit of electrical
                 energy. It&apos;s the spark that gets things moving and the
                 current that keeps them running. That&apos;s the role we want to
                 play for your business: the energy behind your growth, and the
