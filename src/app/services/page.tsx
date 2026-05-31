@@ -27,6 +27,8 @@ import {
   GradientText,
 } from "@/components/ui";
 import { CTASection } from "@/components/CTASection";
+import { JsonLd } from "@/components/JsonLd";
+import { servicesSchema } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import { cta } from "@/config/site";
 
@@ -145,9 +147,26 @@ const projects = [
   },
 ];
 
+const serviceSchemas = servicesSchema([
+  {
+    name: "Social media marketing",
+    description:
+      "Strategy, content creation, paid social ads, community management and reporting that turn your social channels into a consistent source of qualified leads.",
+    hash: "social-media",
+  },
+  {
+    name: "AI automation",
+    description:
+      "Lead capture into your CRM, instant follow-ups, nurture sequences, workflow automation and reporting, built on n8n so growth never buries you in admin.",
+    hash: "automation",
+  },
+]);
+
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={serviceSchemas} />
+
       {/* ---------------------------------------------------------------- Hero */}
       <section className="relative overflow-hidden border-b border-line/60">
         <div className="glow-radial pointer-events-none absolute -top-32 left-1/2 h-[30rem] w-[44rem] -translate-x-1/2" />

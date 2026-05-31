@@ -20,6 +20,13 @@ export const organizationSchema = {
   description: siteConfig.description,
   email: siteConfig.email,
   areaServed: "GB",
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: siteConfig.email,
+    contactType: "customer service",
+    areaServed: "GB",
+    availableLanguage: "English",
+  },
   ...(sameAs.length ? { sameAs } : {}),
 };
 
@@ -32,6 +39,21 @@ export const websiteSchema = {
   inLanguage: "en-GB",
   publisher: { "@id": `${base}/#organization` },
 };
+
+export function servicesSchema(
+  services: { name: string; description: string; hash: string }[],
+) {
+  return services.map((service) => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.name,
+    description: service.description,
+    serviceType: service.name,
+    provider: { "@id": `${base}/#organization` },
+    areaServed: { "@type": "Country", name: "United Kingdom" },
+    url: `${base}/services#${service.hash}`,
+  }));
+}
 
 export function faqSchema(faqs: { q: string; a: string }[]) {
   return {
