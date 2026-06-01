@@ -7,8 +7,6 @@ import {
   Timer,
   Percent,
   TrendingDown,
-  TrendingUp,
-  Zap,
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui";
@@ -113,17 +111,22 @@ export function LeadCalculator() {
   // The user's input is their real close rate at their current response speed.
   // The tier multiplier is how much of the 5-minute potential they capture, so
   // the potential rate with instant follow-up is their current rate scaled back
-  // up (capped at 100%). The uplift between the two is what slow response costs.
+  // up (capped at 100%).
   const currentRate = closeRate / 100;
   const potentialRate = Math.min(1, currentRate / activeTier.multiplier);
-  const upliftRate = Math.max(0, potentialRate - currentRate);
-
-  const monthlyLost = upliftRate * leadsNum * dealNum;
-  const annualLost = monthlyLost * 12;
   const potentialClosePct = potentialRate * 100;
-  // The revenue lost is exactly what instant follow-up would recover.
-  const recoveredMonthly = monthlyLost;
-  const recoveredAnnual = annualLost;
+
+  // Work in whole customers so every figure on the page reconciles by hand:
+  // the lost revenue is simply the extra customers instant follow-up would
+  // win, multiplied by the deal value.
+  const currentCustomers = Math.round(leadsNum * currentRate);
+  const potentialCustomers = Math.round(leadsNum * potentialRate);
+  const lostCustomers = Math.max(0, potentialCustomers - currentCustomers);
+
+  const currentRevenue = currentCustomers * dealNum;
+  const potentialRevenue = potentialCustomers * dealNum;
+  const monthlyLost = lostCustomers * dealNum;
+  const annualLost = monthlyLost * 12;
 
   const animatedMonthlyLost = useCountUp(monthlyLost);
 
@@ -244,21 +247,53 @@ export function LeadCalculator() {
           </div>
         </div>
 
-        {/* Breakdown */}
-        <div className="grid gap-4 sm:grid-cols-2">
-          <StatCard
-            icon={TrendingUp}
-            label="Close rate with instant follow-up"
-            value={`${potentialClosePct.toFixed(0)}%`}
-            sub={`up from your ${(currentRate * 100).toFixed(0)}% today`}
-          />
-          <StatCard
-            icon={Zap}
-            label="Recoverable revenue"
-            value={`${gbp.format(Math.round(recoveredAnnual))}/yr`}
-            sub={`${gbp.format(Math.round(recoveredMonthly))} every month`}
-            accent
-          />
+        {/* The working — every step spelled out so the number reconciles */}
+        <div className="rounded-3xl border border-line bg-surface/60 p-6 sm:p-7">
+          <h3 className="font-display text-base font-semibold">
+            How this adds up
+          </h3>
+          <p className="mt-1 text-sm text-muted">
+            Slow replies drag your close rate down. Here&apos;s the maths, in
+            customers.
+          </p>
+
+          <dl className="mt-5 overflow-hidden rounded-xl border border-line">
+            <BreakdownRow
+              label="Leads coming in"
+              value={`${leadsNum.toLocaleString("en-GB")} / month`}
+            />
+            <BreakdownRow
+              label={`Customers you win today`}
+              note={`at your ${(currentRate * 100).toFixed(0)}% close rate`}
+              value={`${currentCustomers} ${plural(currentCustomers)}`}
+              amount={`${gbp.format(currentRevenue)} / mo`}
+            />
+            <BreakdownRow
+              label="If you replied instantly"
+              note={`close rate climbs to ~${potentialClosePct.toFixed(0)}%`}
+              value={`${potentialCustomers} ${plural(potentialCustomers)}`}
+              amount={`${gbp.format(potentialRevenue)} / mo`}
+            />
+          </dl>
+
+          <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3.5">
+            <div>
+              <p className="text-sm font-semibold text-fg">
+                Lost to slow replies
+              </p>
+              <p className="text-xs text-muted">
+                {lostCustomers} {plural(lostCustomers)} × {gbp.format(dealNum)}
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="font-display text-lg font-bold text-red-300">
+                {gbp.format(monthlyLost)} / mo
+              </p>
+              <p className="text-xs text-muted">
+                {gbp.format(annualLost)} a year
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* CTA */}
@@ -348,48 +383,33 @@ function NumberField({
   );
 }
 
-function StatCard({
-  icon: Icon,
+function plural(n: number) {
+  return n === 1 ? "customer" : "customers";
+}
+
+function BreakdownRow({
   label,
+  note,
   value,
-  sub,
-  accent = false,
+  amount,
 }: {
-  icon: React.ElementType;
   label: string;
+  note?: string;
   value: string;
-  sub: string;
-  accent?: boolean;
+  amount?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "flex flex-col rounded-2xl border p-5",
-        accent
-          ? "border-transparent bg-surface [background:linear-gradient(var(--color-surface),var(--color-surface))_padding-box,var(--brand-gradient)_border-box]"
-          : "border-line bg-surface/60",
-      )}
-    >
-      <span
-        className={cn(
-          "flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-white/5",
-          accent ? "text-brand-green" : "text-brand-teal",
-        )}
-      >
-        <Icon className="h-4.5 w-4.5" />
-      </span>
-      <p className="mt-4 text-xs font-medium uppercase tracking-[0.12em] text-muted">
-        {label}
-      </p>
-      <p
-        className={cn(
-          "mt-1 font-display text-2xl font-bold",
-          accent && "text-gradient",
-        )}
-      >
-        {value}
-      </p>
-      <p className="mt-1 text-xs text-muted">{sub}</p>
+    <div className="flex items-center justify-between gap-3 border-b border-line bg-surface px-4 py-3 last:border-b-0">
+      <div>
+        <dt className="text-sm font-medium text-fg">{label}</dt>
+        {note ? <p className="text-xs text-muted">{note}</p> : null}
+      </div>
+      <dd className="text-right">
+        <span className="block text-sm font-semibold text-fg">{value}</span>
+        {amount ? (
+          <span className="block text-xs text-muted">{amount}</span>
+        ) : null}
+      </dd>
     </div>
   );
 }
