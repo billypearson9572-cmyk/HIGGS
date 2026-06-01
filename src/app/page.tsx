@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   ArrowRight,
   CalendarCheck,
+  Calculator,
   Megaphone,
   Workflow,
   Search,
@@ -232,6 +233,36 @@ export default function HomePage() {
               href="/services#automation"
               cta="Automation services"
             />
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---------------------------------------------------- Calculator promo */}
+      <Section className="py-14 sm:py-16">
+        <Container>
+          <div className="relative overflow-hidden rounded-3xl border border-transparent bg-surface px-6 py-12 [background:linear-gradient(var(--color-surface),var(--color-surface))_padding-box,var(--brand-gradient)_border-box] sm:px-12">
+            <div className="glow-radial pointer-events-none absolute -top-20 right-0 h-72 w-[32rem]" />
+            <div className="relative flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-xl">
+                <Eyebrow>
+                  <Calculator className="h-3.5 w-3.5 text-brand-teal" />
+                  Free tool
+                </Eyebrow>
+                <h2 className="mt-5 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+                  How much is slow lead response{" "}
+                  <GradientText>costing you?</GradientText>
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-muted">
+                  Most SMEs lose more revenue to slow follow-up than they
+                  realise. Plug in your numbers and see the leak in real time,
+                  plus what instant, automated follow-up could recover.
+                </p>
+              </div>
+              <Button href="/lead-calculator" size="lg" className="shrink-0">
+                Try the calculator
+                <ArrowRight className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>
