@@ -1,0 +1,48 @@
+name: Deploy to Vercel (Production)
+
+# Auto-deploys the site to Vercel production on every push to `main`.
+#
+# The build runs on Vercel's own infrastructure (the same path as a manual
+# `vercel --prod`), so it uses the project's configured environment variables
+# — including NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY for the contact form.
+#
+# ONE-TIME SETUP (required before this can run):
+#   Add a repository secret named  VERCEL_TOKEN
+#     GitHub repo → Settings → Secrets and variables → Actions → New repository secret
+#   Create the token at:  Vercel → Settings → Tokens  (use a fresh one).
+#
+# The two IDs below are project identifiers, not secrets — safe to commit.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {} # also allows manual "Run workflow" from the Actions tab
+
+# Never let two production deploys run at once; queue them instead.
+concurrency:
+  group: vercel-production
+  cancel-in-progress: false
+
+env:
+  VERCEL_ORG_ID: team_R1oL0ZqG4mHuEaNX42AY4Liy
+  VERCEL_PROJECT_ID: prj_SEYsnt29yOHmoAf5lEGU3fgn7YA6
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Deploy to production
+        run: vercel deploy --prod --yes --token="$VERCEL_TOKEN"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
