@@ -246,7 +246,7 @@ export default function HomePage() {
               <div className="max-w-xl">
                 <Eyebrow>
                   <Calculator className="h-3.5 w-3.5 text-brand-teal" />
-                  Free tool
+                  Lead response calculator
                 </Eyebrow>
                 <h2 className="mt-5 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
                   How much is slow lead response{" "}

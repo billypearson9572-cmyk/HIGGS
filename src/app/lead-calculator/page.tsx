@@ -21,7 +21,7 @@ export default function LeadCalculatorPage() {
           <div className="mx-auto flex max-w-3xl flex-col items-center">
             <Eyebrow>
               <Calculator className="h-3.5 w-3.5 text-brand-teal" />
-              Free tool
+              Lead response calculator
             </Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
               How much revenue is your{" "}
