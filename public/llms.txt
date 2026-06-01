@@ -1,0 +1,30 @@
+# Voltara Digital
+
+> Social media marketing and AI automation agency for small and medium businesses (SMEs) in the United Kingdom. We fill your funnel with social media marketing, then automate the admin (emails, CRM, follow-ups, reporting) with n8n so growth never buries you in busywork.
+
+## About
+
+Voltara Digital helps SMEs grow beyond word-of-mouth with a predictable marketing system, then automates repetitive admin once the leads are flowing. Engagements are project-based, with no long contracts or lock-in. Contact: info@voltaradigital.com
+
+## Services
+
+- Social media marketing: strategy, content creation, paid social ads, community management, content repurposing, analytics and reporting. https://voltaradigital.com/services#social-media
+- AI automation, built on n8n: lead capture and routing into your CRM, instant follow-up, email and nurture sequences, CRM automation, workflow automation, AI assistants and reporting. https://voltaradigital.com/services#automation
+
+## Key pages
+
+- Home: https://voltaradigital.com/
+- Services: https://voltaradigital.com/services
+- About: https://voltaradigital.com/about
+- Blog: https://voltaradigital.com/blog
+- Contact and free marketing audit: https://voltaradigital.com/contact
+
+## Articles
+
+- Why word-of-mouth has a ceiling (and what to do about it): https://voltaradigital.com/blog/word-of-mouth-ceiling
+- The SME's guide to social media that actually sells: https://voltaradigital.com/blog/social-media-that-sells
+- Drowning in admin? How AI automation buys back your week: https://voltaradigital.com/blog/automate-your-admin
+
+## Contact
+
+Email: info@voltaradigital.com

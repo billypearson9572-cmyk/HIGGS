@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Surfaces */
+  --color-bg: #070b16;
+  --color-bg-soft: #0b1222;
+  --color-surface: #0e1626;
+  --color-surface-2: #131d31;
+  --color-line: #1e2a44;
+
+  /* Text */
+  --color-fg: #e9eef7;
+  --color-muted: #93a3c0;
+
+  /* Brand (from the Voltara logo: lime green → teal → electric blue) */
+  --color-brand-green: #8ae04b;
+  --color-brand-teal: #34c7c9;
+  --color-brand-blue: #1e8fe6;
+  --color-brand-blue-deep: #1565d8;
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-space-grotesk);
+}
+
+:root {
+  --brand-gradient: linear-gradient(120deg, #8ae04b 0%, #34c7c9 50%, #1e8fe6 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: rgba(52, 199, 201, 0.3);
+  color: #ffffff;
+}
+
+/* --- Brand utilities ----------------------------------------------------- */
+
+.text-gradient {
+  background-image: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-brand-gradient {
+  background-image: var(--brand-gradient);
+}
+
+.border-gradient {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+    var(--brand-gradient) border-box;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Soft radial glow used behind hero / CTA sections */
+.glow-radial {
+  background: radial-gradient(
+    closest-side,
+    rgba(52, 199, 201, 0.22),
+    rgba(30, 143, 230, 0.12),
+    transparent
+  );
+}
+
+/* --- Subtle entrance animation ------------------------------------------ */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up {
+    animation: none;
+  }
+}
+
+/* --- Blog typography tweaks (react-markdown + @tailwindcss/typography) --- */
+
+.prose-volt {
+  --tw-prose-invert-body: #c3cee0;
+  --tw-prose-invert-headings: #f3f6fb;
+  --tw-prose-invert-links: var(--color-brand-blue);
+  --tw-prose-invert-bold: #ffffff;
+  --tw-prose-invert-quotes: #d8e1f0;
+  --tw-prose-invert-quote-borders: var(--color-brand-teal);
+  --tw-prose-invert-bullets: var(--color-brand-teal);
+  --tw-prose-invert-hr: var(--color-line);
+}
