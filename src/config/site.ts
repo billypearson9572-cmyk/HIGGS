@@ -62,6 +62,7 @@ export type NavItem = { title: string; href: string };
 export const mainNav: NavItem[] = [
   { title: "Home", href: "/" },
   { title: "Services", href: "/services" },
+  { title: "Calculator", href: "/lead-calculator" },
   { title: "About", href: "/about" },
   { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },
