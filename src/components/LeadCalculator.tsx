@@ -98,28 +98,30 @@ function useCountUp(target: number, duration = 650) {
 
 export function LeadCalculator() {
   // Inputs are kept as strings so the fields can be cleared while typing.
-  const [leads, setLeads] = useState("100");
-  const [deal, setDeal] = useState("1500");
+  const [leads, setLeads] = useState("60");
+  const [deal, setDeal] = useState("2000");
   const [tier, setTier] = useState<(typeof RESPONSE_TIERS)[number]["value"]>(
-    "2to24",
+    "30to120",
   );
-  const [closeRate, setCloseRate] = useState(20);
+  const [closeRate, setCloseRate] = useState(15);
 
   const leadsNum = Math.max(0, Number(leads) || 0);
   const dealNum = Math.max(0, Number(deal) || 0);
   const activeTier =
     RESPONSE_TIERS.find((t) => t.value === tier) ?? RESPONSE_TIERS[0];
 
-  // The inputted close rate is the baseline achievable with an instant reply.
-  // A slow response scales it down by the tier multiplier.
-  const baselineRate = closeRate / 100;
-  const currentRate = baselineRate * activeTier.multiplier;
-  const lostRate = baselineRate - currentRate;
+  // The user's input is their real close rate at their current response speed.
+  // The tier multiplier is how much of the 5-minute potential they capture, so
+  // the potential rate with instant follow-up is their current rate scaled back
+  // up (capped at 100%). The uplift between the two is what slow response costs.
+  const currentRate = closeRate / 100;
+  const potentialRate = Math.min(1, currentRate / activeTier.multiplier);
+  const upliftRate = Math.max(0, potentialRate - currentRate);
 
-  const monthlyLost = lostRate * leadsNum * dealNum;
+  const monthlyLost = upliftRate * leadsNum * dealNum;
   const annualLost = monthlyLost * 12;
-  const potentialClosePct = baselineRate * 100;
-  // Recovering the gap is the upside of instant, automated follow-up.
+  const potentialClosePct = potentialRate * 100;
+  // The revenue lost is exactly what instant follow-up would recover.
   const recoveredMonthly = monthlyLost;
   const recoveredAnnual = annualLost;
 
@@ -248,13 +250,13 @@ export function LeadCalculator() {
             icon={TrendingUp}
             label="Close rate with instant follow-up"
             value={`${potentialClosePct.toFixed(0)}%`}
-            sub={`vs ${(currentRate * 100).toFixed(1)}% at your current speed`}
+            sub={`up from your ${(currentRate * 100).toFixed(0)}% today`}
           />
           <StatCard
             icon={Zap}
             label="Recoverable revenue"
-            value={`${gbp.format(Math.round(recoveredMonthly))}/mo`}
-            sub={`${gbp.format(Math.round(recoveredAnnual))} per year`}
+            value={`${gbp.format(Math.round(recoveredAnnual))}/yr`}
+            sub={`${gbp.format(Math.round(recoveredMonthly))} every month`}
             accent
           />
         </div>
