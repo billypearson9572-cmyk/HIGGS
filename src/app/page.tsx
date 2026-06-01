@@ -108,6 +108,26 @@ const faqs = [
   },
 ];
 
+const experienceStats = [
+  {
+    value: "10M+",
+    label: "Views in a single month",
+    detail:
+      "From one account in one month — across Facebook, Instagram, TikTok, LinkedIn and X.",
+  },
+  {
+    value: "15",
+    label: "Established brands grown",
+    detail:
+      "Viewership and engagement rate more than doubled within six months.",
+  },
+  {
+    value: "5,000+",
+    label: "Social posts created",
+    detail: "Hands-on craft across years of freelance and in-house work.",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -149,8 +169,42 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* ------------------------------------------------------ Experience / proof */}
+      <Section className="border-t border-line/60 bg-bg-soft">
+        <Container>
+          <SectionHeading
+            align="center"
+            eyebrow="The experience behind Voltara"
+            title={
+              <>
+                New name. <GradientText>Proven hands.</GradientText>
+              </>
+            }
+            description="Voltara is young — the people running it aren't. These results come from our prior freelance and in-house work, not Voltara client guarantees. They're the track record behind everything we build."
+          />
+          <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-3">
+            {experienceStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-line bg-surface/60 p-7 text-center"
+              >
+                <p className="font-display text-4xl font-bold tracking-tight">
+                  <GradientText>{stat.value}</GradientText>
+                </p>
+                <p className="mt-3 font-display text-sm font-semibold">
+                  {stat.label}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {stat.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       {/* ------------------------------------------------------------- The thesis */}
-      <Section className="border-t border-line/60">
+      <Section>
         <Container>
           <SectionHeading
             eyebrow="The hard truth"

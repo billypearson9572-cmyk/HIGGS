@@ -39,6 +39,27 @@ const values = [
   },
 ];
 
+const experienceStats = [
+  {
+    value: "10M+",
+    label: "Views in a single month",
+    detail:
+      "Generated from a single account in one month, across Facebook, Instagram, TikTok, LinkedIn and X.",
+  },
+  {
+    value: "15 brands",
+    label: "More than doubled",
+    detail:
+      "Viewership and engagement rate more than doubled for fifteen established brands within six months.",
+  },
+  {
+    value: "5,000+",
+    label: "Social posts created",
+    detail:
+      "Written, designed and shipped across years of freelance and in-house work.",
+  },
+];
+
 const differentiators = [
   {
     icon: Handshake,
@@ -127,6 +148,40 @@ export default function AboutPage() {
                 sustains it.
               </p>
             </Card>
+          </div>
+        </Container>
+      </Section>
+
+      {/* -------------------------------------------------- Experience / proof */}
+      <Section className="border-t border-line/60">
+        <Container>
+          <SectionHeading
+            eyebrow="The experience behind Voltara"
+            title={
+              <>
+                A new name, built on a{" "}
+                <GradientText>proven track record.</GradientText>
+              </>
+            }
+            description="Voltara is young — but the people behind it have spent years doing this work. The numbers below come from prior freelance and in-house roles, not from Voltara client campaigns. We share them so you know exactly what experience you're getting."
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {experienceStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-line bg-surface/60 p-7"
+              >
+                <p className="font-display text-4xl font-bold tracking-tight">
+                  <GradientText>{stat.value}</GradientText>
+                </p>
+                <p className="mt-3 font-display text-base font-semibold">
+                  {stat.label}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {stat.detail}
+                </p>
+              </div>
+            ))}
           </div>
         </Container>
       </Section>
