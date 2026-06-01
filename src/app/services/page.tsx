@@ -43,7 +43,7 @@ const socialOfferings = [
   {
     icon: PenTool,
     title: "Content creation",
-    body: "Scroll-stopping posts, reels and graphics — on-brand, on-message and published on a consistent schedule.",
+    body: "Posts, reels and graphics designed to earn attention — on-brand, on-message and published on a consistent schedule.",
   },
   {
     icon: Megaphone,
@@ -159,9 +159,9 @@ export default function ServicesPage() {
               <GradientText>frees your time.</GradientText>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-              Two services that work as one system. We bring you a steady flow of
-              customers — then take the admin off your plate so growth stays
-              light on its feet.
+              Two services that work as one system. We build you a steady flow of
+              customers — then take the admin off your plate, so growing your
+              business never means drowning in it.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={siteConfig.bookingUrl} external size="lg">

@@ -121,10 +121,10 @@ export default function AboutPage() {
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 The name comes from <em>volt</em> — the unit of electrical
-                energy. It&apos;s the spark that gets things moving and the
-                current that keeps them running. That&apos;s the role we want to
-                play for your business: the energy behind your growth, and the
-                steady current that sustains it.
+                potential, the push that gets current flowing and keeps it
+                moving. That&apos;s the role we want to play for your business:
+                the energy behind your growth, and the steady current that
+                sustains it.
               </p>
             </Card>
           </div>

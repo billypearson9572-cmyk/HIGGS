@@ -110,7 +110,7 @@ export default function ContactPage() {
                 <li className="flex items-center gap-3">
                   <Clock className="h-5 w-5 text-brand-teal" />
                   <span className="text-muted">
-                    Replies within 1 business day
+                    Usually replies within 1 business day
                   </span>
                 </li>
               </ul>
