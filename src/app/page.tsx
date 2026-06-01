@@ -92,7 +92,7 @@ const values = [
 const faqs = [
   {
     q: "How soon will I see results?",
-    a: "Marketing compounds. Most clients see early traction — more reach and enquiries — within the first 4–8 weeks, with momentum building from there. We focus on the metrics that lead to revenue, not vanity numbers.",
+    a: "We'll be straight with you: marketing compounds, so it isn't overnight. Expect early traction — more reach and enquiries — to build over the first 4–8 weeks, with momentum growing from there. We track the metrics that lead to revenue, not vanity numbers, and report on them honestly every month.",
   },
   {
     q: "Do I need to be on every social platform?",

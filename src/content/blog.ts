@@ -18,11 +18,95 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "first-30-days-with-voltara",
+    title: "What your first 30 days with Voltara actually look like",
+    description:
+      "No vague “onboarding process.” Here's an honest, week-by-week look at what happens when you start working with us — what we do, what we need from you, and what we won't promise.",
+    date: "2026-05-27",
+    author: "Voltara Digital",
+    category: "Behind the scenes",
+    readingMinutes: 6,
+    content: `Hiring a marketing partner is an act of trust, and most agencies repay it with a black box. You sign, you wait, and a month later a report lands that you can't really interpret. We do the opposite. Here's exactly what the first month with us looks like, so there are no surprises before you ever get in touch.
+
+## Week 1 — Discovery & audit
+
+We start by understanding your business, not your social channels. On a kickoff call we dig into what you actually sell, who your best customers are, where your enquiries come from today, and what "good" would look like in six months.
+
+Then we audit what you already have — your current presence, your past content, your website's path from visitor to enquiry, and any tools you're using. You get the findings in plain English, including the unflattering bits.
+
+> What we need from you: an hour of honest conversation and access to your existing accounts. That's it.
+
+## Week 2 — Strategy & sign-off
+
+Next we turn the audit into a plan: which one or two channels we'll focus on and why, the kinds of content we'll make, and the single most important number we're trying to move. We'd rather do two channels properly than six badly.
+
+Nothing goes live until you've seen the plan and signed off on it. It's your business and your brand voice — you should recognise yourself in the strategy before we publish a word.
+
+## Weeks 3–4 — Launch & first signals
+
+This is when content starts going out and, if it's part of your plan, the first automations get switched on — usually lead capture into your CRM and an instant follow-up so no enquiry goes cold.
+
+We're watching the early signals here: reach, profile visits, link clicks and first enquiries. We won't pretend a month is enough to judge a marketing system. It isn't. But it's enough to see whether the foundations are working, and to start tuning.
+
+## What we'll never do in month one (or any month)
+
+- **Promise overnight results.** Marketing compounds. Anyone guaranteeing a flood of customers in week one is selling you something.
+- **Drown you in vanity metrics.** Likes are nice. We report on the numbers that connect to revenue.
+- **Lock you in.** We work month to month. If we're not earning our place, you can leave and keep everything we built.
+
+## The takeaway
+
+A good first 30 days isn't about fireworks — it's about laying foundations you can see and trust. By the end of month one you'll know exactly what we're doing, why, and what early progress looks like.
+
+Want to see what your first month could look like? [Book a free strategy call](/contact) and we'll walk you through it.`,
+  },
+  {
+    slug: "why-we-dont-do-long-contracts",
+    title: "Why we don't tie clients into long contracts",
+    description:
+      "Most agencies hide behind 12-month tie-ins. We work month to month, on purpose. Here's the thinking behind it — and why it quietly makes us better at the job.",
+    date: "2026-05-22",
+    author: "Voltara Digital",
+    category: "Opinion",
+    readingMinutes: 4,
+    content: `Ask most marketing agencies for a month-to-month arrangement and you'll feel the room cool. The standard is a 12-month contract, often with a chunky exit clause. We don't work that way, and we think the reason matters.
+
+## The long-contract trap
+
+Long tie-ins are usually sold as a benefit to you — "marketing takes time to work." There's a grain of truth in that. But a year-long lock-in mostly protects the agency. Once you've signed, the pressure to keep impressing you quietly drops, because you can't easily leave even if results stall.
+
+That's a strange incentive to build a relationship on.
+
+## What month-to-month forces us to do
+
+When you can walk away at the end of any month, we have to earn the next one. Every single one. That keeps us honest in ways a contract never could:
+
+- We focus on results you can actually feel, not just slides in a report.
+- We tell you early when something isn't working, instead of running out the clock.
+- We treat your budget like it's ours, because the moment it stops paying off, you'll notice.
+
+Removing the safety net is the point. It aligns us with you.
+
+## You own everything, always
+
+The other half of the trap is ownership. Some agencies build your audience, your ad accounts and your automations on *their* infrastructure — so leaving means starting from zero. We build on your accounts. Your social profiles, your CRM, your n8n workflows. If we ever part ways, you keep all of it and lose nothing.
+
+## The honest catch
+
+Month-to-month cuts both ways, and we'll be straight about it: marketing genuinely does compound, so the best results come from sticking with a strategy long enough to let it work. We're not promising miracles in 30 days. What we're promising is that you'll stay because it's working — not because you signed something you can't get out of.
+
+## The takeaway
+
+Flexible terms aren't a gimmick. They're a forcing function that keeps us pointed at the only thing that matters: growing your business well enough that you *want* to keep going.
+
+That's the deal. [Come and test it](/contact).`,
+  },
+  {
     slug: "word-of-mouth-ceiling",
     title: "Why word-of-mouth has a ceiling (and what to do about it)",
     description:
       "Referrals are the best customers you'll ever get — and the worst growth strategy you can rely on. Here's why, and how to build a system that doesn't depend on luck.",
-    date: "2026-05-20",
+    date: "2026-05-15",
     author: "Voltara Digital",
     category: "Growth",
     readingMinutes: 5,
@@ -69,7 +153,7 @@ Ready to build one? [Book a free strategy call](/contact) and we'll map it out t
     title: "The SME's guide to social media that actually sells",
     description:
       "Posting more isn't a strategy. Here's the simple framework we use to turn social channels into a predictable source of qualified leads for small businesses.",
-    date: "2026-05-12",
+    date: "2026-05-08",
     author: "Voltara Digital",
     category: "Social Media",
     readingMinutes: 6,
@@ -131,7 +215,7 @@ Want us to build it for you? [Have a look at our services](/services) or [book a
     title: "Drowning in admin? How AI automation buys back your week",
     description:
       "Growth creates a hidden tax: admin. Emails, follow-ups, data entry, reporting. Here's how smart automation with n8n hands those hours back to you.",
-    date: "2026-04-28",
+    date: "2026-04-29",
     author: "Voltara Digital",
     category: "Automation",
     readingMinutes: 6,
