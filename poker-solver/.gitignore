@@ -1,3 +1,4 @@
+# Generated equity caches (reproducible via equity.py / run_solve.py)
 cache/
 __pycache__/
 *.pyc
