@@ -179,8 +179,8 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
               Two services that work as one system. We bring you a steady flow of
-              customers, then take the admin off your plate so growth stays
-              light on its feet.
+              customers, then take the admin off your plate so growth never
+              buries you in busywork.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={cta.href} size="lg">

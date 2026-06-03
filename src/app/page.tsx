@@ -26,7 +26,7 @@ import {
 import type { Metadata } from "next";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
-import { siteConfig, cta } from "@/config/site";
+import { cta } from "@/config/site";
 import { faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -135,10 +135,9 @@ export default function HomePage() {
               Grow beyond <GradientText>word-of-mouth.</GradientText>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              {siteConfig.name} builds the marketing engine that brings small and
-              medium businesses a steady, predictable flow of customers, then
-              automates the admin behind it, so scaling never means drowning in
-              busywork.
+              We build the marketing engine that brings you a steady, predictable
+              flow of new customers. Then we automate the admin behind it, so
+              growing never means drowning in busywork.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={cta.href} size="lg">
