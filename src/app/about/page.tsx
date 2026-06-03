@@ -75,7 +75,7 @@ export default function AboutPage() {
               We started Voltara Digital with a simple frustration: brilliant
               small businesses staying invisible, while louder, but not better,
               competitors won the customers. Great work deserves to be seen.
-              We&apos;re here to make sure it is.
+              We&apos;re here to make sure yours is.
             </p>
           </div>
         </Container>
@@ -106,9 +106,9 @@ export default function AboutPage() {
                 </p>
                 <p>
                   So that&apos;s what we build. We combine creative social media
-                  marketing with practical AI automation to give SMEs the kind of
-                  growth engine that used to be reserved for big companies with
-                  big budgets.
+                  marketing with practical AI automation to give businesses like
+                  yours the kind of growth engine that used to be reserved for
+                  big companies with big budgets.
                 </p>
               </div>
             </div>

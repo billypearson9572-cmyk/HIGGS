@@ -10,7 +10,7 @@ export const siteConfig = {
   shortName: "Voltara",
   tagline: "Social media marketing & AI automation for growing businesses",
   description:
-    "Voltara Digital builds the social-media marketing engine that brings small and medium businesses a steady flow of customers, then automates the admin so growth never buries you in busywork.",
+    "Voltara Digital builds the social-media marketing engine that brings your business a steady flow of customers, then automates the admin so growth never buries you in busywork.",
 
   // Your live domain. Used for SEO and share links.
   url: "https://voltaradigital.com",
