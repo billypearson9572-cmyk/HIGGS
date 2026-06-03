@@ -29,6 +29,7 @@ import { siteConfig, cta } from "@/config/site";
 import { faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  title: { absolute: "Voltara Digital" },
   alternates: { canonical: "/" },
 };
 
