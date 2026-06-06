@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Container, Button } from "@/components/ui";
@@ -13,10 +13,13 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // Close the mobile menu whenever the route changes.
-  useEffect(() => {
+  // Close the mobile menu whenever the route changes. Done during render
+  // (the React-recommended pattern) rather than in an effect.
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);

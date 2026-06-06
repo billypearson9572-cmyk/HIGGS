@@ -32,9 +32,7 @@ export default function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "26px" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={markSrc} width={97} height={84} alt="" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={wordmarkSrc} width={172} height={44} alt="" />
         </div>
 
