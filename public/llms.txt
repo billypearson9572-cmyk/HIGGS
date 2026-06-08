@@ -9,7 +9,7 @@ Voltara Digital helps SMEs grow beyond word-of-mouth with a predictable marketin
 ## Services
 
 - Social media marketing: strategy, content creation, paid social ads, community management, content repurposing, analytics and reporting. https://voltaradigital.com/services#social-media
-- AI automation: lead capture and routing into your CRM, instant follow-up, email and nurture sequences, CRM automation, workflow automation, AI assistants and reporting. https://voltaradigital.com/services#automation
+- AI automation, built across platforms like n8n, Zapier and Make: lead capture and routing into your CRM, instant follow-up, email and nurture sequences, CRM automation, workflow automation, AI assistants and reporting. https://voltaradigital.com/services#automation
 
 ## Key pages
 

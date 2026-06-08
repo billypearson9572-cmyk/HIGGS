@@ -108,7 +108,7 @@ const faqs = [
   },
   {
     q: "What exactly do you automate?",
-    a: "Anything repetitive that's costing you time or losing you leads: lead capture into your CRM, instant follow-ups, nurture emails, reminders and reporting. We build it to connect with the tools you already use.",
+    a: "Anything repetitive that's costing you time or losing you leads: lead capture into your CRM, instant follow-ups, nurture emails, reminders and reporting. We build it across platforms like Zapier and n8n so it connects with the tools you already use.",
   },
   {
     q: "Are there long contracts?",

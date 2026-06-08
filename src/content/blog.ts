@@ -159,7 +159,7 @@ Automation isn't about replacing people: it's about removing the tedious glue wo
 
 ## Automation you actually own
 
-We build most automations on flexible, open workflow tools that connect to the apps you already use (Gmail, your CRM, Slack, Notion, Sheets, Stripe and hundreds more). Two things we insist on for SMEs:
+We build most automations on best-in-class platforms like n8n, Zapier and Make, all of which connect to the apps you already use (Gmail, your CRM, Slack, Notion, Sheets, Stripe and hundreds more). Two things we insist on for SMEs:
 
 1. **It's yours.** Workflows can run on your own account, so you're not locked into a black box you don't control.
 2. **It scales with you.** Start with one simple automation and add more as you grow, no rip-and-replace.

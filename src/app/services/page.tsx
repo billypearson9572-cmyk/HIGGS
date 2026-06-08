@@ -96,7 +96,7 @@ const automationOfferings = [
   {
     icon: Workflow,
     title: "Custom workflow automation",
-    body: "Custom workflows connecting the tools you already use: Gmail, Slack, Notion, Sheets, Stripe and 400+ more.",
+    body: "Custom workflows built on platforms like n8n, Zapier and Make, wired into the tools you already use: Gmail, Slack, Notion, Sheets, Stripe and more.",
   },
   {
     icon: Bot,
