@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "social media marketing",
     "marketing agency for SMEs",
     "AI automation",
-    "n8n automation",
+    "workflow automation",
     "lead generation",
     "small business marketing",
     "CRM automation",

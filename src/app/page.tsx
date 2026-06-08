@@ -88,7 +88,7 @@ const values = [
   {
     icon: Workflow,
     title: "Powered by automation",
-    body: "We use n8n and AI to do the repetitive work, so your results scale without the headcount.",
+    body: "We use smart automation and AI to do the repetitive work, so your results scale without the headcount.",
   },
   {
     icon: Repeat,
@@ -108,7 +108,7 @@ const faqs = [
   },
   {
     q: "What exactly do you automate?",
-    a: "Anything repetitive that's costing you time or losing you leads: lead capture into your CRM, instant follow-ups, nurture emails, reminders and reporting. We build it on n8n so it connects to the tools you already use.",
+    a: "Anything repetitive that's costing you time or losing you leads: lead capture into your CRM, instant follow-ups, nurture emails, reminders and reporting. We build it to connect with the tools you already use.",
   },
   {
     q: "Are there long contracts?",
@@ -223,7 +223,7 @@ export default function HomePage() {
               phase="Phase 2"
               icon={Workflow}
               title="AI automation"
-              body="Once you're growing, busywork becomes the bottleneck. We automate emails, CRM updates, follow-ups and reporting with smart n8n workflows, so nothing slips and you get your week back."
+              body="Once you're growing, busywork becomes the bottleneck. We automate emails, CRM updates, follow-ups and reporting with smart automation workflows, so nothing slips and you get your week back."
               points={[
                 "Lead capture into your CRM",
                 "Instant, personalised follow-ups",
@@ -393,7 +393,7 @@ function HeroVisual() {
     { icon: Megaphone, label: "Campaign live", meta: "Active" },
     { icon: CalendarCheck, label: "12 posts scheduled", meta: "This week" },
     { icon: Repeat, label: "Auto-reply to new leads", meta: "On" },
-    { icon: Workflow, label: "Leads synced to CRM", meta: "n8n" },
+    { icon: Workflow, label: "Leads synced to CRM", meta: "Auto" },
   ];
 
   return (

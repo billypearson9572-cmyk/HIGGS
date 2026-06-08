@@ -95,7 +95,7 @@ const automationOfferings = [
   },
   {
     icon: Workflow,
-    title: "Workflow automation (n8n)",
+    title: "Custom workflow automation",
     body: "Custom workflows connecting the tools you already use: Gmail, Slack, Notion, Sheets, Stripe and 400+ more.",
   },
   {
@@ -138,7 +138,7 @@ const projects = [
     description:
       "Connect your tools and automate the admin so growth never buries you in busywork.",
     features: [
-      "n8n workflow build",
+      "Custom workflow build",
       "CRM setup & integration",
       "Automated lead follow-up",
       "Reporting dashboards",
@@ -157,7 +157,7 @@ const serviceSchemas = servicesSchema([
   {
     name: "AI automation",
     description:
-      "Lead capture into your CRM, instant follow-ups, nurture sequences, workflow automation and reporting, built on n8n so growth never buries you in admin.",
+      "Lead capture into your CRM, instant follow-ups, nurture sequences, workflow automation and reporting, so growth never buries you in admin.",
     hash: "automation",
   },
 ]);
@@ -231,7 +231,7 @@ export default function ServicesPage() {
             </h2>
             <p className="max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
               As the leads roll in, admin becomes the bottleneck. We connect your
-              tools with n8n and AI to handle the repetitive work, so nothing
+              tools and layer AI on top to handle the repetitive work, so nothing
               slips through the cracks and you get your week back.
             </p>
           </div>

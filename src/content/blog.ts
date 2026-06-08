@@ -130,7 +130,7 @@ Want us to build it for you? [Have a look at our services](/services) or [get a 
     slug: "automate-your-admin",
     title: "Drowning in admin? How AI automation buys back your week",
     description:
-      "Growth creates a hidden tax: admin. Emails, follow-ups, data entry, reporting. Here's how smart automation with n8n hands those hours back to you.",
+      "Growth creates a hidden tax: admin. Emails, follow-ups, data entry, reporting. Here's how smart automation hands those hours back to you.",
     date: "2026-04-28",
     author: "Voltara Digital",
     category: "Automation",
@@ -157,9 +157,9 @@ Automation isn't about replacing people: it's about removing the tedious glue wo
 - **Reporting on autopilot.** Your key numbers get pulled together and delivered to your inbox every Monday morning.
 - **AI-assisted replies.** Draft responses to common questions are generated for you to approve in a click.
 
-## Why we build on n8n
+## Automation you actually own
 
-We build most automations on [n8n](https://n8n.io), a flexible workflow tool that connects to the apps you already use (Gmail, your CRM, Slack, Notion, Sheets, Stripe and hundreds more). Two reasons we like it for SMEs:
+We build most automations on flexible, open workflow tools that connect to the apps you already use (Gmail, your CRM, Slack, Notion, Sheets, Stripe and hundreds more). Two things we insist on for SMEs:
 
 1. **It's yours.** Workflows can run on your own account, so you're not locked into a black box you don't control.
 2. **It scales with you.** Start with one simple automation and add more as you grow, no rip-and-replace.
