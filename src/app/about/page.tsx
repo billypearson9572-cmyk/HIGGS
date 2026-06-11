@@ -13,15 +13,15 @@ import { CTASection } from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Voltara Digital exists to help great small businesses get the visibility they deserve, and the time back to enjoy growing.",
+    "Voltara Digital is an AI agency. We help businesses sell more, serve customers around the clock and cut hours of manual admin with AI systems built and run for them.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   {
     icon: Target,
-    title: "Outcomes over vanity",
-    body: "We care about leads, customers and revenue, not likes for the sake of likes. Every action ties back to growing your business.",
+    title: "Outcomes over hype",
+    body: "We care about revenue, time saved and customers served, not shiny demos. Every system ties back to a real business result.",
   },
   {
     icon: Repeat,
@@ -48,8 +48,8 @@ const differentiators = [
   },
   {
     icon: Layers,
-    title: "Marketing and automation, under one roof",
-    body: "Most agencies do one or the other. We connect both, so your growth and your systems are designed to work together.",
+    title: "Every system under one roof",
+    body: "Sales, service, marketing, ops and custom builds from one team, so your AI systems are designed to work together, not in silos.",
   },
   {
     icon: Target,
@@ -68,14 +68,15 @@ export default function AboutPage() {
           <div className="max-w-3xl">
             <Eyebrow>About Voltara</Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
-              The growth partner SMEs{" "}
-              <GradientText>actually need.</GradientText>
+              The AI partner your business{" "}
+              <GradientText>actually needs.</GradientText>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted">
               We started Voltara Digital with a simple frustration: brilliant
-              small businesses staying invisible, while louder, but not better,
-              competitors won the customers. Great work deserves to be seen.
-              We&apos;re here to make sure it is.
+              businesses pouring hours into manual work and losing deals to slow,
+              clunky processes, while the tools to fix it sat unused. Great
+              businesses deserve to run like the big players. We&apos;re here to
+              make that happen.
             </p>
           </div>
         </Container>
@@ -88,27 +89,25 @@ export default function AboutPage() {
             <div>
               <SectionHeading
                 eyebrow="Our mission"
-                title="Marketing shouldn't be a gamble"
+                title="Running a business shouldn't mean drowning in it"
               />
               <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-muted">
                 <p>
-                  For most small businesses, growth comes down to luck and
-                  relationships. When work is good, referrals trickle in. When
-                  it&apos;s quiet, there&apos;s no lever to pull. That&apos;s a
-                  stressful way to run a business, and an impossible way to plan
-                  one.
+                  For most businesses, the day disappears into manual work:
+                  chasing leads, answering the same questions, copying data
+                  between tools, pulling reports. It&apos;s draining, it&apos;s
+                  slow, and it quietly caps how far you can grow.
                 </p>
                 <p>
-                  We believe every good business deserves a growth system it can
-                  actually rely on: visibility that brings in customers
-                  predictably, and the systems to handle that growth without
-                  burning out the owner.
+                  We believe every good business deserves systems it can rely on:
+                  AI that wins and serves customers, and automation that clears
+                  the busywork, without burning out the owner or hiring a bigger
+                  team.
                 </p>
                 <p>
-                  So that&apos;s what we build. We combine creative social media
-                  marketing with practical AI automation to give SMEs the kind of
-                  growth engine that used to be reserved for big companies with
-                  big budgets.
+                  So that&apos;s what we build. We give businesses the kind of AI
+                  systems that used to be reserved for big companies with big
+                  budgets, designed, built and run for you.
                 </p>
               </div>
             </div>
@@ -168,7 +167,7 @@ export default function AboutPage() {
             title={
               <>
                 Not your typical{" "}
-                <GradientText>marketing agency.</GradientText>
+                <GradientText>AI agency.</GradientText>
               </>
             }
           />

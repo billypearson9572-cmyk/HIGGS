@@ -1,17 +1,20 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  CalendarCheck,
-  Megaphone,
-  Workflow,
   Search,
+  Check,
+  Sparkles,
+  Inbox,
+  PhoneCall,
+  Repeat,
+  Code,
   Rocket,
   TrendingUp,
-  Check,
   ShieldCheck,
-  Repeat,
-  Sparkles,
-  CircleDot,
+  Plug,
+  MessagesSquare,
+  CalendarCheck,
+  Workflow,
 } from "lucide-react";
 import {
   Container,
@@ -26,6 +29,7 @@ import type { Metadata } from "next";
 import { CTASection } from "@/components/CTASection";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig, cta } from "@/config/site";
+import { services, type Service } from "@/config/services";
 import { faqSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -35,42 +39,42 @@ export const metadata: Metadata = {
 
 const problems = [
   {
-    icon: TrendingUp,
-    title: "Feast or famine",
-    body: "Some months are packed, others are dead quiet, and you can never predict which is coming next.",
+    icon: Inbox,
+    title: "Buried in busywork",
+    body: "Your team loses hours every week to admin a machine could do in seconds.",
   },
   {
-    icon: Search,
-    title: "Invisible to new customers",
-    body: "The people who'd love what you do have never heard of you, because you're not showing up where they look.",
+    icon: PhoneCall,
+    title: "Leads slip away",
+    body: "Slow follow-up and missed enquiries quietly cost you deals you never even see.",
   },
   {
-    icon: CircleDot,
-    title: "No system to lean on",
-    body: "Growth depends on you personally hustling for referrals. The moment you stop, the pipeline dries up.",
+    icon: Repeat,
+    title: "Everything's manual",
+    body: "Growing means hiring more people to do more repetitive work. That doesn't scale.",
   },
 ];
 
 const steps = [
   {
     icon: Search,
-    title: "Discovery & audit",
-    body: "We dig into your goals, audience and current presence to find the fastest path to more customers.",
+    title: "Map the opportunities",
+    body: "We audit how you work and find where AI will save the most time and win the most revenue.",
   },
   {
-    icon: Megaphone,
-    title: "Strategy & launch",
-    body: "We build your content engine and launch campaigns designed to attract, nurture and convert.",
+    icon: Code,
+    title: "Build your systems",
+    body: "We build and connect the automations to the tools you already use, tested and reliable.",
   },
   {
     icon: Rocket,
-    title: "Grow & optimise",
-    body: "Leads start flowing. We double down on what's working using real data, not guesswork.",
+    title: "Launch & train",
+    body: "We switch it on, train your team, and make sure it runs smoothly from day one.",
   },
   {
-    icon: Workflow,
-    title: "Automate & scale",
-    body: "Once you're busy, we automate the admin so growth never turns into overwhelm.",
+    icon: TrendingUp,
+    title: "Optimise & scale",
+    body: "We track results, sharpen what's working, and add new systems as you grow.",
   },
 ];
 
@@ -78,41 +82,41 @@ const values = [
   {
     icon: ShieldCheck,
     title: "Done for you",
-    body: "We run it end to end. You stay focused on serving the customers we bring you.",
+    body: "We design, build and run it end to end. You get the outcome, not a pile of homework.",
   },
   {
     icon: Sparkles,
-    title: "Built for SMEs",
-    body: "No bloated retainers or agency jargon, just practical growth for real businesses.",
+    title: "AI-first, not AI-hype",
+    body: "Practical systems that pay for themselves. No buzzwords, no science projects.",
   },
   {
-    icon: Workflow,
-    title: "Powered by automation",
-    body: "We use smart automation and AI to do the repetitive work, so your results scale without the headcount.",
+    icon: Plug,
+    title: "Built on your stack",
+    body: "Everything connects to the tools you already use, and runs on your own accounts.",
   },
   {
     icon: Repeat,
     title: "Owned by you",
-    body: "Your accounts, your data, your workflows. No lock-in, no holding your business hostage.",
+    body: "Your systems, your data, your workflows. No lock-in, no holding your business hostage.",
   },
 ];
 
 const faqs = [
   {
-    q: "How soon will I see results?",
-    a: "Marketing compounds. Most clients see early traction, more reach and enquiries, within the first 4 to 8 weeks, with momentum building from there. We focus on the metrics that lead to revenue, not vanity numbers.",
+    q: "What does an AI agency actually do for me?",
+    a: "In plain terms, we build systems that do work for you: AI that books sales meetings, answers customers and clears admin, so your business does more without more staff. We design it, build it and run it.",
   },
   {
-    q: "Do I need to be on every social platform?",
-    a: "No. We focus on the one or two channels where your customers actually spend time and do them properly, rather than spreading thin across all of them.",
+    q: "Do I need to be technical?",
+    a: "Not at all. We handle everything end to end and connect it to the tools you already use. You get the results; we own the complexity.",
   },
   {
-    q: "What exactly do you automate?",
-    a: "Anything repetitive that's costing you time or losing you leads: lead capture into your CRM, instant follow-ups, nurture emails, reminders and reporting. We build it across platforms like Zapier and n8n so it connects with the tools you already use.",
+    q: "Where should we start?",
+    a: "Usually sales automation, because it pays for itself the fastest. We begin with the one system that has the clearest return, prove it works, then expand from there.",
   },
   {
     q: "Are there long contracts?",
-    a: "We work in flexible monthly engagements. We'd rather earn your business every month than trap you in a 12-month tie-in.",
+    a: "No. We work in flexible, project-based engagements with no long tie-ins. We'd rather earn the next project than lock you in.",
   },
 ];
 
@@ -129,20 +133,20 @@ export default function HomePage() {
           <div className="animate-fade-up">
             <Eyebrow>
               <Sparkles className="h-3.5 w-3.5 text-brand-teal" />
-              Social media marketing + AI automation
+              AI automation agency
             </Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-              Grow beyond <GradientText>word-of-mouth.</GradientText>
+              The AI team your <GradientText>business runs on.</GradientText>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              {siteConfig.name} builds the marketing engine that brings small and
-              medium businesses a steady, predictable flow of customers, then
-              automates the admin behind it, so scaling never means drowning in
-              busywork.
+              {siteConfig.name} builds AI systems that win you customers and run
+              the busywork, from sales automation that books meetings while you
+              sleep to AI chat, custom builds and internal ops. All designed,
+              built and run for you.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={cta.href} size="lg">
-                <Search className="h-5 w-5" />
+                <Sparkles className="h-5 w-5" />
                 {cta.label}
               </Button>
               <Button href="/services" variant="secondary" size="lg">
@@ -151,8 +155,8 @@ export default function HomePage() {
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted">
-              Free, no-obligation. For ambitious SMEs ready to stop relying on
-              referrals alone.
+              Free, no-obligation AI audit. For businesses ready to put growth on
+              autopilot.
             </p>
           </div>
 
@@ -160,18 +164,18 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* ------------------------------------------------------------- The thesis */}
+      {/* ------------------------------------------------------------- The shift */}
       <Section className="border-t border-line/60">
         <Container>
           <SectionHeading
-            eyebrow="The hard truth"
+            eyebrow="The shift"
             title={
               <>
-                Relationships got you here. They won&apos;t get you to{" "}
-                <GradientText>scale.</GradientText>
+                Your competitors are about to get a lot{" "}
+                <GradientText>faster.</GradientText>
               </>
             }
-            description="Word-of-mouth is powerful, but it's unpredictable, impossible to forecast, and caps how fast you can grow. Today, the businesses pulling ahead aren't always the best ones. They're the most visible."
+            description="AI has quietly changed what a small team can do. The businesses building it into how they work are pulling ahead, more sales, faster service, less admin, while everyone else still does it by hand."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {problems.map((item) => (
@@ -191,7 +195,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* ----------------------------------------------------------- Two services */}
+      {/* ---------------------------------------------------------- What we do */}
       <Section className="bg-bg-soft">
         <Container>
           <SectionHeading
@@ -199,40 +203,21 @@ export default function HomePage() {
             eyebrow="What we do"
             title={
               <>
-                Two engines. <GradientText>One growth system.</GradientText>
+                One agency for every <GradientText>AI system</GradientText> your
+                business needs.
               </>
             }
-            description="We start by filling your funnel. Then, once the leads are flowing, we automate the admin so your time scales with your revenue, not against it."
+            description="From winning customers to serving them and running the admin behind it all, we design, build and run it for you."
           />
-          <div className="mx-auto mt-14 grid max-w-5xl gap-6 lg:grid-cols-2">
-            <ServiceCard
-              phase="Phase 1"
-              icon={Megaphone}
-              title="Social media marketing"
-              body="We turn your social channels into a consistent source of qualified leads: strategy, content, paid ads and community management, all done for you."
-              points={[
-                "Content strategy & creation",
-                "Paid social advertising",
-                "Community management",
-                "Analytics & reporting",
-              ]}
-              href="/services#social-media"
-              cta="Marketing services"
-            />
-            <ServiceCard
-              phase="Phase 2"
-              icon={Workflow}
-              title="AI automation"
-              body="Once you're growing, busywork becomes the bottleneck. We automate emails, CRM updates, follow-ups and reporting with smart automation workflows, so nothing slips and you get your week back."
-              points={[
-                "Lead capture into your CRM",
-                "Instant, personalised follow-ups",
-                "Email nurture sequences",
-                "Automated reporting",
-              ]}
-              href="/services#automation"
-              cta="Automation services"
-            />
+
+          <div className="mx-auto mt-14 max-w-5xl">
+            <FeaturedService service={services[0]} />
+          </div>
+
+          <div className="mx-auto mt-6 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.slice(1).map((service) => (
+              <ServiceTile key={service.hash} service={service} />
+            ))}
           </div>
         </Container>
       </Section>
@@ -244,11 +229,11 @@ export default function HomePage() {
             eyebrow="How it works"
             title={
               <>
-                A clear path from invisible to{" "}
-                <GradientText>in-demand.</GradientText>
+                From manual to <GradientText>automated</GradientText>, without
+                the headache.
               </>
             }
-            description="No mystery, no smoke and mirrors. Here's exactly how we take you from relying on referrals to running a predictable growth system."
+            description="No jargon, no months-long projects. Here's exactly how we get AI working inside your business."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => (
@@ -280,8 +265,8 @@ export default function HomePage() {
           <SectionHeading
             align="center"
             eyebrow="Why Voltara"
-            title="Marketing muscle, without the agency baggage"
-            description="We pair creative marketing with serious automation, and treat your business like we'd want ours treated."
+            title="Serious AI, without the agency baggage"
+            description="We pair real automation engineering with a plain-English, done-for-you approach, and treat your business like we'd want ours treated."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (
@@ -337,63 +322,77 @@ export default function HomePage() {
 
 /* --- Local components ---------------------------------------------------- */
 
-function ServiceCard({
-  phase,
-  icon: Icon,
-  title,
-  body,
-  points,
-  href,
-  cta,
-}: {
-  phase: string;
-  icon: React.ElementType;
-  title: string;
-  body: string;
-  points: string[];
-  href: string;
-  cta: string;
-}) {
+function FeaturedService({ service }: { service: Service }) {
+  const Icon = service.icon;
   return (
-    <div className="flex flex-col rounded-3xl border border-line bg-surface p-8">
-      <div className="flex items-center gap-3">
-        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-gradient text-[#04121f]">
-          <Icon className="h-6 w-6" />
-        </span>
-        <span className="rounded-full border border-line px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-muted">
-          {phase}
-        </span>
+    <div className="relative overflow-hidden rounded-3xl border border-transparent bg-surface p-8 [background:linear-gradient(var(--color-surface),var(--color-surface))_padding-box,var(--brand-gradient)_border-box] sm:p-10">
+      <div className="glow-radial pointer-events-none absolute -top-24 right-0 h-72 w-72" />
+      <div className="relative grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div>
+          <div className="flex items-center gap-3">
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-gradient text-[#04121f]">
+              <Icon className="h-6 w-6" />
+            </span>
+            <span className="rounded-full bg-brand-gradient px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[#04121f]">
+              {service.tagline}
+            </span>
+          </div>
+          <h3 className="mt-6 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+            {service.title}
+          </h3>
+          <p className="mt-3 max-w-lg text-base leading-relaxed text-muted">
+            {service.description}
+          </p>
+          <Link
+            href={`/services#${service.hash}`}
+            className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors hover:text-brand-teal"
+          >
+            Explore sales automation
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <ul className="flex flex-col gap-3 rounded-2xl border border-line bg-bg-soft/60 p-6">
+          {service.points.map((point) => (
+            <li key={point} className="flex items-center gap-3 text-sm">
+              <Check className="h-4 w-4 shrink-0 text-brand-teal" />
+              {point}
+            </li>
+          ))}
+        </ul>
       </div>
-      <h3 className="mt-6 font-display text-2xl font-bold tracking-tight">
-        {title}
-      </h3>
-      <p className="mt-3 text-sm leading-relaxed text-muted">{body}</p>
-      <ul className="mt-6 flex flex-col gap-3">
-        {points.map((point) => (
-          <li key={point} className="flex items-center gap-3 text-sm">
-            <Check className="h-4 w-4 shrink-0 text-brand-teal" />
-            {point}
-          </li>
-        ))}
-      </ul>
-      <Link
-        href={href}
-        className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-colors hover:text-brand-teal"
-      >
-        {cta}
-        <ArrowRight className="h-4 w-4" />
-      </Link>
     </div>
+  );
+}
+
+function ServiceTile({ service }: { service: Service }) {
+  const Icon = service.icon;
+  return (
+    <Link
+      href={`/services#${service.hash}`}
+      className="group flex flex-col rounded-2xl border border-line bg-surface/60 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-surface"
+    >
+      <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white/5 text-brand-teal">
+        <Icon className="h-5 w-5" />
+      </span>
+      <h3 className="mt-5 font-display text-lg font-semibold">{service.title}</h3>
+      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+        {service.description}
+      </p>
+      <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-blue">
+        Learn more
+        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+      </span>
+    </Link>
   );
 }
 
 function HeroVisual() {
   const bars = [42, 56, 50, 68, 61, 84, 92];
   const rows = [
-    { icon: Megaphone, label: "Campaign live", meta: "Active" },
-    { icon: CalendarCheck, label: "12 posts scheduled", meta: "This week" },
-    { icon: Repeat, label: "Auto-reply to new leads", meta: "On" },
-    { icon: Workflow, label: "Leads synced to CRM", meta: "Auto" },
+    { icon: PhoneCall, label: "Lead auto-qualified", meta: "AI" },
+    { icon: MessagesSquare, label: "Customer chat answered", meta: "24/7" },
+    { icon: CalendarCheck, label: "Sales meeting booked", meta: "Auto" },
+    { icon: Workflow, label: "Synced to your CRM", meta: "Done" },
   ];
 
   return (
@@ -403,7 +402,7 @@ function HeroVisual() {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-muted">
-              Your growth system
+              Your AI back office
             </p>
             <p className="mt-1 font-display text-lg font-semibold">This month</p>
           </div>
@@ -430,7 +429,7 @@ function HeroVisual() {
         </div>
         <div className="mt-2 flex items-center gap-2 text-xs text-muted">
           <TrendingUp className="h-3.5 w-3.5 text-brand-green" />
-          Leads trending up
+          Pipeline trending up
         </div>
 
         <div className="mt-6 flex flex-col gap-2.5">

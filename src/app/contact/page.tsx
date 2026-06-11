@@ -5,17 +5,17 @@ import { ContactForm } from "@/components/ContactForm";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Get a free marketing audit",
+  title: "Get a free AI audit",
   description:
-    "Tell us about your business and we'll send back a free, tailored review of your marketing: what's working, what's leaking growth, and the fastest wins.",
+    "Tell us about your business and we'll send back a free, tailored review of where AI and automation can win you customers and save your team hours, and where to start.",
   alternates: { canonical: "/contact" },
 };
 
 const auditIncludes = [
-  "A review of your current social presence",
-  "Where you're losing potential leads",
+  "Where AI can save your team the most time",
+  "The highest-ROI system to build first",
   "Quick wins you can action right away",
-  "A clear plan to grow, with or without us",
+  "A clear plan to automate, with or without us",
 ];
 
 const nextSteps = [
@@ -25,7 +25,7 @@ const nextSteps = [
   },
   {
     title: "We prepare your free audit",
-    body: "We put together a tailored review of your marketing and the biggest opportunities.",
+    body: "We put together a tailored review of where AI can help and the biggest opportunities.",
   },
   {
     title: "We share it with you",
@@ -40,14 +40,15 @@ export default function ContactPage() {
         <div className="glow-radial pointer-events-none absolute -top-32 left-1/2 h-[26rem] w-[40rem] -translate-x-1/2" />
         <Container className="relative py-20 text-center sm:py-24">
           <div className="mx-auto max-w-2xl">
-            <Eyebrow>Free marketing audit</Eyebrow>
+            <Eyebrow>Free AI audit</Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
-              Get your free <GradientText>marketing audit.</GradientText>
+              Get your free <GradientText>AI audit.</GradientText>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted">
               Tell us about your business and we&apos;ll send back a tailored
-              review of your marketing: what&apos;s working, what&apos;s leaking
-              growth, and the fastest wins. Free, and no obligation.
+              review of where AI and automation can win you customers and save
+              your team hours, and the fastest place to start. Free, and no
+              obligation.
             </p>
           </div>
         </Container>

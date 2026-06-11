@@ -38,10 +38,10 @@ export default function OpenGraphImage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "26px" }}>
           <span style={{ fontSize: "70px", fontWeight: 800, lineHeight: 1.05, maxWidth: "920px" }}>
-            Grow beyond word-of-mouth.
+            AI systems that run your business.
           </span>
           <span style={{ fontSize: "30px", color: "#93a3c0", maxWidth: "840px" }}>
-            Social media marketing &amp; AI automation for growing businesses.
+            Sales automation, AI chat, custom builds and internal ops — done for you.
           </span>
         </div>
 

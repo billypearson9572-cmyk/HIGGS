@@ -8,9 +8,9 @@
 export const siteConfig = {
   name: "Voltara Digital",
   shortName: "Voltara",
-  tagline: "Social media marketing & AI automation for growing businesses",
+  tagline: "AI systems that win you customers and run the busywork",
   description:
-    "Voltara Digital builds the social-media marketing engine that brings small and medium businesses a steady flow of customers, then automates the admin so growth never buries you in busywork.",
+    "Voltara Digital is an AI automation agency. We build systems that sell for you, serve your customers and run your back office — from AI sales automation and chatbots to custom builds and internal ops, all done for you.",
 
   // Your live domain. Used for SEO and share links.
   url: "https://voltaradigital.com",
@@ -52,8 +52,8 @@ export const siteConfig = {
  * contact form. Used by buttons across the site so the offer stays consistent.
  */
 export const cta = {
-  label: "Get a free marketing audit",
-  shortLabel: "Free audit",
+  label: "Get a free AI audit",
+  shortLabel: "Free AI audit",
   href: "/contact",
 } as const;
 

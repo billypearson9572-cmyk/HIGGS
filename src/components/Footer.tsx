@@ -9,10 +9,10 @@ const footerNav = [
   {
     title: "Services",
     links: [
-      { title: "Social media marketing", href: "/services#social-media" },
-      { title: "AI automation", href: "/services#automation" },
-      { title: "How it works", href: "/#how-it-works" },
-      { title: "Pricing", href: "/services#pricing" },
+      { title: "Sales automation", href: "/services#sales-automation" },
+      { title: "AI chat & support", href: "/services#customer-service" },
+      { title: "Admin & internal ops", href: "/services#internal-ops" },
+      { title: "All services", href: "/services" },
     ],
   },
   {
@@ -50,8 +50,8 @@ export function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-5 text-sm leading-relaxed text-muted">
-              {siteConfig.tagline}. We help SMEs grow beyond word-of-mouth, and
-              automate the busywork once they do.
+              {siteConfig.tagline}. We design, build and run the AI systems that
+              win you customers and clear the busywork.
             </p>
             {socialLinks.length > 0 ? (
               <div className="mt-6 flex items-center gap-3">

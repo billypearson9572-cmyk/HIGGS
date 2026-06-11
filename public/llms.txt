@@ -1,15 +1,20 @@
 # Voltara Digital
 
-> Social media marketing and AI automation agency for small and medium businesses (SMEs) in the United Kingdom. We fill your funnel with social media marketing, then automate the admin (emails, CRM, follow-ups, reporting) so growth never buries you in busywork.
+> Voltara Digital is an AI automation agency for businesses in the United Kingdom and beyond. We build AI systems that win customers and run the busywork — from sales automation and AI chatbots to custom builds, internal-ops automation and AI-powered marketing.
 
 ## About
 
-Voltara Digital helps SMEs grow beyond word-of-mouth with a predictable marketing system, then automates repetitive admin once the leads are flowing. Engagements are project-based, with no long contracts or lock-in. Contact: info@voltaradigital.com
+Voltara Digital is an AI agency. We design and build the automation and AI systems that help businesses sell more, serve customers around the clock and cut hours of manual admin. Engagements are project-based, with no long contracts or lock-in. Contact: info@voltaradigital.com
 
 ## Services
 
-- Social media marketing: strategy, content creation, paid social ads, community management, content repurposing, analytics and reporting. https://voltaradigital.com/services#social-media
-- AI automation, built across platforms like n8n, Zapier and Make: lead capture and routing into your CRM, instant follow-up, email and nurture sequences, CRM automation, workflow automation, AI assistants and reporting. https://voltaradigital.com/services#automation
+- Sales automation (flagship): AI lead sourcing, outreach, qualification, follow-up and pipeline/CRM automation that books meetings on autopilot. https://voltaradigital.com/services#sales-automation
+- Customer service & AI chat: website/WhatsApp chatbots, instant first response, query routing and AI-drafted replies with human handoff. https://voltaradigital.com/services#customer-service
+- Admin & internal ops: automating data entry, reporting, documents, scheduling and tool-to-tool integrations. https://voltaradigital.com/services#internal-ops
+- AI-powered marketing: content creation, social media, paid ads and SEO, accelerated with AI. https://voltaradigital.com/services#marketing
+- Build & tech help: websites, web apps, internal tools and system integrations. https://voltaradigital.com/services#build
+- Industry-specific systems: pre-built AI systems tuned to your sector. https://voltaradigital.com/services#industry-systems
+- Business development: AI-driven outbound and partnership systems to open new channels. https://voltaradigital.com/services#business-development
 
 ## Key pages
 
