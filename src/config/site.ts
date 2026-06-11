@@ -63,6 +63,7 @@ export const mainNav: NavItem[] = [
   { title: "Home", href: "/" },
   { title: "Services", href: "/services" },
   { title: "Calculator", href: "/lead-calculator" },
+  { title: "Race value", href: "/horse-race" },
   { title: "About", href: "/about" },
   { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },
