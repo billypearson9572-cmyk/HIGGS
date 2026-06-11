@@ -17,6 +17,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Don't advertise the framework (minor info-leak hardening).
+  poweredByHeader: false,
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
