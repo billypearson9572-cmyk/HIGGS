@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  Calculator,
   Search,
   Check,
   Sparkles,
@@ -218,6 +219,36 @@ export default function HomePage() {
             {services.slice(1).map((service) => (
               <ServiceTile key={service.hash} service={service} />
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---------------------------------------------------- Calculator promo */}
+      <Section className="py-14 sm:py-16">
+        <Container>
+          <div className="relative overflow-hidden rounded-3xl border border-transparent bg-surface px-6 py-12 [background:linear-gradient(var(--color-surface),var(--color-surface))_padding-box,var(--brand-gradient)_border-box] sm:px-12">
+            <div className="glow-radial pointer-events-none absolute -top-20 right-0 h-72 w-[32rem]" />
+            <div className="relative flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-xl">
+                <Eyebrow>
+                  <Calculator className="h-3.5 w-3.5 text-brand-teal" />
+                  Lead response calculator
+                </Eyebrow>
+                <h2 className="mt-5 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+                  How much is slow lead response{" "}
+                  <GradientText>costing you?</GradientText>
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-muted">
+                  Slow follow-up quietly loses more deals than most businesses
+                  realise. Plug in your numbers to see the leak in real time, and
+                  what instant, automated follow-up could win back.
+                </p>
+              </div>
+              <Button href="/lead-calculator" size="lg" className="shrink-0">
+                Try the calculator
+                <ArrowRight className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>
