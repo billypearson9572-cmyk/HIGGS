@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="595" height="842" role="img" aria-label="A5 ear wax removal leaflet">
+  <defs>
+    <style>.f{font-family:'Poppins','Montserrat','Segoe UI',sans-serif;}</style>
+  </defs>
+
+  <!-- page -->
+  <rect width="595" height="842" fill="#F7F4EF"/>
+
+  <!-- top teal band -->
+  <path d="M0 0 H595 V250 Q300 320 0 250 Z" fill="#0E5A66"/>
+
+  <!-- mark -->
+  <g transform="translate(40,38)">
+    <circle cx="34" cy="34" r="34" fill="#FFFFFF"/>
+    <circle cx="23" cy="34" r="3.2" fill="#F2A65A"/>
+    <path d="M27 27.1 A8 8 0 0 1 27 40.9" fill="none" stroke="#0E5A66" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M30.5 20.9 A15 15 0 0 1 30.5 47.1" fill="none" stroke="#0E5A66" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M34 14.6 A22 22 0 0 1 34 53.4" fill="none" stroke="#F2A65A" stroke-width="3.2" stroke-linecap="round"/>
+  </g>
+  <text class="f" x="120" y="62" font-size="24" font-weight="700" fill="#FFFFFF">Andrew Bird Hearing</text>
+  <text class="f" x="120" y="86" font-size="13" font-weight="500" fill="#Bfe0e3" letter-spacing="1">INDEPENDENT HEARING SPECIALISTS · SINCE 2007</text>
+
+  <!-- hero headline -->
+  <text class="f" x="40" y="170" font-size="44" font-weight="700" fill="#FFFFFF">Blocked ears?</text>
+  <text class="f" x="40" y="218" font-size="28" font-weight="500" fill="#F2A65A">Gentle microsuction ear wax removal</text>
+
+  <!-- price / offer badge -->
+  <g transform="translate(420,330)">
+    <circle cx="70" cy="70" r="70" fill="#F2A65A"/>
+    <text class="f" x="70" y="58" font-size="16" font-weight="600" fill="#1A2B2E" text-anchor="middle">FROM</text>
+    <text class="f" x="70" y="96" font-size="38" font-weight="700" fill="#1A2B2E" text-anchor="middle">£XX</text>
+  </g>
+
+  <!-- body copy -->
+  <g class="f" fill="#1A2B2E">
+    <text x="40" y="350" font-size="20" font-weight="700" fill="#0E5A66">Same-day appointments available</text>
+  </g>
+  <g class="f" fill="#3A4A4D" font-size="15" font-weight="500">
+    <text x="40" y="390">Quick, safe and comfortable wax removal carried</text>
+    <text x="40" y="414">out by qualified specialists using the gold-standard</text>
+    <text x="40" y="438">microsuction method — no messy syringing.</text>
+  </g>
+
+  <!-- ticks -->
+  <g class="f" font-size="16" font-weight="600" fill="#1A2B2E">
+    <g transform="translate(40,480)"><circle cx="0" cy="-5" r="9" fill="#0E5A66"/><path d="M-4 -5 l3 3 l5 -6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="20" y="0">Fully qualified, friendly clinicians</text></g>
+    <g transform="translate(40,512)"><circle cx="0" cy="-5" r="9" fill="#0E5A66"/><path d="M-4 -5 l3 3 l5 -6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="20" y="0">5★ rated · 92+ patient reviews</text></g>
+    <g transform="translate(40,544)"><circle cx="0" cy="-5" r="9" fill="#0E5A66"/><path d="M-4 -5 l3 3 l5 -6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="20" y="0">18 local clinics + home visits</text></g>
+  </g>
+
+  <!-- CTA band -->
+  <rect x="0" y="600" width="595" height="160" fill="#0E5A66"/>
+  <text class="f" x="297" y="652" font-size="22" font-weight="600" fill="#FFFFFF" text-anchor="middle">Book your appointment today</text>
+  <text class="f" x="297" y="700" font-size="34" font-weight="700" fill="#F2A65A" text-anchor="middle">01242 262551</text>
+  <text class="f" x="297" y="730" font-size="16" font-weight="500" fill="#Bfe0e3" text-anchor="middle">andrewbirdhearing.co.uk · info@andrewbirdhearing.co.uk</text>
+
+  <!-- footer -->
+  <text class="f" x="297" y="800" font-size="12" font-weight="500" fill="#6B7B7E" text-anchor="middle">Hesters Way Community Resource Centre, Cassin Drive, Cheltenham, GL51 7SU</text>
+</svg>

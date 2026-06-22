@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-label="Instagram review template">
+  <defs>
+    <style>.f{font-family:'Poppins','Montserrat','Segoe UI',sans-serif;}</style>
+  </defs>
+  <!-- background -->
+  <rect width="1080" height="1080" fill="#0E5A66"/>
+  <!-- faint sound-wave motif -->
+  <g opacity="0.10" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M870 540 A120 120 0 0 1 870 540"/>
+    <path d="M120 120 A140 140 0 0 1 120 400"/>
+    <path d="M120 80 A180 180 0 0 1 120 440"/>
+  </g>
+
+  <!-- card -->
+  <rect x="90" y="150" width="900" height="780" rx="32" fill="#F7F4EF"/>
+
+  <!-- stars -->
+  <g transform="translate(150,250)" fill="#F2A65A">
+    <text class="f" font-size="64" font-weight="700">★ ★ ★ ★ ★</text>
+  </g>
+
+  <!-- quote -->
+  <g class="f" fill="#1A2B2E" font-weight="600">
+    <text x="150" y="420" font-size="52">“Charming, gentle and</text>
+    <text x="150" y="490" font-size="52">thorough — I can hear</text>
+    <text x="150" y="560" font-size="52">clearly again. Honestly</text>
+    <text x="150" y="630" font-size="52">life-changing.”</text>
+  </g>
+
+  <!-- attribution -->
+  <text class="f" x="150" y="730" font-size="30" font-weight="500" fill="#6B7B7E">— A verified patient, Cheltenham</text>
+
+  <!-- divider -->
+  <rect x="150" y="772" width="120" height="5" rx="2.5" fill="#F2A65A"/>
+
+  <!-- mark + name -->
+  <g transform="translate(150,812)">
+    <circle cx="44" cy="44" r="44" fill="#0E5A66"/>
+    <circle cx="30" cy="44" r="4" fill="#F2A65A"/>
+    <path d="M35.5 35.4 A10.5 10.5 0 0 1 35.5 52.6" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M40 28.1 A19.5 19.5 0 0 1 40 59.9" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+    <path d="M44.5 20.8 A28.5 28.5 0 0 1 44.5 67.2" fill="none" stroke="#F2A65A" stroke-width="4" stroke-linecap="round"/>
+    <text class="f" x="108" y="38" font-size="34" font-weight="700" fill="#0E5A66">Andrew Bird Hearing</text>
+    <text class="f" x="108" y="74" font-size="24" font-weight="500" fill="#6B7B7E">5★ · 92+ reviews · @andrewbirdhearingltd</text>
+  </g>
+</svg>
