@@ -513,9 +513,10 @@ export const contentPrinciples = {
   ],
   publishing: [
     "Publish on Tuesdays or Thursdays — highest open and engagement rates.",
-    "Share on LinkedIn same day as publishing. Put the link in the first comment.",
-    "Repurpose into Instagram carousel or Reel within 3 days.",
-    "X thread within 24 hours — use the post's key points as thread tweets.",
+    "Share on Facebook page same day as publishing. Links in Facebook posts are fine.",
+    "Post in 2–3 relevant Facebook Groups on the same day — no links, just value + mention the article exists.",
+    "Repurpose into Instagram Reel or carousel within 2 days.",
+    "LinkedIn: hold off until there are 3+ case studies with real numbers to reference. Don't show up there without something to show.",
     "Email subscribers (when list is active): send a short teaser with a read link.",
   ],
 } as const;
