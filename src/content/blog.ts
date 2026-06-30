@@ -18,6 +18,120 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "questions-before-hiring-ai-agency",
+    title: "5 questions to ask before hiring an AI agency",
+    description:
+      "The AI agency market has exploded. Not all of them are right for your business. Here are the five questions that separate the good ones from the rest.",
+    date: "2026-06-23",
+    author: "Voltara Digital",
+    category: "AI & Automation",
+    readingMinutes: 5,
+    content: `The AI agency market has exploded. There are now hundreds of businesses claiming to do "AI automation," from freelancers with a Make account to proper technical teams who've built systems at scale.
+
+Most of them aren't lying. But not all of them are right for your business.
+
+Here are five questions that will tell you quickly whether the agency you're talking to is worth hiring.
+
+## 1. "Can you show me something you've built?"
+
+Not a capabilities deck. Not a screenshot of a workflow diagram. An actual system, or a genuine case study with numbers.
+
+Any agency worth hiring has built things. They should be able to walk you through what the problem was, what they built, and what happened after. Vague answers here are a red flag. Great agencies are specific: "We built a WhatsApp intake bot for a local service business that handles 80% of enquiries without human input."
+
+## 2. "What platforms do you build on?"
+
+There's no single right answer, but there are wrong answers. Agencies who build everything on proprietary platforms where you can't access or export your own workflows are building dependency, not solutions. Make sure you'll own what gets built.
+
+Good answers: n8n (self-hostable, open-source), Make, Zapier for simpler workflows, purpose-built AI agents on platforms like OpenAI's API.
+
+Red flag: "We use our own platform and your automations will live there."
+
+## 3. "What do the ongoing costs look like?"
+
+Automation isn't always a one-time cost. Many workflows rely on third-party services that charge by usage, or platforms with monthly subscription fees. A good agency will be transparent about what your systems will cost to run once they're live.
+
+Ask for a breakdown: build cost, monthly platform costs, ongoing support. Surprises here — either vague answers or costs that creep up after launch — are a sign the agency is focused on closing the sale, not building a long-term relationship.
+
+## 4. "What happens if something breaks?"
+
+Automations can fail. An API changes, a platform updates, a new edge case appears that the workflow wasn't built for. The question isn't whether it will happen; it's what the agency does when it does.
+
+Good answers include: a support retainer, a monitoring setup that catches errors before they affect your business, and a clear escalation process. Agencies who wave this question away usually mean "that's your problem now."
+
+## 5. "What won't automation fix?"
+
+This is the most revealing question of all. A good agency will tell you honestly what automation can't solve, where human judgment is irreplaceable, or where you'd need more than a workflow to see results.
+
+An agency that claims automation solves everything is either naïve or selling. The honest ones will say things like: "Automation won't fix a broken sales process — it'll just run it faster" or "If your data is messy, we'll need to sort that first."
+
+---
+
+These five questions won't guarantee you hire the right agency. But they'll filter out most of the wrong ones quickly.
+
+At Voltara, we answer all five — often before you ask. [Have a conversation with us](/contact) and we'll tell you exactly what we can and can't do for your business.`,
+  },
+  {
+    slug: "ai-automation-tipping-point-2026",
+    title: "The AI automation tipping point: what UK SMEs need to know in 2026",
+    description:
+      "AI automation stopped being an innovation story and became a competitive reality. The SMEs that adopted it early are quietly building a compound advantage. Here's what's changed, and what to do about it.",
+    date: "2026-06-16",
+    author: "Voltara Digital",
+    category: "AI & Automation",
+    readingMinutes: 7,
+    content: `2026 is the year AI automation stopped being an innovation story and became a competitive reality.
+
+For the past few years, AI has been something you watched big companies pilot and consultancies write white papers about. Now, the SMEs that adopted it early are quietly building a compound advantage that's difficult to close.
+
+This isn't hype. It's arithmetic.
+
+## What's actually changed
+
+Three things happened in 2025 that changed the economics for small businesses:
+
+1. **The tools got dramatically cheaper.** What cost thousands per month in enterprise software two years ago now costs a fraction of that. Platforms like n8n, Make, and purpose-built AI agents have made automation accessible to businesses with 5 people, not just 500.
+2. **The setup time collapsed.** A basic lead-capture and follow-up automation that would have taken months to deploy in 2023 can be running in days. The barrier isn't the technology anymore; it's knowing what to build.
+3. **The ROI became measurable.** Clients can now see exactly what automation saves them — in hours per week, in leads not lost, in faster response times. The "maybe it works" phase is over. The numbers are in.
+
+## The three automations that pay for themselves fastest
+
+Not every automation delivers the same return. These three consistently generate ROI quickly enough that the cost becomes almost academic:
+
+### 1. Lead capture and instant follow-up
+
+The average SME takes 47 minutes to reply to a new lead. Studies consistently show that responding within 5 minutes makes you 9x more likely to convert. A simple automation — new enquiry comes in, personalised reply goes out in seconds, lead is logged in your CRM — can recover deals you're currently losing to speed.
+
+**What it typically looks like:** web form → instant acknowledgment email → lead added to CRM → owner notified → reminder to call within 24 hours.
+
+### 2. Qualification and nurture
+
+Not every lead is ready to buy right now. Most aren't. Without automation, those leads go cold because following up manually is time-consuming enough that it just... doesn't happen. A nurture sequence changes that: leads who aren't ready get helpful, well-timed content that keeps you front of mind until they are.
+
+**What it typically looks like:** lead tagged "not ready" → enters 8-week email sequence → interaction data feeds back into CRM → hot leads flagged automatically.
+
+### 3. Admin consolidation
+
+The average SME owner spends 8–12 hours a week on tasks that generate no revenue: data entry, chasing invoices, pulling reports, copy-pasting between tools. These are boring, repetitive, and perfect for automation. Reclaim those hours once and they compound indefinitely.
+
+**What it typically looks like:** new invoice sent → reminder scheduled automatically → payment logged in accounts → weekly summary delivered to your inbox every Monday morning.
+
+## What happens if you wait
+
+Nothing catastrophic. But the gap widens.
+
+Businesses that automate early get compounding returns: faster response times, more leads converted, teams freed to focus on higher-value work. Their competitors, still doing things manually, have to work harder and harder to keep up with businesses that have, in effect, grown their team without hiring anyone.
+
+The window to get ahead isn't closed. But it's narrowing.
+
+## The honest take
+
+AI automation isn't magic, and it isn't always simple. Some workflows take longer to build than expected. Some clients see results in weeks; others take months to tune properly. The businesses that get the best outcomes are the ones who approach it as a system to build, not a box to tick.
+
+If you're an SME owner wondering whether automation is right for you, the question isn't really "can we afford to do this." It's "can we afford to keep not doing it."
+
+If you're curious where your biggest opportunities are, [our free AI audit](/contact) is exactly that: an honest look at where automation would pay off fastest for your business. No obligation, no pitch.`,
+  },
+  {
     slug: "word-of-mouth-ceiling",
     title: "Why word-of-mouth has a ceiling (and what to do about it)",
     description:
