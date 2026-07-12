@@ -15,6 +15,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
+  const legalRoutes = ["/privacy", "/terms", "/cookies"].map((path) => ({
+    url: `${base}${path}`,
+    lastModified: now,
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
+  }));
+
   const posts = getAllPosts().map((post) => ({
     url: `${base}/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -22,5 +29,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...routes, ...posts];
+  return [...routes, ...legalRoutes, ...posts];
 }

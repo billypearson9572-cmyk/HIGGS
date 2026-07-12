@@ -26,6 +26,12 @@ const footerNav = [
   },
 ];
 
+const legalNav = [
+  { title: "Privacy", href: "/privacy" },
+  { title: "Terms", href: "/terms" },
+  { title: "Cookies", href: "/cookies" },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-line bg-bg-soft">
@@ -72,9 +78,23 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-line pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+            <p>
+              © {new Date().getFullYear()} {siteConfig.name}. All rights
+              reserved.
+            </p>
+            <nav className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              {legalNav.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="transition-colors hover:text-fg"
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </nav>
+          </div>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
             <a
               href={`mailto:${siteConfig.email}`}

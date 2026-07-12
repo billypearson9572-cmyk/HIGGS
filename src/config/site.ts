@@ -30,6 +30,26 @@ export const siteConfig = {
    */
   contactEndpoint: process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "",
 
+  /**
+   * Legal entity details — used across the Privacy Policy, Terms of Service
+   * and Cookie Policy. Replace the placeholders with your real registered
+   * details before going live, and have the pages reviewed by a professional.
+   */
+  legal: {
+    // Registered / trading name of the business that controls the data.
+    entityName: "Voltara Digital",
+    // Companies House number if you're a registered company (leave "" if not).
+    companyNumber: "",
+    // Registered or business address shown on the legal pages.
+    address: "London, United Kingdom",
+    // ICO (Information Commissioner's Office) registration reference, if held.
+    icoRegistration: "",
+    // Jurisdiction whose law governs the Terms.
+    governingLaw: "England and Wales",
+    // Date the current legal documents took effect (shown as "Last updated").
+    lastUpdated: "12 July 2026",
+  },
+
   socials: {
     instagram: "https://instagram.com/",
     linkedin: "https://www.linkedin.com/company/",

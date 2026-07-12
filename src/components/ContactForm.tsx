@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Send, Check, Loader2, AlertCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -183,8 +184,11 @@ export function ContactForm() {
       </button>
 
       <p className="text-xs text-muted">
-        By submitting, you agree to be contacted about your enquiry. We never
-        share your details.
+        By submitting, you agree to be contacted about your enquiry and to our{" "}
+        <Link href="/privacy" className="text-brand-blue hover:underline">
+          Privacy Policy
+        </Link>
+        . We never sell your details.
       </p>
     </form>
   );
