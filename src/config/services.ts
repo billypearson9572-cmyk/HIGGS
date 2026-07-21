@@ -54,7 +54,7 @@ export const services: Service[] = [
       "Instant first response",
       "Smart query routing",
       "AI-drafted replies",
-      "Human handoff built in",
+      "Human handoff included",
     ],
   },
   {
@@ -89,10 +89,10 @@ export const services: Service[] = [
   {
     hash: "build",
     icon: Code,
-    title: "Build & tech help",
+    title: "Custom tech & tools",
     tagline: "Your on-demand tech team",
     description:
-      "Websites, web apps, internal tools and integrations — built fast and built right. The technical muscle to ship whatever your business needs.",
+      "Websites, web apps, internal tools and integrations — set up fast and done right. The technical muscle to ship whatever your business needs.",
     points: [
       "Websites & landing pages",
       "Custom web apps & tools",
@@ -104,9 +104,9 @@ export const services: Service[] = [
     hash: "industry-systems",
     icon: Building2,
     title: "Industry-specific systems",
-    tagline: "Built for your sector",
+    tagline: "Made for your sector",
     description:
-      "Pre-built AI systems tuned to how your industry actually works, so you get a solution that fits on day one instead of a generic template.",
+      "Ready-made AI systems tuned to how your industry actually works, so you get a solution that fits on day one instead of a generic template.",
     points: [
       "Sector-tuned workflows",
       "Compliance-aware automation",

@@ -60,12 +60,12 @@ const steps = [
   {
     icon: Search,
     title: "Map the opportunities",
-    body: "We audit how you work and find where AI will save the most time and win the most revenue.",
+    body: "We look at how you work and find where AI will save the most time and win the most revenue.",
   },
   {
     icon: Code,
-    title: "Build your systems",
-    body: "We build and connect the automations to the tools you already use, tested and reliable.",
+    title: "Implement the solution",
+    body: "We set up and connect the automations to the tools you already use, tested and reliable.",
   },
   {
     icon: Rocket,
@@ -83,7 +83,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: "Done for you",
-    body: "We design, build and run it end to end. You get the outcome, not a pile of homework.",
+    body: "We design, set up and run it end to end. You get the outcome, not a pile of homework.",
   },
   {
     icon: Sparkles,
@@ -92,7 +92,7 @@ const values = [
   },
   {
     icon: Plug,
-    title: "Built on your stack",
+    title: "Runs on your stack",
     body: "Everything connects to the tools you already use, and runs on your own accounts.",
   },
   {
@@ -105,7 +105,7 @@ const values = [
 const faqs = [
   {
     q: "What does an AI agency actually do for me?",
-    a: "In plain terms, we build systems that do work for you: AI that books sales meetings, answers customers and clears admin, so your business does more without more staff. We design it, build it and run it.",
+    a: "In plain terms, we set up systems that do work for you: AI that books sales meetings, answers customers and clears admin, so your business does more without more staff. We design it, set it up and run it.",
   },
   {
     q: "Do I need to be technical?",
@@ -140,10 +140,10 @@ export default function HomePage() {
               The AI team your <GradientText>business runs on.</GradientText>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              {siteConfig.name} builds AI systems that win you customers and run
+              {siteConfig.name} sets up AI systems that win you customers and run
               the busywork, from sales automation that books meetings while you
-              sleep to AI chat, custom builds and internal ops. All designed,
-              built and run for you.
+              sleep to AI chat, custom tech and internal ops. All designed, set
+              up and run for you.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={cta.href} size="lg">
@@ -156,8 +156,8 @@ export default function HomePage() {
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted">
-              Free, no-obligation AI audit. For businesses ready to put growth on
-              autopilot.
+              Free, no-obligation consultation. For businesses ready to put growth
+              on autopilot.
             </p>
           </div>
 
@@ -176,7 +176,7 @@ export default function HomePage() {
                 <GradientText>faster.</GradientText>
               </>
             }
-            description="AI has quietly changed what a small team can do. The businesses building it into how they work are pulling ahead, more sales, faster service, less admin, while everyone else still does it by hand."
+            description="AI has quietly changed what a small team can do. The businesses wiring it into how they work are pulling ahead, more sales, faster service, less admin, while everyone else still does it by hand."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {problems.map((item) => (
@@ -208,7 +208,7 @@ export default function HomePage() {
                 business needs.
               </>
             }
-            description="From winning customers to serving them and running the admin behind it all, we design, build and run it for you."
+            description="From winning customers to serving them and running the admin behind it all, we design, set up and run it for you."
           />
 
           <div className="mx-auto mt-14 max-w-5xl">

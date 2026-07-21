@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Get a free AI audit",
+  title: "Book a free consultation",
   description:
     "Tell us about your business and we'll send back a free, tailored review of where AI and automation can win you customers and save your team hours, and where to start.",
   alternates: { canonical: "/contact" },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const auditIncludes = [
   "Where AI can save your team the most time",
-  "The highest-ROI system to build first",
+  "The highest-ROI system to start with",
   "Quick wins you can action right away",
   "A clear plan to automate, with or without us",
 ];
@@ -24,7 +24,7 @@ const nextSteps = [
     body: "A real person reads your enquiry, usually within one business day.",
   },
   {
-    title: "We prepare your free audit",
+    title: "We map out your quick wins",
     body: "We put together a tailored review of where AI can help and the biggest opportunities.",
   },
   {
@@ -40,9 +40,9 @@ export default function ContactPage() {
         <div className="glow-radial pointer-events-none absolute -top-32 left-1/2 h-[26rem] w-[40rem] -translate-x-1/2" />
         <Container className="relative py-20 text-center sm:py-24">
           <div className="mx-auto max-w-2xl">
-            <Eyebrow>Free AI audit</Eyebrow>
+            <Eyebrow>Free consultation</Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
-              Get your free <GradientText>AI audit.</GradientText>
+              Book your free <GradientText>consultation.</GradientText>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted">
               Tell us about your business and we&apos;ll send back a tailored
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 <Search className="h-6 w-6" />
               </span>
               <h3 className="mt-5 font-display text-lg font-semibold">
-                What&apos;s in your audit
+                What&apos;s in your consultation
               </h3>
               <ul className="mt-4 flex flex-col gap-3">
                 {auditIncludes.map((item) => (

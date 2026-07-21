@@ -104,7 +104,7 @@ export function ContactForm() {
         </h3>
         <p className="mt-2 max-w-sm text-sm text-muted">
           We typically reply within one business day, usually with a first look
-          at your audit and clear next steps.
+          at your plan and clear next steps.
         </p>
         <button
           type="button"
@@ -170,7 +170,7 @@ export function ContactForm() {
             <option value="" disabled>
               Choose one…
             </option>
-            <option>A free marketing audit</option>
+            <option>A free consultation</option>
             <option>Social media marketing</option>
             <option>AI automation</option>
             <option>Both</option>
@@ -219,7 +219,7 @@ export function ContactForm() {
         ) : (
           <>
             <Send className="h-4.5 w-4.5" />
-            Get my free audit
+            Get my free consultation
           </>
         )}
       </button>

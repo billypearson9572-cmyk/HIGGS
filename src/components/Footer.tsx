@@ -50,7 +50,7 @@ export function Footer() {
           <div className="max-w-sm">
             <Logo />
             <p className="mt-5 text-sm leading-relaxed text-muted">
-              {siteConfig.tagline}. We design, build and run the AI systems that
+              {siteConfig.tagline}. We design, set up and run the AI systems that
               win you customers and clear the busywork.
             </p>
             {socialLinks.length > 0 ? (

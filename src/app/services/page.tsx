@@ -17,7 +17,7 @@ import { cta } from "@/config/site";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI systems built and run for you: sales automation, customer-service chatbots, internal-ops automation, AI marketing, custom builds, industry-specific systems and business development.",
+    "AI systems set up and run for you: sales automation, customer-service chatbots, internal-ops automation, AI marketing, custom tech, industry-specific systems and business development.",
   alternates: { canonical: "/services" },
 };
 
@@ -37,13 +37,13 @@ const howWeWork = [
   },
   {
     icon: Plug,
-    title: "Built on your tools",
+    title: "On your own tools",
     body: "We connect to the apps and accounts you already use, so everything stays yours.",
   },
   {
     icon: TrendingUp,
     title: "Prove ROI, then expand",
-    body: "We start with the highest-return system, show it working, and only then build the next.",
+    body: "We start with the highest-return system, show it working, and only then set up the next.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function ServicesPage() {
               <GradientText>do the work for you.</GradientText>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-              Seven ways we put AI to work in your business, all designed, built
+              Seven ways we put AI to work in your business, all designed, set up
               and run for you. Most clients start with sales automation, then
               expand as it pays for itself.
             </p>
@@ -139,7 +139,7 @@ export default function ServicesPage() {
             align="center"
             eyebrow="How we work"
             title="Start with one system. Expand as it pays off."
-            description="No retainers, no long contracts, no lock-in. We scope each system as a project and prove the return before building the next."
+            description="No retainers, no long contracts, no lock-in. We scope each system as a project and prove the return before setting up the next."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {howWeWork.map((item) => (
@@ -164,7 +164,7 @@ export default function ServicesPage() {
 
       <CTASection
         title="Let's find your highest-ROI AI win"
-        description="Tell us how your business runs today and we'll send back a free audit: the systems that'll save you the most time and win you the most revenue, and exactly where to start."
+        description="Tell us how your business runs today and we'll walk you through it on a free consultation: the systems that'll save you the most time and win you the most revenue, and exactly where to start."
       />
     </>
   );

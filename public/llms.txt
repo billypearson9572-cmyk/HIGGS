@@ -1,10 +1,10 @@
 # Voltara Digital
 
-> Voltara Digital is an AI automation agency for businesses in the United Kingdom and beyond. We build AI systems that win customers and run the busywork — from sales automation and AI chatbots to custom builds, internal-ops automation and AI-powered marketing.
+> Voltara Digital is an AI automation agency for businesses in the United Kingdom and beyond. We set up AI systems that win customers and run the busywork — from sales automation and AI chatbots to custom tech, internal-ops automation and AI-powered marketing.
 
 ## About
 
-Voltara Digital is an AI agency. We design and build the automation and AI systems that help businesses sell more, serve customers around the clock and cut hours of manual admin. Engagements are project-based, with no long contracts or lock-in. Contact: info@voltaradigital.com
+Voltara Digital is an AI agency. We design and set up the automation and AI systems that help businesses sell more, serve customers around the clock and cut hours of manual admin. Engagements are project-based, with no long contracts or lock-in. Contact: info@voltaradigital.com
 
 ## Services
 
@@ -12,8 +12,8 @@ Voltara Digital is an AI agency. We design and build the automation and AI syste
 - Customer service & AI chat: website/WhatsApp chatbots, instant first response, query routing and AI-drafted replies with human handoff. https://voltaradigital.com/services#customer-service
 - Admin & internal ops: automating data entry, reporting, documents, scheduling and tool-to-tool integrations. https://voltaradigital.com/services#internal-ops
 - AI-powered marketing: content creation, social media, paid ads and SEO, accelerated with AI. https://voltaradigital.com/services#marketing
-- Build & tech help: websites, web apps, internal tools and system integrations. https://voltaradigital.com/services#build
-- Industry-specific systems: pre-built AI systems tuned to your sector. https://voltaradigital.com/services#industry-systems
+- Custom tech & tools: websites, web apps, internal tools and system integrations. https://voltaradigital.com/services#build
+- Industry-specific systems: ready-made AI systems tuned to your sector. https://voltaradigital.com/services#industry-systems
 - Business development: AI-driven outbound and partnership systems to open new channels. https://voltaradigital.com/services#business-development
 
 ## Key pages
@@ -22,7 +22,7 @@ Voltara Digital is an AI agency. We design and build the automation and AI syste
 - Services: https://voltaradigital.com/services
 - About: https://voltaradigital.com/about
 - Blog: https://voltaradigital.com/blog
-- Contact and free marketing audit: https://voltaradigital.com/contact
+- Contact and free consultation: https://voltaradigital.com/contact
 
 ## Articles
 

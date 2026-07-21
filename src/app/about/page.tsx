@@ -13,7 +13,7 @@ import { CTASection } from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Voltara Digital is an AI agency. We help businesses sell more, serve customers around the clock and cut hours of manual admin with AI systems built and run for them.",
+    "Voltara Digital is an AI agency. We help businesses sell more, serve customers around the clock and cut hours of manual admin with AI systems set up and run for them.",
   alternates: { canonical: "/about" },
 };
 
@@ -25,8 +25,8 @@ const values = [
   },
   {
     icon: Repeat,
-    title: "Built to be owned by you",
-    body: "Your accounts, your data, your workflows. We build you leverage, never lock-in. If we ever part ways, you keep everything.",
+    title: "Yours to own",
+    body: "Your accounts, your data, your workflows. We give you leverage, never lock-in. If we ever part ways, you keep everything.",
   },
   {
     icon: Zap,
@@ -53,7 +53,7 @@ const differentiators = [
   },
   {
     icon: Target,
-    title: "Built around your numbers",
+    title: "Focused on your numbers",
     body: "We start from the result you want and work backwards, then report against it honestly, every single month.",
   },
 ];
@@ -105,9 +105,9 @@ export default function AboutPage() {
                   team.
                 </p>
                 <p>
-                  So that&apos;s what we build. We give businesses the kind of AI
+                  So that&apos;s what we do. We give businesses the kind of AI
                   systems that used to be reserved for big companies with big
-                  budgets, designed, built and run for you.
+                  budgets, designed, set up and run for you.
                 </p>
               </div>
             </div>
