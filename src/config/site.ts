@@ -57,6 +57,32 @@ export const cta = {
   href: "/contact",
 } as const;
 
+/**
+ * The Voltara podcast — powers the /podcast page and the outreach invites.
+ *
+ * Rename anything freely; the page reads it all from here. Leave the platform
+ * links blank until the show is live and they stay hidden. `episodes` starts
+ * empty and the page shows an honest "now recording" state until you add real
+ * ones, so nothing ever looks faked.
+ */
+export const podcast = {
+  name: "The Current",
+  tagline: "Conversations with the founders building real businesses.",
+  intro:
+    "A relaxed remote interview about how you built your business, what's working now, and what you're figuring out next. No fluff and no hard sell, just a good conversation you get to keep and share.",
+  host: "Voltara Digital",
+  // Roughly how long a recording takes, shown on the page.
+  length: "30–40 minutes, recorded remotely",
+  // Where episodes live once published. Any blank link is hidden.
+  links: {
+    youtube: "",
+    spotify: "",
+    apple: "",
+  },
+  // Add episodes as you record them: { title, guest, company, url }.
+  episodes: [] as { title: string; guest: string; company: string; url: string }[],
+} as const;
+
 export type NavItem = { title: string; href: string };
 
 export const mainNav: NavItem[] = [
@@ -65,5 +91,6 @@ export const mainNav: NavItem[] = [
   { title: "Calculator", href: "/lead-calculator" },
   { title: "About", href: "/about" },
   { title: "Blog", href: "/blog" },
+  { title: "Podcast", href: "/podcast" },
   { title: "Contact", href: "/contact" },
 ];

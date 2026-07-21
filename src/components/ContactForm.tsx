@@ -11,7 +11,15 @@ type Status = "idle" | "submitting" | "success" | "error";
 const fieldClass =
   "w-full rounded-xl border border-line bg-bg-soft px-4 py-3 text-sm text-fg placeholder:text-muted/70 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/25";
 
-export function ContactForm() {
+export function ContactForm({
+  submitLabel = "Get my free audit",
+  topic,
+}: {
+  /** Text on the submit button (e.g. "Request my call"). */
+  submitLabel?: string;
+  /** Optional hidden tag so you can tell where a submission came from. */
+  topic?: string;
+} = {}) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -129,6 +137,7 @@ export function ContactForm() {
         className="hidden"
         style={{ display: "none" }}
       />
+      {topic ? <input type="hidden" name="topic" value={topic} /> : null}
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name" htmlFor="name">
@@ -219,7 +228,7 @@ export function ContactForm() {
         ) : (
           <>
             <Send className="h-4.5 w-4.5" />
-            Get my free audit
+            {submitLabel}
           </>
         )}
       </button>
