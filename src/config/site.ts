@@ -66,13 +66,13 @@ export const cta = {
  * ones, so nothing ever looks faked.
  */
 export const podcast = {
-  name: "The Current",
-  tagline: "Conversations with the founders building real businesses.",
+  name: "Stateside",
+  tagline: "How American businesses win, and what UK founders can learn from them.",
   intro:
-    "A relaxed remote interview about how you built your business, what's working now, and what you're figuring out next. No fluff and no hard sell, just a good conversation you get to keep and share.",
-  host: "Voltara Digital",
+    "A relaxed remote interview with US founders and owners about how they really build, sell and grow. We dig into the American playbook so UK listeners can apply it at home. No fluff and no hard sell, just a good conversation you get to keep and share.",
+  host: "Billy Pearson, Voltara Digital",
   // Roughly how long a recording takes, shown on the page.
-  length: "30–40 minutes, recorded remotely",
+  length: "30–40 minutes, recorded remotely over Zoom",
   // Where episodes live once published. Any blank link is hidden.
   links: {
     youtube: "",

@@ -46,7 +46,7 @@ const whatYouGet = [
   {
     icon: Sparkles,
     title: "A wider audience",
-    body: "Your story in front of other founders and owners who follow the show.",
+    body: "Your story in front of UK founders and owners looking to the US for what works.",
   },
 ];
 
@@ -84,8 +84,9 @@ const steps = [
 ];
 
 const forYou = [
-  "You own or run a small to medium business",
+  "You own or run a US business, ideally on the East Coast",
   "You've built something real and have a story worth hearing",
+  "You're happy to share what works for a UK audience learning from the US",
   "You're open to a friendly conversation, not a sales pitch",
   "You'd like the exposure, the clips and the backlink that come with it",
 ];
