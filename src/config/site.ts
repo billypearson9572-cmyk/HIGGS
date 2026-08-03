@@ -28,6 +28,13 @@ export const siteConfig = {
   bookingUrl: "",
 
   /**
+   * Live demo number (Twilio). When set (e.g. "07123 456789"), the homepage
+   * hero shows "Text DEMO to ..." as the primary call to action — the visitor
+   * texts it and watches the system reply in seconds. Leave blank to hide.
+   */
+  demoNumber: "",
+
+  /**
    * Contact form delivery (in priority order):
    *
    * 1. Web3Forms, the easy option. Get a free access key at

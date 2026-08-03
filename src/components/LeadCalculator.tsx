@@ -8,8 +8,11 @@ import {
   Percent,
   TrendingDown,
   ArrowRight,
+  Mail,
+  LockOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui";
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 /**
@@ -103,6 +106,17 @@ export function LeadCalculator() {
   );
   const [closeRate, setCloseRate] = useState(15);
 
+  // The full breakdown unlocks with an email. Unlock survives a refresh via
+  // sessionStorage, and the email lands as a warm lead (with their numbers)
+  // through the same Web3Forms route as the contact form.
+  const [email, setEmail] = useState("");
+  const [unlocked, setUnlocked] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("calc-unlocked") === "1") setUnlocked(true);
+  }, []);
+
   const leadsNum = Math.max(0, Number(leads) || 0);
   const dealNum = Math.max(0, Number(deal) || 0);
   const activeTier =
@@ -129,6 +143,41 @@ export function LeadCalculator() {
   const annualLost = monthlyLost * 12;
 
   const animatedMonthlyLost = useCountUp(monthlyLost);
+
+  async function unlock(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.trim() || submitting) return;
+    setSubmitting(true);
+    // Send the lead + their numbers, then unlock. If the network call fails,
+    // unlock anyway — the tool must never feel broken to a prospect.
+    try {
+      if (siteConfig.web3formsKey) {
+        await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            access_key: siteConfig.web3formsKey,
+            subject: "Calculator lead — see their numbers",
+            from_name: "Lead calculator",
+            email: email.trim(),
+            message: [
+              `Email: ${email.trim()}`,
+              `Monthly leads: ${leadsNum}`,
+              `Average deal: ${gbp.format(dealNum)}`,
+              `Response time: ${activeTier.label}`,
+              `Close rate: ${closeRate}%`,
+              `Estimated loss: ${gbp.format(monthlyLost)}/mo (${gbp.format(annualLost)}/yr)`,
+            ].join("\n"),
+          }),
+        });
+      }
+    } catch {
+      // Deliberately swallowed — see note above.
+    }
+    sessionStorage.setItem("calc-unlocked", "1");
+    setUnlocked(true);
+    setSubmitting(false);
+  }
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_1.15fr] lg:gap-8">
@@ -247,8 +296,10 @@ export function LeadCalculator() {
           </div>
         </div>
 
-        {/* The working — every step spelled out so the number reconciles */}
-        <div className="rounded-3xl border border-line bg-surface/60 p-6 sm:p-7">
+        {/* The working — every step spelled out so the number reconciles.
+            Gated: the headline number above stays live, the full breakdown
+            unlocks with an email (which arrives as a warm lead). */}
+        <div className="relative overflow-hidden rounded-3xl border border-line bg-surface/60 p-6 sm:p-7">
           <h3 className="font-display text-base font-semibold">
             How this adds up
           </h3>
@@ -257,43 +308,90 @@ export function LeadCalculator() {
             customers.
           </p>
 
-          <dl className="mt-5 overflow-hidden rounded-xl border border-line">
-            <BreakdownRow
-              label="Leads coming in"
-              value={`${leadsNum.toLocaleString("en-GB")} / month`}
-            />
-            <BreakdownRow
-              label={`Customers you win today`}
-              note={`at your ${(currentRate * 100).toFixed(0)}% close rate`}
-              value={`${currentCustomers} ${plural(currentCustomers)}`}
-              amount={`${gbp.format(currentRevenue)} / mo`}
-            />
-            <BreakdownRow
-              label="If you replied instantly"
-              note={`close rate climbs to ~${potentialClosePct.toFixed(0)}%`}
-              value={`${potentialCustomers} ${plural(potentialCustomers)}`}
-              amount={`${gbp.format(potentialRevenue)} / mo`}
-            />
-          </dl>
+          <div
+            className={cn(
+              !unlocked && "pointer-events-none select-none blur-md",
+            )}
+            aria-hidden={!unlocked}
+          >
+            <dl className="mt-5 overflow-hidden rounded-xl border border-line">
+              <BreakdownRow
+                label="Leads coming in"
+                value={`${leadsNum.toLocaleString("en-GB")} / month`}
+              />
+              <BreakdownRow
+                label={`Customers you win today`}
+                note={`at your ${(currentRate * 100).toFixed(0)}% close rate`}
+                value={`${currentCustomers} ${plural(currentCustomers)}`}
+                amount={`${gbp.format(currentRevenue)} / mo`}
+              />
+              <BreakdownRow
+                label="If you replied instantly"
+                note={`close rate climbs to ~${potentialClosePct.toFixed(0)}%`}
+                value={`${potentialCustomers} ${plural(potentialCustomers)}`}
+                amount={`${gbp.format(potentialRevenue)} / mo`}
+              />
+            </dl>
 
-          <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3.5">
-            <div>
-              <p className="text-sm font-semibold text-fg">
-                Lost to slow replies
-              </p>
-              <p className="text-xs text-muted">
-                {lostCustomers} {plural(lostCustomers)} × {gbp.format(dealNum)}
-              </p>
-            </div>
-            <div className="text-right">
-              <p className="font-display text-lg font-bold text-red-300">
-                {gbp.format(monthlyLost)} / mo
-              </p>
-              <p className="text-xs text-muted">
-                {gbp.format(annualLost)} a year
-              </p>
+            <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3.5">
+              <div>
+                <p className="text-sm font-semibold text-fg">
+                  Lost to slow replies
+                </p>
+                <p className="text-xs text-muted">
+                  {lostCustomers} {plural(lostCustomers)} ×{" "}
+                  {gbp.format(dealNum)}
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="font-display text-lg font-bold text-red-300">
+                  {gbp.format(monthlyLost)} / mo
+                </p>
+                <p className="text-xs text-muted">
+                  {gbp.format(annualLost)} a year
+                </p>
+              </div>
             </div>
           </div>
+
+          {!unlocked ? (
+            <div className="absolute inset-x-0 bottom-0 top-16 flex items-center justify-center p-6">
+              <form
+                onSubmit={unlock}
+                className="w-full max-w-sm rounded-2xl border border-line bg-surface p-5 shadow-2xl"
+              >
+                <p className="flex items-center gap-2 font-display text-sm font-semibold">
+                  <LockOpen className="h-4 w-4 text-brand-teal" />
+                  See the full breakdown
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-muted">
+                  Pop your email in and the customer-by-customer maths unlocks
+                  instantly. No spam, ever — one line back if slow replies turn
+                  out to be costing you.
+                </p>
+                <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+                  <div className="relative flex-1">
+                    <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@company.co.uk"
+                      className="w-full rounded-xl border border-line bg-bg-soft py-2.5 pl-9 pr-3 text-sm text-fg placeholder:text-muted/60 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/25"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-brand-gradient px-5 text-sm font-semibold text-[#04121f] shadow-[0_10px_34px_-12px_rgba(52,199,201,0.65)] transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal/50 disabled:pointer-events-none disabled:opacity-60"
+                  >
+                    {submitting ? "Unlocking…" : "Unlock"}
+                  </button>
+                </div>
+              </form>
+            </div>
+          ) : null}
         </div>
 
         {/* CTA */}
