@@ -109,8 +109,14 @@ export function LeadCalculator() {
   // The full breakdown unlocks with an email. Unlock survives a refresh via
   // sessionStorage, and the email lands as a warm lead (with their numbers)
   // through the same Web3Forms route as the contact form.
+  //
+  // If no delivery route is configured there is nowhere for that email to go,
+  // so the gate switches itself off rather than adding friction for nothing.
+  const canCapture = Boolean(
+    siteConfig.web3formsKey || siteConfig.contactEndpoint,
+  );
   const [email, setEmail] = useState("");
-  const [unlocked, setUnlocked] = useState(false);
+  const [unlocked, setUnlocked] = useState(!canCapture);
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -150,6 +156,14 @@ export function LeadCalculator() {
     setSubmitting(true);
     // Send the lead + their numbers, then unlock. If the network call fails,
     // unlock anyway — the tool must never feel broken to a prospect.
+    const details = [
+      `Email: ${email.trim()}`,
+      `Monthly leads: ${leadsNum}`,
+      `Average deal: ${gbp.format(dealNum)}`,
+      `Response time: ${activeTier.label}`,
+      `Close rate: ${closeRate}%`,
+      `Estimated loss: ${gbp.format(monthlyLost)}/mo (${gbp.format(annualLost)}/yr)`,
+    ].join("\n");
     try {
       if (siteConfig.web3formsKey) {
         await fetch("https://api.web3forms.com/submit", {
@@ -160,14 +174,17 @@ export function LeadCalculator() {
             subject: "Calculator lead — see their numbers",
             from_name: "Lead calculator",
             email: email.trim(),
-            message: [
-              `Email: ${email.trim()}`,
-              `Monthly leads: ${leadsNum}`,
-              `Average deal: ${gbp.format(dealNum)}`,
-              `Response time: ${activeTier.label}`,
-              `Close rate: ${closeRate}%`,
-              `Estimated loss: ${gbp.format(monthlyLost)}/mo (${gbp.format(annualLost)}/yr)`,
-            ].join("\n"),
+            message: details,
+          }),
+        });
+      } else if (siteConfig.contactEndpoint) {
+        await fetch(siteConfig.contactEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            subject: "Calculator lead — see their numbers",
+            email: email.trim(),
+            message: details,
           }),
         });
       }
