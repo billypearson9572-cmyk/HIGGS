@@ -141,9 +141,9 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
               {siteConfig.name} builds AI systems that win you customers and run
-              the busywork, from sales automation that books meetings while you
-              sleep to AI chat, custom builds and internal ops. All designed,
-              built and run for you.
+              the busywork, from sales automation that answers and books every
+              enquiry round the clock to AI chat, custom builds and internal
+              ops. All designed, built and run for you.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button href={cta.href} size="lg">
@@ -156,8 +156,8 @@ export default function HomePage() {
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted">
-              Free, no-obligation AI audit. For businesses ready to put growth on
-              autopilot.
+              Free, no-obligation AI audit. Plain answers on what to automate
+              first and what it would save you.
             </p>
           </div>
 
