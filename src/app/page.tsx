@@ -137,14 +137,13 @@ export default function HomePage() {
               AI automation agency · UK
             </Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-              Every enquiry you miss is a customer who{" "}
+              A missed enquiry is a customer who{" "}
               <GradientText>rang the next number.</GradientText>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              We build one system for UK businesses: it replies to every call,
-              form and message within 60 seconds, day or night, then chases the
-              follow-up automatically. Live in under three weeks. You barely
-              lift a finger.
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted">
+              We build one system that answers every call, form and message in
+              60 seconds, then chases the follow-up for you. Live in three
+              weeks.
             </p>
             {siteConfig.demoNumber ? (
               <div className="mt-9 max-w-xl rounded-2xl border border-transparent bg-surface p-5 [background:linear-gradient(var(--color-surface),var(--color-surface))_padding-box,var(--brand-gradient)_border-box]">
@@ -160,20 +159,16 @@ export default function HomePage() {
                 </p>
               </div>
             ) : null}
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href={cta.href} size="lg">
                 <Sparkles className="h-5 w-5" />
                 {cta.label}
               </Button>
-              <Button href="/lead-calculator" variant="secondary" size="lg">
-                See what slow replies cost you
+              <Button href="/lead-calculator" variant="ghost" size="lg">
+                See what it&apos;s costing you
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
-            <p className="mt-6 text-sm text-muted">
-              Free, no-obligation AI consult. Plain answers on what to automate
-              first and what it would save you.
-            </p>
           </div>
 
           <HeroVisual />
@@ -394,6 +389,10 @@ export default function HomePage() {
                 body: "Priced per project, because it depends on your volume, your tools and what needs connecting. That's what the consult is for: we scope it, then you get one fixed price before any work starts. Founding clients pay half.",
               },
               {
+                title: "After it's built",
+                body: "The project ends when the system is live and yours. If you'd rather we kept watching, tuning and improving it, that's an optional monthly support plan. Entirely your call, and you can stop it any time.",
+              },
+              {
                 title: "Running costs",
                 body: "Roughly £30 to £80 a month in usage (numbers, messages, AI), paid on your own accounts so you always see the real bill.",
               },
@@ -407,7 +406,7 @@ export default function HomePage() {
               },
               {
                 title: "The terms",
-                body: "Three-month initial term so the system can prove itself, then rolling monthly with 30 days' notice. Every AI touchpoint has boundaries and a human handoff.",
+                body: "One project, agreed before we start, with nothing owed afterwards. Support is optional and monthly, cancel with 30 days' notice. Every AI touchpoint has boundaries and a human handoff.",
               },
             ].map((item) => (
               <Card key={item.title}>
@@ -530,11 +529,11 @@ function FeaturedService({ service }: { service: Service }) {
 
 function HeroVisual() {
   const bars = [42, 56, 50, 68, 61, 84, 92];
+  // Deliberately short: the hero panel is a glance, not a feature list.
   const rows = [
-    { icon: PhoneCall, label: "Lead auto-qualified", meta: "AI" },
-    { icon: MessagesSquare, label: "Customer chat answered", meta: "24/7" },
-    { icon: CalendarCheck, label: "Sales meeting booked", meta: "Auto" },
-    { icon: Workflow, label: "Synced to your CRM", meta: "Done" },
+    { icon: PhoneCall, label: "Missed call answered", meta: "8s" },
+    { icon: MessagesSquare, label: "Enquiry qualified", meta: "AI" },
+    { icon: CalendarCheck, label: "Callback booked", meta: "Auto" },
   ];
 
   return (

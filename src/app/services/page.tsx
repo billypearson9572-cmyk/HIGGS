@@ -33,7 +33,7 @@ const howWeWork = [
   {
     icon: FileText,
     title: "Scoped & quoted up front",
-    body: "Every system is a defined project with a price agreed before we start. No retainers, no surprises.",
+    body: "Every system is a defined project with a price agreed before we start. Ongoing support is optional, never compulsory.",
   },
   {
     icon: Plug,

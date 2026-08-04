@@ -59,7 +59,7 @@ export const siteConfig = {
  * contact form. Used by buttons across the site so the offer stays consistent.
  */
 export const cta = {
-  label: "Book a free AI consult",
+  label: "Book a free consult",
   shortLabel: "Free AI consult",
   href: "/contact",
 } as const;
