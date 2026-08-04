@@ -12,7 +12,7 @@ const fieldClass =
   "w-full rounded-xl border border-line bg-bg-soft px-4 py-3 text-sm text-fg placeholder:text-muted/70 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/25";
 
 export function ContactForm({
-  submitLabel = "Get my free audit",
+  submitLabel = "Book my free consult",
   topic,
 }: {
   /** Text on the submit button (e.g. "Request my call"). */
@@ -112,7 +112,7 @@ export function ContactForm({
         </h3>
         <p className="mt-2 max-w-sm text-sm text-muted">
           We typically reply within one business day, usually with a first look
-          at your audit and clear next steps.
+          at your consult and clear next steps.
         </p>
         <button
           type="button"
@@ -179,7 +179,7 @@ export function ContactForm({
             <option value="" disabled>
               Choose one…
             </option>
-            <option>A free marketing audit</option>
+            <option>A free AI consult</option>
             <option>Social media marketing</option>
             <option>AI automation</option>
             <option>Both</option>

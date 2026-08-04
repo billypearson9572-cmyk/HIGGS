@@ -171,7 +171,7 @@ export default function HomePage() {
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted">
-              Free, no-obligation AI audit. Plain answers on what to automate
+              Free, no-obligation AI consult. Plain answers on what to automate
               first and what it would save you.
             </p>
           </div>
@@ -391,7 +391,7 @@ export default function HomePage() {
               },
               {
                 title: "What it costs",
-                body: "Standard builds run £1,000 to £4,500 by scope, plus a monthly retainer from £500 that covers monitoring and fixes. Founding clients pay half the build fee.",
+                body: "Priced per project, because it depends on your volume, your tools and what needs connecting. That's what the consult is for: we scope it, then you get one fixed price before any work starts. Founding clients pay half.",
               },
               {
                 title: "Running costs",

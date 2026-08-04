@@ -55,12 +55,12 @@ export const siteConfig = {
 };
 
 /**
- * The site's primary call-to-action: a free marketing audit, requested via the
+ * The site's primary call-to-action: a free AI consult, requested via the
  * contact form. Used by buttons across the site so the offer stays consistent.
  */
 export const cta = {
-  label: "Get a free AI audit",
-  shortLabel: "Free AI audit",
+  label: "Book a free AI consult",
+  shortLabel: "Free AI consult",
   href: "/contact",
 } as const;
 
