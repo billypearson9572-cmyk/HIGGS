@@ -35,7 +35,7 @@ We are a social media marketing and AI automation agency based in the United Kin
 
 We use the information you provide to:
 
-- Respond to your enquiry and provide the free audit or services you've asked about
+- Respond to your enquiry and provide the free consult or services you've asked about
 - Communicate with you about your project
 - Improve our website and the service we offer
 

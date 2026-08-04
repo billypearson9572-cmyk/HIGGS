@@ -78,7 +78,7 @@ export const services: Service[] = [
     title: "AI-powered marketing",
     tagline: "More output, sharper aim",
     description:
-      "Content, social and ads supercharged with AI, so you produce more, target sharper and turn attention into pipeline without growing the team.",
+      "Content, social and ads produced faster and aimed sharper with AI, so you turn attention into pipeline without growing the team.",
     points: [
       "Content creation at scale",
       "Social media management",

@@ -28,6 +28,13 @@ export const siteConfig = {
   bookingUrl: "",
 
   /**
+   * Live demo number (Twilio). When set (e.g. "07123 456789"), the homepage
+   * hero shows "Text DEMO to ..." as the primary call to action — the visitor
+   * texts it and watches the system reply in seconds. Leave blank to hide.
+   */
+  demoNumber: "",
+
+  /**
    * Contact form delivery (in priority order):
    *
    * 1. Web3Forms, the easy option. Get a free access key at
@@ -48,13 +55,39 @@ export const siteConfig = {
 };
 
 /**
- * The site's primary call-to-action: a free marketing audit, requested via the
+ * The site's primary call-to-action: a free AI consult, requested via the
  * contact form. Used by buttons across the site so the offer stays consistent.
  */
 export const cta = {
-  label: "Get a free AI audit",
-  shortLabel: "Free AI audit",
+  label: "Book a free AI consult",
+  shortLabel: "Free AI consult",
   href: "/contact",
+} as const;
+
+/**
+ * The Voltara podcast — powers the /podcast page and the outreach invites.
+ *
+ * Rename anything freely; the page reads it all from here. Leave the platform
+ * links blank until the show is live and they stay hidden. `episodes` starts
+ * empty and the page shows an honest "now recording" state until you add real
+ * ones, so nothing ever looks faked.
+ */
+export const podcast = {
+  name: "Stateside",
+  tagline: "How American businesses win, and what UK founders can learn from them.",
+  intro:
+    "A relaxed remote interview with US founders and owners about how they really build, sell and grow. We dig into the American playbook so UK listeners can apply it at home. No fluff and no hard sell, just a good conversation you get to keep and share.",
+  host: "Billy Pearson, Voltara Digital",
+  // Roughly how long a recording takes, shown on the page.
+  length: "30–40 minutes, recorded remotely over Zoom",
+  // Where episodes live once published. Any blank link is hidden.
+  links: {
+    youtube: "",
+    spotify: "",
+    apple: "",
+  },
+  // Add episodes as you record them: { title, guest, company, url }.
+  episodes: [] as { title: string; guest: string; company: string; url: string }[],
 } as const;
 
 export type NavItem = { title: string; href: string };
@@ -65,5 +98,6 @@ export const mainNav: NavItem[] = [
   { title: "Calculator", href: "/lead-calculator" },
   { title: "About", href: "/about" },
   { title: "Blog", href: "/blog" },
+  { title: "Podcast", href: "/podcast" },
   { title: "Contact", href: "/contact" },
 ];

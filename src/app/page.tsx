@@ -134,30 +134,45 @@ export default function HomePage() {
           <div className="animate-fade-up">
             <Eyebrow>
               <Sparkles className="h-3.5 w-3.5 text-brand-teal" />
-              AI automation agency
+              AI automation agency · UK
             </Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-              The AI team your <GradientText>business runs on.</GradientText>
+              Every enquiry you miss is a customer who{" "}
+              <GradientText>rang the next number.</GradientText>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-              {siteConfig.name} builds AI systems that win you customers and run
-              the busywork, from sales automation that books meetings while you
-              sleep to AI chat, custom builds and internal ops. All designed,
-              built and run for you.
+              We build one system for UK businesses: it replies to every call,
+              form and message within 60 seconds, day or night, then chases the
+              follow-up automatically. Live in under three weeks. You barely
+              lift a finger.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            {siteConfig.demoNumber ? (
+              <div className="mt-9 max-w-xl rounded-2xl border border-transparent bg-surface p-5 [background:linear-gradient(var(--color-surface),var(--color-surface))_padding-box,var(--brand-gradient)_border-box]">
+                <p className="font-display text-lg font-bold">
+                  Text <GradientText>DEMO</GradientText> to{" "}
+                  <span className="whitespace-nowrap">
+                    {siteConfig.demoNumber}
+                  </span>
+                </p>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">
+                  Watch it reply in seconds. That&apos;s the actual product, in
+                  your hand, right now.
+                </p>
+              </div>
+            ) : null}
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Button href={cta.href} size="lg">
                 <Sparkles className="h-5 w-5" />
                 {cta.label}
               </Button>
-              <Button href="/services" variant="secondary" size="lg">
-                Explore our services
+              <Button href="/lead-calculator" variant="secondary" size="lg">
+                See what slow replies cost you
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
             <p className="mt-6 text-sm text-muted">
-              Free, no-obligation AI audit. For businesses ready to put growth on
-              autopilot.
+              Free, no-obligation AI consult. Plain answers on what to automate
+              first and what it would save you.
             </p>
           </div>
 
@@ -201,24 +216,38 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             align="center"
-            eyebrow="What we do"
+            eyebrow="The system"
             title={
               <>
-                One agency for every <GradientText>AI system</GradientText> your
-                business needs.
+                One system that <GradientText>stops the leak.</GradientText>
               </>
             }
-            description="From winning customers to serving them and running the admin behind it all, we design, build and run it for you."
+            description="Instant replies, automatic follow-up, every enquiry logged and chased. Designed, built and run for you, on the tools you already use."
           />
 
           <div className="mx-auto mt-14 max-w-5xl">
             <FeaturedService service={services[0]} />
           </div>
 
-          <div className="mx-auto mt-6 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(1).map((service) => (
-              <ServiceTile key={service.hash} service={service} />
-            ))}
+          <div className="mx-auto mt-8 max-w-5xl rounded-2xl border border-line bg-surface/60 px-6 py-5">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm">
+              <span className="font-medium text-muted">We also build:</span>
+              {services.slice(1).map((service, i) => (
+                <span key={service.hash} className="flex items-center gap-2">
+                  {i > 0 ? (
+                    <span aria-hidden className="text-muted/50">
+                      ·
+                    </span>
+                  ) : null}
+                  <Link
+                    href={`/services#${service.hash}`}
+                    className="font-medium text-fg/90 underline-offset-4 transition-colors hover:text-brand-teal hover:underline"
+                  >
+                    {service.title}
+                  </Link>
+                </span>
+              ))}
+            </div>
           </div>
         </Container>
       </Section>
@@ -285,6 +314,110 @@ export default function HomePage() {
                   {step.body}
                 </p>
               </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* ------------------------------------------------------- Founding clients */}
+      <Section className="py-14 sm:py-16">
+        <Container>
+          <div className="relative overflow-hidden rounded-3xl border border-transparent bg-surface px-6 py-12 [background:linear-gradient(var(--color-surface),var(--color-surface))_padding-box,var(--brand-gradient)_border-box] sm:px-12">
+            <div className="glow-radial pointer-events-none absolute -top-20 right-0 h-72 w-[32rem]" />
+            <div className="relative grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center">
+              <div>
+                <Eyebrow>
+                  <Sparkles className="h-3.5 w-3.5 text-brand-teal" />
+                  Founding clients
+                </Eyebrow>
+                <h2 className="mt-5 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+                  Three founding clients.{" "}
+                  <GradientText>Half the standard rate.</GradientText>
+                </h2>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+                  Voltara is new, and I&apos;d rather trade than pretend
+                  otherwise. I&apos;m taking on three founding clients at half
+                  rate in exchange for a written case study, a testimonial and
+                  one introduction. You get senior-level attention at a price
+                  that won&apos;t exist in six months. I get the proof. In
+                  writing, both ways.
+                </p>
+                <p className="mt-4 text-sm font-medium text-fg/80">
+                  Billy Pearson, founder
+                </p>
+              </div>
+              <div className="flex flex-col gap-3">
+                {[
+                  "Half the standard build fee, agreed up front",
+                  "Same system, same 2 to 3 week build, same support",
+                  "The trade: a case study, a testimonial, one introduction",
+                ].map((line) => (
+                  <div
+                    key={line}
+                    className="flex items-center gap-3 rounded-xl border border-line bg-bg-soft/60 px-4 py-3 text-sm"
+                  >
+                    <Check className="h-4 w-4 shrink-0 text-brand-teal" />
+                    {line}
+                  </div>
+                ))}
+                <Button href={cta.href} size="lg" className="mt-2">
+                  Take a founding spot
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* ---------------------------------------------------- Radical transparency */}
+      <Section className="bg-bg-soft" id="the-whole-deal">
+        <Container>
+          <SectionHeading
+            align="center"
+            eyebrow="No black box"
+            title={
+              <>
+                Here&apos;s the <GradientText>whole deal.</GradientText>
+              </>
+            }
+            description="Most agencies make you book a call to find out what anything costs or how it works. Here it is up front."
+          />
+          <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "What you get",
+                body: "A working system that replies to every call, form and message in seconds, chases the follow-up, and logs it all in your CRM.",
+              },
+              {
+                title: "What it costs",
+                body: "Priced per project, because it depends on your volume, your tools and what needs connecting. That's what the consult is for: we scope it, then you get one fixed price before any work starts. Founding clients pay half.",
+              },
+              {
+                title: "Running costs",
+                body: "Roughly £30 to £80 a month in usage (numbers, messages, AI), paid on your own accounts so you always see the real bill.",
+              },
+              {
+                title: "The timeline",
+                body: "Live in 2 to 3 weeks from kickoff. Your total time in: about 2 to 3 hours. Done-for-you means your calendar barely notices.",
+              },
+              {
+                title: "You own everything",
+                body: "Accounts, workflows and data are yours from day one, with an offboarding handover included. No lock-in, in writing.",
+              },
+              {
+                title: "The terms",
+                body: "Three-month initial term so the system can prove itself, then rolling monthly with 30 days' notice. Every AI touchpoint has boundaries and a human handoff.",
+              },
+            ].map((item) => (
+              <Card key={item.title}>
+                <h3 className="font-display text-lg font-semibold">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                  {item.body}
+                </p>
+              </Card>
             ))}
           </div>
         </Container>
@@ -392,28 +525,6 @@ function FeaturedService({ service }: { service: Service }) {
         </ul>
       </div>
     </div>
-  );
-}
-
-function ServiceTile({ service }: { service: Service }) {
-  const Icon = service.icon;
-  return (
-    <Link
-      href={`/services#${service.hash}`}
-      className="group flex flex-col rounded-2xl border border-line bg-surface/60 p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-surface"
-    >
-      <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white/5 text-brand-teal">
-        <Icon className="h-5 w-5" />
-      </span>
-      <h3 className="mt-5 font-display text-lg font-semibold">{service.title}</h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
-        {service.description}
-      </p>
-      <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-blue">
-        Learn more
-        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-      </span>
-    </Link>
   );
 }
 
