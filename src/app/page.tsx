@@ -136,7 +136,7 @@ export default function HomePage() {
               <Sparkles className="h-3.5 w-3.5 text-brand-teal" />
               AI automation agency · UK
             </Eyebrow>
-            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 max-w-xl text-balance font-display text-[2.5rem] font-bold leading-[1.12] tracking-tight sm:text-5xl lg:text-[3.4rem]">
               A missed enquiry is a customer who{" "}
               <GradientText>rang the next number.</GradientText>
             </h1>

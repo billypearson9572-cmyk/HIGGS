@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Container, Button } from "@/components/ui";
-import { mainNav, siteConfig, cta } from "@/config/site";
+import { mainNav, siteConfig, cta, isLandingPath } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -23,6 +23,24 @@ export function Navbar() {
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  // Landing pages (cold outreach, paid ads) get logo + one action only. Every
+  // nav link on a conversion page is a way out of the funnel.
+  if (isLandingPath(pathname)) {
+    return (
+      <header className="sticky top-0 z-50 border-b border-line/70 bg-bg/80 backdrop-blur-xl">
+        <Container className="flex h-16 items-center justify-between gap-4">
+          <span aria-label={siteConfig.name} className="shrink-0">
+            <Logo />
+          </span>
+          <Button href="#book" size="md">
+            <Search className="h-4 w-4" />
+            {cta.shortLabel}
+          </Button>
+        </Container>
+      </header>
+    );
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-bg/80 backdrop-blur-xl">

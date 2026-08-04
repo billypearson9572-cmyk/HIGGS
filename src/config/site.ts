@@ -90,6 +90,18 @@ export const podcast = {
   episodes: [] as { title: string; guest: string; company: string; url: string }[],
 } as const;
 
+/**
+ * Conversion landing pages used in cold outreach and paid ads. They render
+ * with stripped-back chrome (logo and one call to action, no nav links) so a
+ * visitor who arrived from an email or an ad has nowhere to wander off to.
+ * Add a path here and the Navbar and Footer collapse automatically.
+ */
+export const landingPaths = ["/leads"] as const;
+
+export function isLandingPath(pathname: string) {
+  return landingPaths.some((p) => pathname === p || pathname.startsWith(`${p}/`));
+}
+
 export type NavItem = { title: string; href: string };
 
 export const mainNav: NavItem[] = [

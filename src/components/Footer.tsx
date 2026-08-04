@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail, MapPin } from "lucide-react";
 import { InstagramIcon, LinkedInIcon, XIcon } from "@/components/SocialIcons";
 import { Logo } from "@/components/Logo";
 import { Container } from "@/components/ui";
-import { siteConfig } from "@/config/site";
+import { siteConfig, isLandingPath } from "@/config/site";
 
 const footerNav = [
   {
@@ -27,6 +30,26 @@ const footerNav = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // Landing pages keep only the legal minimum: no link farm under a
+  // conversion page.
+  if (isLandingPath(pathname)) {
+    return (
+      <footer className="border-t border-line/70 py-8">
+        <Container className="flex flex-col items-center gap-3 text-center text-xs text-muted sm:flex-row sm:justify-between sm:text-left">
+          <p>
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
+            reserved.
+          </p>
+          <Link href="/privacy" className="transition-colors hover:text-fg">
+            Privacy
+          </Link>
+        </Container>
+      </footer>
+    );
+  }
+
   const socialLinks = [
     {
       key: "instagram",
