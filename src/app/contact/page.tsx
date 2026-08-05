@@ -5,31 +5,31 @@ import { ContactForm } from "@/components/ContactForm";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Book a free AI consult",
+  title: "Get your free audit video",
   description:
-    "Tell us about your business and we'll send back a free, tailored review of where AI and automation can win you customers and save your team hours, and where to start.",
+    "Send us your website and we'll send back a short video showing what actually happens when someone enquires with you today, and what we'd change. Free, and no call needed.",
   alternates: { canonical: "/contact" },
 };
 
 const consultIncludes = [
-  "Where AI can save your team the most time",
-  "The highest-ROI system to build first",
-  "Quick wins you can action right away",
-  "A clear plan to automate, with or without us",
+  "What actually happens when someone enquires with you today",
+  "Where enquiries are going cold, with the timings",
+  "The one system we'd build first, and roughly what it costs",
+  "A plan you can action yourself, with or without us",
 ];
 
 const nextSteps = [
   {
-    title: "We review your details",
-    body: "A real person reads your enquiry, usually within one business day.",
+    title: "We enquire with you, as a customer would",
+    body: "We send a real enquiry through your website and time what happens next. No prep needed from you.",
   },
   {
-    title: "We prepare for your consult",
-    body: "We put together a tailored review of where AI can help and the biggest opportunities.",
+    title: "We record what we found",
+    body: "A short video, usually under five minutes: your enquiry route, where it leaks, and what we'd change. Yours to keep either way.",
   },
   {
-    title: "We talk it through",
-    body: "A short call where you get honest, practical recommendations and clear next steps. No obligation.",
+    title: "You decide, in your own time",
+    body: "No call required and nothing to book. If you want to talk it through instead, just say so and we will.",
   },
 ];
 
@@ -40,15 +40,15 @@ export default function ContactPage() {
         <div className="glow-radial pointer-events-none absolute -top-32 left-1/2 h-[26rem] w-[40rem] -translate-x-1/2" />
         <Container className="relative py-20 text-center sm:py-24">
           <div className="mx-auto max-w-2xl">
-            <Eyebrow>Free AI consult</Eyebrow>
+            <Eyebrow>Free audit video &middot; no call needed</Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
-              Book your free <GradientText>AI consult.</GradientText>
+              See what happens to <GradientText>your enquiries.</GradientText>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted">
-              Tell us about your business and we&apos;ll send back a tailored
-              review of where AI and automation can win you customers and save
-              your team hours, and the fastest place to start. Free, and no
-              obligation.
+              Give us your website and we&apos;ll enquire with you the way a
+              customer would, then send back a short video showing what actually
+              happened and what we&apos;d change. Free, no call needed, and
+              yours to keep whether or not you ever hire us.
             </p>
           </div>
         </Container>
@@ -62,8 +62,8 @@ export default function ContactPage() {
               Tell us about your business
             </h2>
             <p className="mt-2 text-sm text-muted">
-              Fields marked optional can be skipped, just enough for us to give
-              you something useful.
+              Only your name, email and website are needed. Everything else is
+              optional.
             </p>
             <div className="mt-8">
               <ContactForm />

@@ -3,8 +3,8 @@ import { Container, Button } from "@/components/ui";
 import { cta } from "@/config/site";
 
 export function CTASection({
-  title = "Book your free AI consult",
-  description = "We'll map where AI and automation can win you customers and save your team hours, and show you the fastest, highest-ROI places to start. Free, and no obligation.",
+  title = "See what happens to your enquiries",
+  description = "Send us your website and we'll send back a short video: what actually happens when someone enquires with you today, and what we'd change. Free, no call needed, no obligation. If you'd rather talk it through, we're happy to do that instead.",
 }: {
   title?: string;
   description?: string;

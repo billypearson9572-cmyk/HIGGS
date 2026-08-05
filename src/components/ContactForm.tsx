@@ -12,7 +12,7 @@ const fieldClass =
   "w-full rounded-xl border border-line bg-bg-soft px-4 py-3 text-sm text-fg placeholder:text-muted/70 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/25";
 
 export function ContactForm({
-  submitLabel = "Book my free consult",
+  submitLabel = "Send me my free audit video",
   topic,
 }: {
   /** Text on the submit button (e.g. "Request my call"). */
@@ -88,6 +88,7 @@ export function ContactForm({
     const body = [
       `Name: ${payload.name ?? ""}`,
       `Email: ${payload.email ?? ""}`,
+      `Website: ${payload.website ?? ""}`,
       `Company: ${payload.company ?? ""}`,
       `Interested in: ${payload.service ?? ""}`,
       `Budget: ${payload.budget ?? ""}`,
@@ -163,6 +164,21 @@ export function ContactForm({
         </Field>
       </div>
 
+      {/* The website is what the audit is actually performed on, so it is the
+          one field that genuinely has to be filled in. Company name is not —
+          we can read that off the site. */}
+      <Field label="Your website" htmlFor="website">
+        <input
+          id="website"
+          name="website"
+          required
+          inputMode="url"
+          autoComplete="url"
+          placeholder="yourbusiness.co.uk"
+          className={fieldClass}
+        />
+      </Field>
+
       <Field label="Company" htmlFor="company" optional>
         <input
           id="company"
@@ -179,10 +195,10 @@ export function ContactForm({
             <option value="" disabled>
               Choose one…
             </option>
-            <option>A free AI consult</option>
-            <option>Social media marketing</option>
+            <option>A free audit video</option>
+            <option>The free instant-reply setup</option>
             <option>AI automation</option>
-            <option>Both</option>
+            <option>Social media marketing</option>
             <option>Not sure yet</option>
           </select>
         </Field>
@@ -197,13 +213,14 @@ export function ContactForm({
         </Field>
       </div>
 
-      <Field label="How can we help?" htmlFor="message">
+      {/* Optional on purpose. This form's job is to get us a website to audit,
+          and every required field costs us people who would have said yes. */}
+      <Field label="Anything you want us to look at?" htmlFor="message" optional>
         <textarea
           id="message"
           name="message"
-          required
-          rows={5}
-          placeholder="Tell us a little about your business and what you'd like to achieve…"
+          rows={4}
+          placeholder="Optional — how enquiries reach you today, or anything you already know is broken…"
           className={cn(fieldClass, "resize-y")}
         />
       </Field>
