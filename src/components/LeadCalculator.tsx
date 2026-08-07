@@ -422,7 +422,7 @@ export function LeadCalculator() {
           </p>
           <div className="mt-6 flex justify-center">
             <Button href="/contact" size="lg">
-              See how to fix this. Get a free audit video
+              See how to fix this. Get a free audit
               <ArrowRight className="h-5 w-5" />
             </Button>
           </div>

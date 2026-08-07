@@ -22,8 +22,13 @@ export const siteConfig = {
   location: "United Kingdom · Working with SMEs everywhere",
 
   /**
-   * Scheduling link (Calendly, Cal.com, etc.). Not surfaced yet. When you
-   * have one, paste it here and a "Book a call" button can be wired up.
+   * Scheduling link — Billy uses Cal.com. Paste the full booking URL, e.g.
+   * "https://cal.com/billy-pearson/15min", and the /book page swaps its
+   * fallback form for the live scheduler. Provider-agnostic: it is embedded in
+   * an iframe, so any scheduler that allows embedding works.
+   *
+   * Deliberately NOT the primary CTA anywhere. A booked call is the escape
+   * hatch for people who would rather talk; the audit is the front door.
    */
   bookingUrl: "",
 
@@ -55,20 +60,25 @@ export const siteConfig = {
 };
 
 /**
- * The site's primary call-to-action: a free audit video.
+ * The site's primary call-to-action: a free audit.
  *
  * Deliberately not "book a consult". Asking for a meeting only converts people
  * who have already decided they need us — and it makes the first thing we do
- * to a stranger a request rather than a favour. The audit video inverts that:
- * we go and look at their enquiry route, record what we find, and send it. It
- * gets watched late at night, re-watched, and forwarded to a business partner,
- * none of which a call does.
+ * to a stranger a request rather than a favour. The audit inverts that:
+ * we go and look at their enquiry route and send them what we find. It gets
+ * read late at night, re-read, and forwarded to a business partner, none of
+ * which a call does.
+ *
+ * The button never says "video", even though a video is usually what we send.
+ * Naming the format makes the offer sound like a deliverable to evaluate;
+ * "free audit" is the thing they actually want, and it leaves us free to send
+ * a written breakdown when that suits the prospect better.
  *
  * A call is still offered everywhere. It just isn't the price of entry.
  */
 export const cta = {
-  label: "Get my free audit video",
-  shortLabel: "Free audit video",
+  label: "Get my free audit",
+  shortLabel: "Free audit",
   href: "/contact",
 } as const;
 

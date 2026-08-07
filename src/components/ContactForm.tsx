@@ -12,7 +12,7 @@ const fieldClass =
   "w-full rounded-xl border border-line bg-bg-soft px-4 py-3 text-sm text-fg placeholder:text-muted/70 outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/25";
 
 export function ContactForm({
-  submitLabel = "Send me my free audit video",
+  submitLabel = "Send me my free audit",
   topic,
 }: {
   /** Text on the submit button (e.g. "Request my call"). */
@@ -195,7 +195,7 @@ export function ContactForm({
             <option value="" disabled>
               Choose one…
             </option>
-            <option>A free audit video</option>
+            <option>A free audit of my enquiry route</option>
             <option>The free instant-reply setup</option>
             <option>AI automation</option>
             <option>Social media marketing</option>

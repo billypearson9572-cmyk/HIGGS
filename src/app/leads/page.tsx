@@ -118,7 +118,7 @@ export default function LeadsLandingPage() {
                 href="#book"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand-gradient px-7 text-base font-semibold text-[#04121f] shadow-[0_10px_34px_-12px_rgba(52,199,201,0.65)] transition-all duration-200 hover:-translate-y-0.5"
               >
-                Get my free audit video
+                Get my free audit
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -293,7 +293,7 @@ export default function LeadsLandingPage() {
           </div>
           <div className="mx-auto mt-10 max-w-2xl">
             <ContactForm
-              submitLabel="Send me my free audit video"
+              submitLabel="Send me my free audit"
               topic="leads-landing"
             />
           </div>

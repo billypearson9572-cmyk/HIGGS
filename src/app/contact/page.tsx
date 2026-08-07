@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Get your free audit video",
+  title: "Get your free audit",
   description:
     "Send us your website and we'll send back a short video showing what actually happens when someone enquires with you today, and what we'd change. Free, and no call needed.",
   alternates: { canonical: "/contact" },
@@ -40,7 +40,7 @@ export default function ContactPage() {
         <div className="glow-radial pointer-events-none absolute -top-32 left-1/2 h-[26rem] w-[40rem] -translate-x-1/2" />
         <Container className="relative py-20 text-center sm:py-24">
           <div className="mx-auto max-w-2xl">
-            <Eyebrow>Free audit video &middot; no call needed</Eyebrow>
+            <Eyebrow>Free audit &middot; no call needed</Eyebrow>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl">
               See what happens to <GradientText>your enquiries.</GradientText>
             </h1>
