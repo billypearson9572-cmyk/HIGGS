@@ -389,8 +389,8 @@ export default function HomePage() {
                 body: "Priced per project, because it depends on your volume, your tools and what needs connecting. We look first, then you get one fixed price before any work starts. Founding clients pay half.",
               },
               {
-                title: "If we don't deliver, you don't pay",
-                body: "Your system is live and answering real enquiries within 30 days, or you owe us nothing. Not a refund you have to chase \u2014 an invoice that never gets sent.",
+                title: "You don't pay until it catches something",
+                body: "No invoice goes out until your system has caught its first missed enquiry, or 30 days after it goes live \u2014 whichever comes first. And if it isn't live within 30 days of kickoff, you don't pay at all. Not a refund you have to chase: an invoice that doesn't get sent until it has done its job.",
               },
               {
                 title: "After it's built",

@@ -83,7 +83,7 @@ const objections = [
   },
   {
     q: "What if it doesn't work?",
-    a: "Then you don't pay. Your system is live and answering real enquiries within 30 days or we don't invoice you. The risk sits with us, which is the only fair way round when you haven't worked with us before.",
+    a: "Then you don't pay. No invoice goes out until it has caught your first missed enquiry, or 30 days after it goes live, whichever comes first \u2014 and if it isn't live within 30 days of kickoff you don't pay at all. The risk sits with us, which is the only fair way round when you haven't worked with us before.",
   },
   {
     q: "Do I have to get on a call?",
@@ -130,8 +130,8 @@ export default function LeadsLandingPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-muted">
-              Live in 30 days or you don&apos;t pay · Built on your existing
-              tools · You own it
+              You don&apos;t pay until it catches your first missed enquiry ·
+              Built on your existing tools · You own it
             </p>
           </div>
         </Container>
