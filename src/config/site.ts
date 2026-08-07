@@ -55,12 +55,20 @@ export const siteConfig = {
 };
 
 /**
- * The site's primary call-to-action: a free AI consult, requested via the
- * contact form. Used by buttons across the site so the offer stays consistent.
+ * The site's primary call-to-action: a free audit video.
+ *
+ * Deliberately not "book a consult". Asking for a meeting only converts people
+ * who have already decided they need us — and it makes the first thing we do
+ * to a stranger a request rather than a favour. The audit video inverts that:
+ * we go and look at their enquiry route, record what we find, and send it. It
+ * gets watched late at night, re-watched, and forwarded to a business partner,
+ * none of which a call does.
+ *
+ * A call is still offered everywhere. It just isn't the price of entry.
  */
 export const cta = {
-  label: "Book a free consult",
-  shortLabel: "Free AI consult",
+  label: "Get my free audit video",
+  shortLabel: "Free audit video",
   href: "/contact",
 } as const;
 

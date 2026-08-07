@@ -79,7 +79,15 @@ const objections = [
   },
   {
     q: "What does it cost?",
-    a: "It's priced per project, because it depends on your volume and tools. We scope it on the call and you get one fixed price before any work starts.",
+    a: "It's priced per project, because it depends on your volume and tools. We look at your setup first, then you get one fixed price before any work starts. Founding clients pay half.",
+  },
+  {
+    q: "What if it doesn't work?",
+    a: "Then you don't pay. Your system is live and answering real enquiries within 30 days or we don't invoice you. The risk sits with us, which is the only fair way round when you haven't worked with us before.",
+  },
+  {
+    q: "Do I have to get on a call?",
+    a: "No. You get a video, you watch it whenever suits you, and you decide. If you'd rather talk it through we're happy to, but it's your choice, not a hoop.",
   },
 ];
 
@@ -110,7 +118,7 @@ export default function LeadsLandingPage() {
                 href="#book"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand-gradient px-7 text-base font-semibold text-[#04121f] shadow-[0_10px_34px_-12px_rgba(52,199,201,0.65)] transition-all duration-200 hover:-translate-y-0.5"
               >
-                Book a free consult
+                Get my free audit video
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -122,7 +130,8 @@ export default function LeadsLandingPage() {
               </Link>
             </div>
             <p className="mt-6 text-sm text-muted">
-              Live in three weeks · Built on your existing tools · You own it
+              Live in 30 days or you don&apos;t pay · Built on your existing
+              tools · You own it
             </p>
           </div>
         </Container>
@@ -275,14 +284,16 @@ export default function LeadsLandingPage() {
               <GradientText>fits your business.</GradientText>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted">
-              Tell us how enquiries reach you today. We&apos;ll come back with
-              what we&apos;d build, what it would cost and what it would likely
-              recover. No slides, no pressure, and no obligation.
+              Give us your website and we&apos;ll enquire with you the way a
+              customer would. You get back a short video showing exactly what
+              happened, what it&apos;s costing you and what we&apos;d change.
+              No call needed, no slides, no obligation, and it&apos;s yours to
+              keep whether or not you hire us.
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-2xl">
             <ContactForm
-              submitLabel="Book my free consult"
+              submitLabel="Send me my free audit video"
               topic="leads-landing"
             />
           </div>

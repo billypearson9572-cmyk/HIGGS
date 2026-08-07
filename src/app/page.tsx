@@ -376,7 +376,7 @@ export default function HomePage() {
                 Here&apos;s the <GradientText>whole deal.</GradientText>
               </>
             }
-            description="Most agencies make you book a call to find out what anything costs or how it works. Here it is up front."
+            description="Most agencies make you book a call to find out what anything costs or how it works. Here it is up front, including what happens if we get it wrong."
           />
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -386,7 +386,11 @@ export default function HomePage() {
               },
               {
                 title: "What it costs",
-                body: "Priced per project, because it depends on your volume, your tools and what needs connecting. That's what the consult is for: we scope it, then you get one fixed price before any work starts. Founding clients pay half.",
+                body: "Priced per project, because it depends on your volume, your tools and what needs connecting. We look first, then you get one fixed price before any work starts. Founding clients pay half.",
+              },
+              {
+                title: "If we don't deliver, you don't pay",
+                body: "Your system is live and answering real enquiries within 30 days, or you owe us nothing. Not a refund you have to chase \u2014 an invoice that never gets sent.",
               },
               {
                 title: "After it's built",

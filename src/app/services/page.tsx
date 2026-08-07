@@ -164,7 +164,7 @@ export default function ServicesPage() {
 
       <CTASection
         title="Let's find your highest-ROI AI win"
-        description="Tell us how your business runs today and we'll set up a free consult: the systems that'll save you the most time and win you the most revenue, and exactly where to start."
+        description="Send us your website and we'll send back a short video: what actually happens when someone enquires with you today, the systems that would save you the most time, and exactly where we'd start. No call needed."
       />
     </>
   );
