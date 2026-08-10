@@ -1,0 +1,70 @@
+name: Deploy Preview (Vercel)
+
+# Builds a throwaway preview deployment so changes can be clicked through on a
+# real URL before they go anywhere near production.
+#
+# Deliberately NOT --prod: this creates a preview deployment with its own
+# unlisted URL and leaves voltaradigital.com untouched. The production workflow
+# in deploy.yml still owns main.
+#
+# Reuses the same VERCEL_TOKEN secret and project IDs as the production deploy,
+# so there is no extra setup.
+
+on:
+  push:
+    branches:
+      - "claude/**"
+  workflow_dispatch: {}
+
+# One preview at a time per branch; a newer push supersedes an in-flight build.
+concurrency:
+  group: vercel-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  VERCEL_ORG_ID: team_R1oL0ZqG4mHuEaNX42AY4Liy
+  VERCEL_PROJECT_ID: prj_SEYsnt29yOHmoAf5lEGU3fgn7YA6
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Deploy preview
+        id: deploy
+        run: |
+          url=$(vercel deploy --yes --token="$VERCEL_TOKEN")
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+      - name: Publish the links
+        run: |
+          url="${{ steps.deploy.outputs.url }}"
+          {
+            echo "## Preview is live"
+            echo ""
+            echo "The redesign is staged under \`/v2\`. The current live site is"
+            echo "still served from the root, so the two can be compared side by side."
+            echo ""
+            echo "### Redesign"
+            for p in index services calculator about blog podcast contact privacy 404; do
+              echo "- [$p]($url/v2/$p.html)"
+            done
+            echo ""
+            echo "### Current site, same deployment"
+            echo "- [home]($url/)"
+            echo "- [lead calculator]($url/lead-calculator)"
+            echo ""
+            echo "Nothing here is production. voltaradigital.com is unchanged."
+          } >> "$GITHUB_STEP_SUMMARY"
