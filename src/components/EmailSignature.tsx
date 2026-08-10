@@ -16,6 +16,11 @@ import { siteConfig } from "@/config/site";
  *   gradient ring is baked into the PNG because Outlook ignores border-radius
  * - the CTA carries a flat background-color under the gradient so clients that
  *   drop background-image still render a solid brand-blue pill
+ * - no panel background: the signature sits on whatever the message body is,
+ *   so it reads as part of the email rather than a pasted block. Text colours
+ *   are therefore chosen for a light body, and leaving the background unset
+ *   also lets dark-mode clients recolour it instead of stranding dark text on
+ *   a dark panel
  */
 const BADGE_PATH = "/voltara-badge.png";
 const BADGE_URL = `${siteConfig.url.replace(/\/$/, "")}${BADGE_PATH}`;
@@ -39,18 +44,18 @@ function buildSignature(
   badge: string = BADGE_URL,
 ) {
   const site = siteConfig.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
-  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;background-color:#0e1626;font-family:Arial,Helvetica,sans-serif;color:#e9eef7;">
+  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#070b16;">
   <tr>
     <td style="padding:0 18px 0 0;vertical-align:middle;">
       <img src="${badge}" width="88" height="88" alt="${siteConfig.name}" style="display:block;width:88px;height:88px;border:0;border-radius:44px;" />
     </td>
     <td style="padding:2px 24px 2px 18px;vertical-align:middle;border-left:3px solid #34c7c9;">
-      <div style="font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:bold;color:#e9eef7;">${name}</div>
-      <div style="font-size:13px;color:#93a3c0;padding-top:3px;">${role} &middot; ${siteConfig.name}</div>
+      <div style="font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:bold;color:#070b16;">${name}</div>
+      <div style="font-size:13px;color:#55617a;padding-top:3px;">${role} &middot; ${siteConfig.name}</div>
       <div style="font-size:13px;padding-top:8px;white-space:nowrap;">
-        <a href="${siteConfig.url}" style="color:#34c7c9;text-decoration:none;font-weight:bold;">${site}</a>
-        <span style="color:#1e2a44;">&nbsp;|&nbsp;</span>
-        <a href="mailto:${email}" style="color:#34c7c9;text-decoration:none;">${email}</a>
+        <a href="${siteConfig.url}" style="color:#1565d8;text-decoration:none;font-weight:bold;">${site}</a>
+        <span style="color:#b6bdc7;">&nbsp;|&nbsp;</span>
+        <a href="mailto:${email}" style="color:#1565d8;text-decoration:none;">${email}</a>
       </div>
       <div style="padding-top:12px;">
         <a href="${siteConfig.url}/contact" style="display:inline-block;background-color:#1e8fe6;background-image:linear-gradient(120deg,#8ae04b 0%,#34c7c9 50%,#1e8fe6 100%);color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:0.6px;text-decoration:none;padding:9px 18px;border-radius:20px;">FREE AI CONSULT &rarr;</a>
