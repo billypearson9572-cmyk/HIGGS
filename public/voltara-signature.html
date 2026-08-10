@@ -22,6 +22,18 @@
   .note { color: #93a3c0; font-size: 13px; line-height: 1.7; margin-top: 26px;
           border-top: 1px solid #1e2a44; padding-top: 20px; }
   code { color: #34c7c9; }
+  /* Named animation the signature markup refers to. Mail clients strip CSS
+     animation, so pasted copies fall back to the static gradient. */
+  @keyframes ctaShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    /* !important: the signature sets the animation inline so it survives a
+       copy, and an inline style outranks this rule without it. */
+    #preview a { animation: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -55,21 +67,21 @@
 
   function build(p, badge) {
     badge = badge || BADGE;
-    return '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#070b16;">'
+    return '<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#0e1626;">'
       + '<tr>'
       + '<td style="padding:0 18px 0 0;vertical-align:middle;">'
       + '<img src="' + badge + '" width="88" height="88" alt="Voltara Digital" style="display:block;width:88px;height:88px;border:0;border-radius:44px;" />'
       + '</td>'
-      + '<td style="padding:2px 24px 2px 18px;vertical-align:middle;border-left:3px solid #34c7c9;">'
-      + '<div style="font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:bold;color:#070b16;">' + p.name + '</div>'
-      + '<div style="font-size:13px;color:#55617a;padding-top:3px;">' + p.role + ' &middot; Voltara Digital</div>'
+      + '<td style="padding:2px 0 2px 18px;vertical-align:middle;border-left:3px solid #34c7c9;">'
+      + '<div style="font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:bold;color:#0e1626;">' + p.name + '</div>'
+      + '<div style="font-size:13px;color:#5b6a86;padding-top:3px;">' + p.role + ' &middot; Voltara Digital</div>'
       + '<div style="font-size:13px;padding-top:8px;white-space:nowrap;">'
-      + '<a href="https://voltaradigital.com" style="color:#1565d8;text-decoration:none;font-weight:bold;">voltaradigital.com</a>'
-      + '<span style="color:#b6bdc7;">&nbsp;|&nbsp;</span>'
-      + '<a href="mailto:' + p.email + '" style="color:#1565d8;text-decoration:none;">' + p.email + '</a>'
+      + '<a href="https://voltaradigital.com" style="color:#1e8fe6;text-decoration:none;font-weight:bold;">voltaradigital.com</a>'
+      + '<span style="color:#c3cddd;">&nbsp;|&nbsp;</span>'
+      + '<a href="mailto:' + p.email + '" style="color:#1e8fe6;text-decoration:none;">' + p.email + '</a>'
       + '</div>'
       + '<div style="padding-top:12px;">'
-      + '<a href="https://voltaradigital.com/contact" style="display:inline-block;background-color:#1e8fe6;background-image:linear-gradient(120deg,#8ae04b 0%,#34c7c9 50%,#1e8fe6 100%);color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:0.6px;text-decoration:none;padding:9px 18px;border-radius:20px;">FREE AI CONSULT &rarr;</a>'
+      + '<a href="https://voltaradigital.com/contact" style="display:inline-block;background-color:#1e8fe6;background-image:linear-gradient(120deg,#8ae04b 0%,#34c7c9 50%,#1e8fe6 100%);background-size:220% 100%;animation:ctaShift 5s ease-in-out infinite;color:#ffffff;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:bold;letter-spacing:0.6px;text-decoration:none;padding:9px 18px;border-radius:20px;transition:transform 0.25s,box-shadow 0.25s;">FREE AI CONSULT &rarr;</a>'
       + '</div>'
       + '</td>'
       + '</tr>'
