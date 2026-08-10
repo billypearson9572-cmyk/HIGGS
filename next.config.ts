@@ -16,11 +16,28 @@ const securityHeaders = [
   },
 ];
 
+/**
+ * The redesign renames /lead-calculator to /calculator, so the old URL needs a
+ * permanent redirect to keep existing links and search results working.
+ *
+ * It is gated because the destination does not exist yet: the redesign is
+ * staged under /public/v2 and /calculator is not a route until it goes live.
+ * Shipping the redirect before then would point a working page at a 404. Set
+ * NEXT_PUBLIC_NEW_SITE=1 at cutover and it turns on.
+ */
+const newSiteIsLive = process.env.NEXT_PUBLIC_NEW_SITE === "1";
+
 const nextConfig: NextConfig = {
   // Don't advertise the framework (minor info-leak hardening).
   poweredByHeader: false,
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
+  },
+  async redirects() {
+    if (!newSiteIsLive) return [];
+    return [
+      { source: "/lead-calculator", destination: "/calculator", permanent: true },
+    ];
   },
 };
 
