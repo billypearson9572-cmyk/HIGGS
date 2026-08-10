@@ -88,11 +88,20 @@ The site is dark by default. There is no light theme.
 Three families, all loaded through `next/font/google` in `src/app/layout.tsx`,
 so they self-host and there is no external font request.
 
-| Token | Family | Use |
+| Token | Family | Actually used? |
 |---|---|---|
-| `--font-sans` / `--font-geist-sans` | **Geist** | Body copy. The default on `body`. |
-| `--font-display` / `--font-space-grotesk` | **Space Grotesk** | Headings. Weights 400, 500, 600, 700 loaded. |
-| `--font-mono` / `--font-geist-mono` | **Geist Mono** | Code and numerals where alignment matters. |
+| `--font-sans` / `--font-geist-sans` | **Geist** | Yes. The default on `body`. |
+| `--font-display` / `--font-space-grotesk` | **Space Grotesk** | Yes. Every heading, via the `font-display` class. Weights 400, 500, 600, 700. |
+| `--font-mono` / `--font-geist-mono` | **Geist Mono** | **No.** Loaded and preloaded, but the `font-mono` class appears nowhere in the source or the rendered page. |
+
+Verified against the live site, not just the config: three woff2 files are
+preloaded on every page, totalling about 75 KB.
+
+**Geist Mono is dead weight.** It is preloaded on every page load and never
+rendered: `font-mono` appears 0 times in `src/` and 0 times in the served HTML,
+and blog `code` elements fall through to Tailwind's default mono stack rather
+than to Geist Mono. Either use it deliberately in the redesign or drop it from
+`layout.tsx` and save roughly 22 KB and a preload on every page.
 
 Geist and Geist Mono load with the `latin` subset and default weights. Only
 Space Grotesk declares explicit weights, so if the redesign needs a specific
