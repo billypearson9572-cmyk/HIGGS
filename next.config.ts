@@ -25,17 +25,18 @@ const securityHeaders = [
  * Shipping the redirect before then would point a working page at a 404. Set
  * NEXT_PUBLIC_NEW_SITE=1 at cutover and it turns on.
  */
-const newSiteIsLive = process.env.NEXT_PUBLIC_NEW_SITE === "1";
-
 /**
- * Serve the redesign as the whole site on Vercel preview deployments, so it can
- * be reviewed at real URLs instead of poked at under /v2/whatever.html.
+ * The redesign is the site. It serves everywhere by default.
  *
- * VERCEL_ENV is set by Vercel itself and is "production" only on production
- * deployments, so this cannot leak onto voltaradigital.com. Setting
- * NEXT_PUBLIC_NEW_SITE=1 turns it on everywhere, which is the cutover switch.
+ * Rollback without a code change: set NEXT_PUBLIC_LEGACY_SITE=1 in the Vercel
+ * project's environment variables and redeploy. Every original route is still
+ * present underneath — the redesign is layered over them with rewrites, not a
+ * replacement — so the old site comes straight back.
  */
-const serveRedesign = newSiteIsLive || process.env.VERCEL_ENV === "preview";
+const serveRedesign = process.env.NEXT_PUBLIC_LEGACY_SITE !== "1";
+
+/** /lead-calculator was renamed to /calculator; the old URL must keep working. */
+const newSiteIsLive = serveRedesign;
 
 /** Pages of the redesign, as they are named under public/v2. */
 const redesignPages = [
