@@ -13,7 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/podcast",
     "/contact",
-    "/lead-calculator",
+    // Renamed from /lead-calculator in the redesign; the old path 308s here.
+    "/calculator",
     "/privacy",
   ].map(
     (path) => ({
