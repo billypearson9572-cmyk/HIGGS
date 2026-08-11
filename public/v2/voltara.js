@@ -284,6 +284,72 @@
     );
   }
 
+  // --------------------------------------------------------------- metadata
+
+  /**
+   * Keep the page's SEO metadata alive across the bundler's document swap.
+   *
+   * The bundler boots by calling `document.documentElement.replaceWith(...)`
+   * with a freshly parsed template, which throws away the original <head>.
+   * That template carries no title, description, canonical or social tags, so
+   * after render the document has an empty title and no metadata at all.
+   * Google indexes the rendered DOM, so without this the tags in the served
+   * HTML are simply discarded before they count for anything.
+   *
+   * This runs before the swap, keeps a copy of the head tags that matter, and
+   * puts them back once the new document is in place. `document` itself
+   * survives the swap — only documentElement is replaced — which is why a
+   * listener registered here still fires afterwards.
+   */
+  var HEAD_SELECTOR =
+    'title, link[rel="canonical"], meta[name="description"], meta[name="robots"], ' +
+    'meta[property^="og:"], meta[name^="twitter:"], script[type="application/ld+json"]';
+
+  function preserveMetadata() {
+    var saved = [].slice
+      .call(document.querySelectorAll(HEAD_SELECTOR))
+      .map(function (el) {
+        return el.cloneNode(true);
+      });
+    if (!saved.length) return;
+
+    function restore() {
+      var head = document.head;
+      if (!head) return false;
+      // Only restore what the new document is missing, so a future template
+      // that does carry its own tags wins rather than ending up duplicated.
+      var added = false;
+      saved.forEach(function (el) {
+        var sel =
+          el.tagName === "TITLE"
+            ? "title"
+            : el.tagName === "LINK"
+              ? 'link[rel="canonical"]'
+              : el.tagName === "SCRIPT"
+                ? 'script[type="application/ld+json"]'
+                : el.getAttribute("property")
+                  ? 'meta[property="' + el.getAttribute("property") + '"]'
+                  : 'meta[name="' + el.getAttribute("name") + '"]';
+        var existing = head.querySelector(sel);
+        if (existing && (el.tagName !== "TITLE" || existing.textContent.trim())) return;
+        if (existing) existing.remove();
+        head.appendChild(el.cloneNode(true));
+        added = true;
+      });
+      return added;
+    }
+
+    // The swap happens during the bundler's own DOMContentLoaded handler, so
+    // poll briefly rather than guessing at ordering.
+    var deadline = Date.now() + 20000;
+    (function watch() {
+      if (!document.title || !document.querySelector('meta[name="description"]')) {
+        restore();
+      }
+      if (Date.now() < deadline) setTimeout(watch, 150);
+    })();
+  }
+
   // ----------------------------------------------------------------- footer
 
   function addPrivacyLink() {
@@ -308,6 +374,7 @@
   }
 
   function init() {
+    preserveMetadata();
     addPrivacyLink();
     // Delegated, so it can bind before the form has rendered.
     wireContactForm();
