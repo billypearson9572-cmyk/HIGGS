@@ -26,7 +26,7 @@
    * exactly what the live React site does today.
    */
   var CONFIG = {
-    web3formsKey: "",
+    web3formsKey: "5dc7b515-0268-4d52-a091-2ecd09f8087d",
     contactEndpoint: "",
     email: "info@voltaradigital.com",
   };
