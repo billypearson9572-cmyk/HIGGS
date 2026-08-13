@@ -1,0 +1,19 @@
+{
+  "layout": "compare",
+  "size": "linkedin-square",
+  "kicker": "Scope creep",
+  "headline": "Same contract. | Two weeks apart.",
+  "closer": "Agreed in writing, or we don't start.",
+  "left": {
+    "title": "Week one · signed",
+    "items": ["Sales funnel automation", "CRM setup", "Email sequences", "Reporting dashboard"]
+  },
+  "right": {
+    "title": "Week three · expected",
+    "items": [
+      "Sales funnel automation", "CRM setup", "Email sequences", "Reporting dashboard",
+      "Social media management", "Weekly content calendar", "Ad creative",
+      "Website redesign", "\"Quick\" daily calls", "Weekends on call", "Whatever comes next"
+    ]
+  }
+}

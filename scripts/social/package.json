@@ -1,0 +1,14 @@
+{
+  "name": "voltara-social-graphics",
+  "private": true,
+  "type": "module",
+  "description": "Renders brand-consistent social graphics from JSON. Separate from the site's package.json so it never affects the Vercel build.",
+  "scripts": {
+    "generate": "node generate.mjs"
+  },
+  "dependencies": {
+    "@fontsource/geist-sans": "^5.2.11",
+    "@fontsource/space-grotesk": "^5.2.9",
+    "puppeteer": "^24.10.2"
+  }
+}
