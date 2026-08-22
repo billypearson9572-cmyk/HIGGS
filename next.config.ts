@@ -79,6 +79,15 @@ const nextConfig: NextConfig = {
         // resolves to /services.html. Without this, every nav click 404s.
         { source: "/:page.html", destination: "/v2/:page.html" },
 
+        // Phase-2 SEO landing pages, authored as plain HTML like /privacy.
+        // Nested paths, so they need their own entries: the single-segment
+        // rules above cannot reach them.
+        {
+          source: "/services/ai-receptionist",
+          destination: "/v2/services/ai-receptionist.html",
+        },
+        { source: "/industries/:page", destination: "/v2/industries/:page.html" },
+
         // Same story for the logo, referenced as "public/voltara-mark.png",
         // and for the script that makes the contact form submit. Without this
         // last one the form loads looking fine and does nothing.
