@@ -350,6 +350,34 @@
     })();
   }
 
+  // ------------------------------------------------------------- hero video
+
+  // The ASCII hero <video> is plain markup now (no template bindings), but
+  // the boot runtime re-creates the element after the document swap, and by
+  // the time its muted property lands the browser has already refused the
+  // autoplay. One nudge after the element exists is all it needs; the catch
+  // covers browsers that refuse anyway, where the poster simply stays.
+  function startHeroVideo() {
+    // Re-query on every attempt: the boot runtime instantiates the template
+    // in stages and the first <video> found can be replaced by a fresh node
+    // moments later, taking any properties set on it to the grave. Keep
+    // nudging whatever node currently exists until one is genuinely playing.
+    var deadline = Date.now() + 20000;
+    (function nudge() {
+      var video = document.querySelector('video[poster="/hero-poster.webp"]');
+      if (video) {
+        video.muted = true;
+        video.loop = true;
+        if (video.paused) {
+          var attempt = video.play();
+          if (attempt && attempt.catch) attempt.catch(function () {});
+        }
+        if (!video.paused && video.currentTime > 0) return;
+      }
+      if (Date.now() < deadline) setTimeout(nudge, 250);
+    })();
+  }
+
   // ----------------------------------------------------------------- footer
 
   function addPrivacyLink() {
@@ -376,6 +404,7 @@
   function init() {
     preserveMetadata();
     addPrivacyLink();
+    startHeroVideo();
     // Delegated, so it can bind before the form has rendered.
     wireContactForm();
   }
