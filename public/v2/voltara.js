@@ -350,6 +350,34 @@
     })();
   }
 
+  // ------------------------------------------------------------- hero video
+
+  // The ASCII hero <video> is plain markup now (no template bindings), but
+  // the boot runtime re-creates the element after the document swap, and by
+  // the time its muted property lands the browser has already refused the
+  // autoplay. One nudge after the element exists is all it needs; the catch
+  // covers browsers that refuse anyway, where the poster simply stays.
+  function startHeroVideo() {
+    // Re-query on every attempt: the boot runtime instantiates the template
+    // in stages and the first <video> found can be replaced by a fresh node
+    // moments later, taking any properties set on it to the grave. Keep
+    // nudging whatever node currently exists until one is genuinely playing.
+    var deadline = Date.now() + 20000;
+    (function nudge() {
+      var video = document.querySelector('video[poster="/hero-poster.webp"]');
+      if (video) {
+        video.muted = true;
+        video.loop = true;
+        if (video.paused) {
+          var attempt = video.play();
+          if (attempt && attempt.catch) attempt.catch(function () {});
+        }
+        if (!video.paused && video.currentTime > 0) return;
+      }
+      if (Date.now() < deadline) setTimeout(nudge, 250);
+    })();
+  }
+
   // ----------------------------------------------------------------- footer
 
   function addPrivacyLink() {
@@ -373,9 +401,44 @@
     });
   }
 
+  // The phase-2 landing pages, reachable from every page's footer. Appended
+  // to the footer's first link column so the crawl path and the human path
+  // are the same three links the services page carries.
+  function addLandingPageLinks() {
+    whenReady("footer", function (footer) {
+      if (footer.querySelector("[data-voltara-landing]")) return;
+      var column = [].slice
+        .call(footer.querySelectorAll("a"))
+        .filter(function (a) {
+          var href = a.getAttribute("href") || "";
+          return href.indexOf("services") !== -1;
+        })[0];
+      if (!column || !column.parentElement) return;
+      var list = column.parentElement;
+      [
+        ["/services/ai-receptionist", "AI receptionist"],
+        ["/industries/estate-agents", "For estate agents"],
+        ["/industries/dental-practices", "For dental practices"],
+      ].forEach(function (pair) {
+        var a = document.createElement("a");
+        a.setAttribute("data-voltara-landing", "1");
+        a.href = pair[0];
+        a.textContent = pair[1];
+        a.style.cssText = column.style.cssText || "";
+        if (!a.style.cssText) {
+          a.style.cssText = "display:block;color:#93a3c0;text-decoration:none;" +
+            "font-family:Geist,sans-serif;font-size:14px;margin-top:10px";
+        }
+        list.appendChild(a);
+      });
+    });
+  }
+
   function init() {
     preserveMetadata();
     addPrivacyLink();
+    addLandingPageLinks();
+    startHeroVideo();
     // Delegated, so it can bind before the form has rendered.
     wireContactForm();
   }

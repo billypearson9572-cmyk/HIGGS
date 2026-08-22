@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Renamed from /lead-calculator in the redesign; the old path 308s here.
     "/calculator",
     "/privacy",
+    // Phase-2 SEO landing pages (plain HTML under public/v2, see next.config).
+    "/services/ai-receptionist",
+    "/industries/estate-agents",
+    "/industries/dental-practices",
   ].map(
     (path) => ({
       url: `${base}${path}`,

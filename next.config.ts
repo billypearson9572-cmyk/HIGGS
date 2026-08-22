@@ -50,11 +50,23 @@ const redesignPages = [
   "privacy",
 ];
 
+/**
+ * Preview deployments must never be indexed: the git-branch URLs serve the
+ * same content as the real domain and would compete with it in search.
+ * VERCEL_ENV is set at build time ("production" | "preview" | "development"),
+ * so preview builds bake the noindex header in and production never sees it.
+ * Phase-3 launch checklist item 2.
+ */
+const isProductionDeploy = process.env.VERCEL_ENV === "production";
+
 const nextConfig: NextConfig = {
   // Don't advertise the framework (minor info-leak hardening).
   poweredByHeader: false,
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    const headers = isProductionDeploy
+      ? securityHeaders
+      : [...securityHeaders, { key: "X-Robots-Tag", value: "noindex, nofollow" }];
+    return [{ source: "/:path*", headers }];
   },
   async redirects() {
     if (!newSiteIsLive) return [];
@@ -78,6 +90,15 @@ const nextConfig: NextConfig = {
         // The exported pages link to each other as "services.html", which
         // resolves to /services.html. Without this, every nav click 404s.
         { source: "/:page.html", destination: "/v2/:page.html" },
+
+        // Phase-2 SEO landing pages, authored as plain HTML like /privacy.
+        // Nested paths, so they need their own entries: the single-segment
+        // rules above cannot reach them.
+        {
+          source: "/services/ai-receptionist",
+          destination: "/v2/services/ai-receptionist.html",
+        },
+        { source: "/industries/:page", destination: "/v2/industries/:page.html" },
 
         // Same story for the logo, referenced as "public/voltara-mark.png",
         // and for the script that makes the contact form submit. Without this
